@@ -64,8 +64,9 @@ A sample agent skeleton built with [NegMAS](https://github.com/yasserfarouk/negm
 │   ├── ISBTAcquisition/
 │   ├── Laptop/
 │   └── NiceOrDie/
+├── docs/                  # Strategy documentation (examples + NoamNeg)
 ├── main.py                # CLI application entry point
-├── mynegotiator.py        # Your agent implementation (RENAME & EDIT THIS!)
+├── noam_neg.py            # NoamNeg agent (default for CLI)
 ├── pyproject.toml         # Project configuration
 └── README.md
 ```

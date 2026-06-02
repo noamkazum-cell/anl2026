@@ -1,11 +1,11 @@
-"""Tests for the MyNegotiator agent."""
+"""Tests for the Agent360 agent."""
 
 import pytest
 from negmas.inout import Scenario
 from negmas.preferences.generators import generate_multi_issue_ufuns
 from negmas.sao import SAOMechanism
 
-from noam_neg import NoamNeg
+from agent360 import Agent360
 
 
 @pytest.fixture
@@ -20,49 +20,45 @@ def test_scenario():
     return Scenario(outcome_space=ufuns[0].outcome_space, ufuns=ufuns)
 
 
-class TestMyNegotiator:
-    """Tests for the MyNegotiator agent."""
+class TestAgent360:
+    """Tests for the Agent360 agent."""
 
     def test_instantiation(self):
-        """Test that MyNegotiator can be instantiated."""
-        negotiator = NoamNeg()
+        """Test that Agent360 can be instantiated."""
+        negotiator = Agent360()
         assert negotiator is not None
 
-    def test_inherits_from_boaneg(self):
-        """Test that MyNegotiator inherits from BOANeg."""
-        from examples.boa import BOANeg
+    def test_has_required_methods(self):
+        """Test that Agent360 exposes the SAOCallNegotiator strategy hooks."""
+        negotiator = Agent360()
+        assert callable(negotiator.acceptance_strategy)
+        assert callable(negotiator.concealing_bidding_strategy)
+        assert callable(negotiator.update_opponent_model)
 
-        negotiator = NoamNeg()
-        assert isinstance(negotiator, BOANeg)
-
-    def test_has_required_components(self, test_scenario):
-        """Test that MyNegotiator has all required BOA components after initialization."""
+    def test_opponent_model_initialized(self, test_scenario):
+        """Test that opponent_ufun is set after preferences are attached."""
         mechanism = SAOMechanism(
             outcome_space=test_scenario.outcome_space,
             n_steps=5,
         )
-        negotiator = NoamNeg()
-        opponent = NoamNeg()
+        negotiator = Agent360()
+        opponent = Agent360()
 
         mechanism.add(negotiator, ufun=test_scenario.ufuns[0])
         mechanism.add(opponent, ufun=test_scenario.ufuns[1])
+        mechanism.run()
 
-        # Run one step to initialize
-        mechanism.step()
-
-        # Check that it has the three main BOA components inherited from BOANeg
-        assert negotiator._acceptance is not None
-        assert negotiator._offering is not None
-        assert negotiator._models is not None
+        assert negotiator.private_info.get("opponent_ufun") is not None
+        assert len(negotiator.rational_outcomes) > 0
 
     def test_negotiation_completes(self, test_scenario):
-        """Test that MyNegotiator can complete a negotiation."""
+        """Test that Agent360 can complete a negotiation."""
         mechanism = SAOMechanism(
             outcome_space=test_scenario.outcome_space,
             n_steps=50,
         )
-        negotiator1 = NoamNeg()
-        negotiator2 = NoamNeg()
+        negotiator1 = Agent360()
+        negotiator2 = Agent360()
 
         mechanism.add(negotiator1, ufun=test_scenario.ufuns[0])
         mechanism.add(negotiator2, ufun=test_scenario.ufuns[1])
@@ -71,33 +67,31 @@ class TestMyNegotiator:
         assert mechanism.state.agreement is not None or mechanism.state.timedout
 
     def test_makes_offers(self, test_scenario):
-        """Test that MyNegotiator makes valid offers."""
+        """Test that Agent360 makes valid offers."""
         mechanism = SAOMechanism(
             outcome_space=test_scenario.outcome_space,
             n_steps=10,
         )
-        negotiator = NoamNeg()
-        opponent = NoamNeg()
+        negotiator = Agent360()
+        opponent = Agent360()
 
         mechanism.add(negotiator, ufun=test_scenario.ufuns[0])
         mechanism.add(opponent, ufun=test_scenario.ufuns[1])
 
         mechanism.run()
 
-        # Check that offers were made
         assert len(mechanism.history) > 0
 
     def test_negotiation_with_different_opponents(self, test_scenario):
-        """Test that MyNegotiator can negotiate with different types of opponents."""
+        """Test that Agent360 can negotiate with different types of opponents."""
         from examples.simple import SimpleNegotiator
         from examples.map import MAPNeg
 
-        # Test against SimpleNegotiator
         mechanism1 = SAOMechanism(
             outcome_space=test_scenario.outcome_space,
             n_steps=50,
         )
-        negotiator1 = NoamNeg()
+        negotiator1 = Agent360()
         opponent1 = SimpleNegotiator()
 
         mechanism1.add(negotiator1, ufun=test_scenario.ufuns[0])
@@ -106,12 +100,11 @@ class TestMyNegotiator:
         mechanism1.run()
         assert mechanism1.state.agreement is not None or mechanism1.state.timedout
 
-        # Test against MAPNeg
         mechanism2 = SAOMechanism(
             outcome_space=test_scenario.outcome_space,
             n_steps=50,
         )
-        negotiator2 = NoamNeg()
+        negotiator2 = Agent360()
         opponent2 = MAPNeg()
 
         mechanism2.add(negotiator2, ufun=test_scenario.ufuns[0])
@@ -121,8 +114,7 @@ class TestMyNegotiator:
         assert mechanism2.state.agreement is not None or mechanism2.state.timedout
 
     def test_negotiation_on_multiple_scenarios(self, test_scenario):
-        """Test that MyNegotiator works on scenarios with different numbers of issues."""
-        # Test with 1 issue
+        """Test that Agent360 works on scenarios with different numbers of issues."""
         ufuns1 = generate_multi_issue_ufuns(
             n_issues=1,
             n_values=(3, 5),
@@ -135,8 +127,8 @@ class TestMyNegotiator:
             outcome_space=scenario1.outcome_space,
             n_steps=50,
         )
-        negotiator1a = NoamNeg()
-        negotiator1b = NoamNeg()
+        negotiator1a = Agent360()
+        negotiator1b = Agent360()
 
         mechanism1.add(negotiator1a, ufun=scenario1.ufuns[0])
         mechanism1.add(negotiator1b, ufun=scenario1.ufuns[1])
@@ -144,7 +136,6 @@ class TestMyNegotiator:
         mechanism1.run()
         assert mechanism1.state.agreement is not None or mechanism1.state.timedout
 
-        # Test with 4 issues
         ufuns4 = generate_multi_issue_ufuns(
             n_issues=4,
             n_values=(3, 5),
@@ -157,8 +148,8 @@ class TestMyNegotiator:
             outcome_space=scenario4.outcome_space,
             n_steps=50,
         )
-        negotiator4a = NoamNeg()
-        negotiator4b = NoamNeg()
+        negotiator4a = Agent360()
+        negotiator4b = Agent360()
 
         mechanism4.add(negotiator4a, ufun=scenario4.ufuns[0])
         mechanism4.add(negotiator4b, ufun=scenario4.ufuns[1])
@@ -167,19 +158,18 @@ class TestMyNegotiator:
         assert mechanism4.state.agreement is not None or mechanism4.state.timedout
 
     def test_agreement_is_valid(self, test_scenario):
-        """Test that agreements reached by MyNegotiator are valid outcomes."""
+        """Test that agreements reached by Agent360 are valid outcomes."""
         mechanism = SAOMechanism(
             outcome_space=test_scenario.outcome_space,
             n_steps=50,
         )
-        negotiator1 = NoamNeg()
-        negotiator2 = NoamNeg()
+        negotiator1 = Agent360()
+        negotiator2 = Agent360()
 
         mechanism.add(negotiator1, ufun=test_scenario.ufuns[0])
         mechanism.add(negotiator2, ufun=test_scenario.ufuns[1])
 
         mechanism.run()
 
-        # If agreement is reached, it should be a valid outcome
         if mechanism.state.agreement is not None:
             assert mechanism.state.agreement in test_scenario.outcome_space.enumerate()

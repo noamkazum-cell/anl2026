@@ -23,7 +23,7 @@ allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["examples", "tests"]
-force-include = {"main.py" = "main.py", "mynegotiator.py" = "mynegotiator.py", "README.md" = "README.md", "scenarios" = "scenarios"}
+force-include = {"main.py" = "main.py", "agent360.py" = "agent360.py", "README.md" = "README.md", "scenarios" = "scenarios"}
 
 [project.scripts]
 anl2026 = "main:app"

@@ -115,7 +115,7 @@ class TestTournamentCommand:
                 "--competitor",
                 "negmas.sao.BoulwareTBNegotiator",
                 "--competitor",
-                "mynegotiator.MyNegotiator",
+                "agent360.Agent360",
             ],
         )
         assert result.exit_code == 0
@@ -131,7 +131,7 @@ class TestTournamentCommand:
                 "--competitor",
                 "negmas.sao.BoulwareTBNegotiator",
                 "--competitor",
-                "mynegotiator.MyNegotiator",
+                "agent360.Agent360",
             ],
         )
         assert result.exit_code == 0
@@ -150,7 +150,7 @@ class TestTournamentCommand:
                 "--competitor",
                 "negmas.sao.BoulwareTBNegotiator",
                 "--competitor",
-                "mynegotiator.MyNegotiator",
+                "agent360.Agent360",
             ],
         )
         assert result.exit_code == 0

@@ -34,11 +34,11 @@ import typer
 from typing import Annotated
 
 try:
-    from .noam_neg import NoamNeg
+    from .agent360 import Agent360
 except ImportError:
-    from noam_neg import NoamNeg
+    from agent360 import Agent360
 
-MY_NEGOTIATOR = get_full_type_name(NoamNeg)
+AGENT360 = get_full_type_name(Agent360)
 
 app = typer.Typer(help="ANL2026 CLI application")
 
@@ -147,7 +147,7 @@ def run(
         typer.Option(
             "--negotiator",
             "--agent",
-            help=f"Your negotiator class (module.ClassName). If not provided, uses {MY_NEGOTIATOR}.",
+            help=f"Your negotiator class (module.ClassName). If not provided, uses {AGENT360}.",
             rich_help_panel="Negotiation",
         ),
     ] = None,
@@ -241,7 +241,7 @@ def run(
 
     # Set default negotiator if not provided
     if negotiator is None:
-        negotiator = MY_NEGOTIATOR
+        negotiator = AGENT360
         print(
             f"Will use negotiator [magenta]{negotiator}[/magenta] (to select a specific negotiator pass --negotiator=<negotiator_class>)"
         )
@@ -375,7 +375,7 @@ def run(
 
 DEFAULT_COMPETITORS = [
     "negmas.sao.BoulwareTBNegotiator",
-    MY_NEGOTIATOR,
+    AGENT360,
     "examples.simple.SimpleNegotiator",
     "examples.map.MAPNeg",
     "examples.boa.BOANeg",
