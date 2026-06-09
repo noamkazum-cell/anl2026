@@ -1,0 +1,1009 @@
+match_type,scenario,agent,agent_mode,opponent,opponent_mode,family,agent_first,runs,advantage,concealing,score
+panel,Amsterdam,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.5669144981412639,0.5488311442943499,1.1157456424356136
+panel,Amsterdam,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.5993150684931505,0.5724315289791766,1.1717465974723271
+panel,Amsterdam,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.7100371747211895,0.4646279651883267,1.1746651399095163
+panel,Amsterdam,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.6780821917808219,0.5051096362265703,1.1831918280073923
+panel,Amsterdam,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.7100371747211895,0.4627780048531333,1.172815179574323
+panel,Amsterdam,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.6198630136986301,0.49114796197042915,1.1110109756690592
+panel,Amsterdam,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.7007434944237918,1.0,1.7007434944237918
+panel,Amsterdam,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,first,2,0.6840148698884758,0.5,1.1840148698884758
+panel,Amsterdam,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,second,2,0.6181506849315068,1.0,1.6181506849315068
+panel,Amsterdam,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,first,2,0.6617100371747211,1.0,1.6617100371747213
+panel,Amsterdam,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,second,2,0.6301369863013697,1.0,1.6301369863013697
+panel,Amsterdam,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,first,2,0.30855018587360594,1.0,1.308550185873606
+panel,Amsterdam,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,second,2,0.47260273972602734,1.0,1.4726027397260273
+panel,Amsterdam,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.5669144981412639,1.0,1.566914498141264
+panel,Amsterdam,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.6130136986301369,1.0,1.6130136986301369
+panel,Amsterdam,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,second,2,0.6130136986301369,1.0,1.6130136986301369
+panel,Amsterdam,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.5650557620817844,1.0,1.5650557620817844
+panel,Amsterdam,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.6421232876712328,1.0,1.6421232876712328
+panel,Amsterdam,Agent360,gradient,RandomNegotiator,random rational offers,baseline,first,2,0.7788104089219331,1.0,1.778810408921933
+panel,Amsterdam,Agent360,gradient,RandomNegotiator,random rational offers,baseline,second,2,0.7123287671232876,1.0,1.7123287671232876
+panel,Amsterdam,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.6558219178082191,1.0,1.6558219178082192
+panel,Amsterdam,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.4907063197026022,0.5594194193844314,1.0501257390870335
+panel,Amsterdam,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.631849315068493,0.5741448747925301,1.2059941898610231
+panel,Amsterdam,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.7100371747211895,0.5154334169559227,1.2254705916771123
+panel,Amsterdam,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.6267123287671232,0.5398267599356483,1.1665390887027716
+panel,Amsterdam,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.7100371747211895,0.515039420737311,1.2250765954585006
+panel,Amsterdam,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.6198630136986301,0.5333099589201022,1.1531729726187323
+panel,Amsterdam,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,first,2,0.7546468401486989,1.0,1.7546468401486988
+panel,Amsterdam,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,second,2,0.6267123287671232,1.0,1.6267123287671232
+panel,Amsterdam,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,first,2,0.4851301115241635,1.0,1.4851301115241635
+panel,Amsterdam,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,second,2,0.5462328767123287,1.0,1.5462328767123288
+panel,Amsterdam,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,first,2,0.30855018587360594,1.0,1.308550185873606
+panel,Amsterdam,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,second,2,0.47260273972602734,1.0,1.4726027397260273
+panel,Amsterdam,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.6059479553903345,1.0,1.6059479553903344
+panel,Amsterdam,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.5496575342465753,1.0,1.5496575342465753
+panel,Amsterdam,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,second,2,0.6541095890410957,1.0,1.654109589041096
+panel,Amsterdam,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.7360594795539033,1.0,1.7360594795539033
+panel,Amsterdam,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.5616438356164383,1.0,1.5616438356164384
+panel,Amsterdam,Agent360Full,full,RandomNegotiator,random rational offers,baseline,first,2,0.3661710037174721,0.5,0.8661710037174721
+panel,Amsterdam,Agent360Full,full,RandomNegotiator,random rational offers,baseline,second,2,0.8065068493150684,1.0,1.8065068493150687
+panel,Amsterdam,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.7769516728624535,0.548134679425247,1.3250863522877006
+panel,Amsterdam,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.9349315068493151,0.5843817710369545,1.5193132778862697
+panel,Amsterdam,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.7100371747211895,0.465085842286461,1.1751230170076505
+panel,Amsterdam,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.6780821917808219,0.5029409711210431,1.181023162901865
+panel,Amsterdam,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.7100371747211895,0.46539059422038187,1.1754277689415713
+panel,Amsterdam,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.6198630136986301,0.5032313981877277,1.1230944118863577
+panel,Amsterdam,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,first,2,0.9330855018587361,1.0,1.933085501858736
+panel,Amsterdam,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,second,2,0.9332191780821918,1.0,1.933219178082192
+panel,Amsterdam,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,first,2,0.7769516728624535,1.0,1.7769516728624535
+panel,Amsterdam,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,second,2,0.9349315068493151,1.0,1.9349315068493151
+panel,Amsterdam,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,first,2,0.30855018587360594,1.0,1.308550185873606
+panel,Amsterdam,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,second,2,0.47260273972602734,1.0,1.4726027397260273
+panel,Amsterdam,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.6914498141263941,1.0,1.691449814126394
+panel,Amsterdam,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.7363013698630136,1.0,1.7363013698630136
+panel,Amsterdam,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,second,2,0.732876712328767,1.0,1.7328767123287672
+panel,Amsterdam,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.6263940520446096,1.0,1.6263940520446096
+panel,Amsterdam,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.7054794520547946,1.0,1.7054794520547945
+panel,Amsterdam,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,first,2,0.5,1.0,1.5
+panel,Amsterdam,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,second,2,0.9092465753424657,1.0,1.9092465753424657
+panel,Amsterdam,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.4851301115241635,0.5572900263455407,1.0424201378697042
+panel,Amsterdam,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.5993150684931505,0.5724315289791766,1.1717465974723271
+panel,Amsterdam,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.7100371747211895,0.5430625438688974,1.253099718590087
+panel,Amsterdam,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.6780821917808219,0.5797867949970323,1.257868986777854
+panel,Amsterdam,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.7100371747211895,0.5462696687367847,1.2563068434579745
+panel,Amsterdam,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.6198630136986301,0.5660802821416142,1.1859432958402443
+panel,Amsterdam,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,first,2,0.7546468401486989,1.0,1.7546468401486988
+panel,Amsterdam,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,second,2,0.6267123287671232,1.0,1.6267123287671232
+panel,Amsterdam,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,first,2,0.5464684014869888,1.0,1.546468401486989
+panel,Amsterdam,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,second,2,0.5462328767123287,1.0,1.5462328767123288
+panel,Amsterdam,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,first,2,0.30855018587360594,1.0,1.308550185873606
+panel,Amsterdam,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,second,2,0.47260273972602734,1.0,1.4726027397260273
+panel,Amsterdam,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.6059479553903345,1.0,1.6059479553903344
+panel,Amsterdam,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.5821917808219177,1.0,1.5821917808219177
+panel,Amsterdam,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.5985130111524164,1.0,1.5985130111524164
+panel,Amsterdam,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.5513698630136985,1.0,1.5513698630136985
+panel,Amsterdam,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,first,2,0.5539033457249071,1.0,1.553903345724907
+panel,Amsterdam,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,second,2,0.6763698630136986,1.0,1.6763698630136985
+panel,Amsterdam,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.6558219178082191,1.0,1.6558219178082192
+panel,Amsterdam,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.6198630136986301,1.0,1.61986301369863
+panel,Amsterdam,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.7100371747211895,1.0,1.7100371747211895
+panel,Amsterdam,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.732876712328767,1.0,1.7328767123287672
+panel,Camera,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.6241373506143746,0.6192829402465182,1.2434202908608927
+panel,Camera,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.5489877530617346,0.6137523861010016,1.1627401391627363
+panel,Camera,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.6204342703248611,0.4763240457222354,1.0967583160470964
+panel,Camera,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.6653336665833542,0.4902951748649002,1.1556288414482545
+panel,Camera,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.6204342703248611,0.4799258273892496,1.1003600977141108
+panel,Camera,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.6653336665833542,0.48492287849153604,1.1502565450748903
+panel,Camera,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,first,2,0.726056219491668,0.5,1.226056219491668
+panel,Camera,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,second,2,0.597725568607848,1.0,1.597725568607848
+panel,Camera,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,first,2,0.7442349772765526,1.0,1.7442349772765526
+panel,Camera,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,second,2,0.5606098475381156,1.0,1.5606098475381156
+panel,Camera,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,first,2,0.26931493014644,1.0,1.26931493014644
+panel,Camera,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,second,2,0.4558860284928768,1.0,1.4558860284928767
+panel,Camera,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.6012455815519272,1.0,1.601245581551927
+panel,Camera,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.5971007248187954,1.0,1.5971007248187954
+panel,Camera,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,first,2,0.6805251641137855,1.0,1.6805251641137855
+panel,Camera,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.6200134657465073,1.0,1.6200134657465073
+panel,Camera,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.6668332916770808,1.0,1.6668332916770807
+panel,Camera,Agent360,gradient,RandomNegotiator,random rational offers,baseline,first,2,0.6673960612691466,1.0,1.6673960612691467
+panel,Camera,Agent360,gradient,RandomNegotiator,random rational offers,baseline,second,2,0.7784303924018996,1.0,1.7784303924018996
+panel,Camera,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.6822083824272007,1.0,1.6822083824272007
+panel,Camera,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.6241373506143746,0.6192829402465182,1.2434202908608927
+panel,Camera,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.5606098475381156,0.6242744545993482,1.1848843021374638
+panel,Camera,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.6204342703248611,0.532066923989936,1.1525011943147971
+panel,Camera,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.6653336665833542,0.5125617699512028,1.177895436534557
+panel,Camera,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.6204342703248611,0.5317925015708453,1.1522267718957064
+panel,Camera,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.6653336665833542,0.5133270418656875,1.1786607084490417
+panel,Camera,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,first,2,0.8845312236997138,1.0,1.8845312236997138
+panel,Camera,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,second,2,0.49112721819545113,1.0,1.4911272181954511
+panel,Camera,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,first,2,0.6241373506143746,1.0,1.6241373506143746
+panel,Camera,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,second,2,0.5606098475381156,1.0,1.5606098475381156
+panel,Camera,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,first,2,0.26931493014644,1.0,1.26931493014644
+panel,Camera,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,second,2,0.4558860284928768,1.0,1.4558860284928767
+panel,Camera,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.23161083992593837,1.0,1.2316108399259384
+panel,Camera,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.5841039740064985,1.0,1.5841039740064984
+panel,Camera,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,first,2,0.6805251641137855,1.0,1.6805251641137855
+panel,Camera,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.6255680861807775,1.0,1.6255680861807775
+panel,Camera,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.5841039740064985,1.0,1.5841039740064984
+panel,Camera,Agent360Full,full,RandomNegotiator,random rational offers,baseline,first,2,0.2410368624810638,0.5,0.7410368624810638
+panel,Camera,Agent360Full,full,RandomNegotiator,random rational offers,baseline,second,2,0.5224943764058986,1.0,1.5224943764058985
+panel,Camera,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.8643326039387308,0.6236118603865918,1.4879444643253226
+panel,Camera,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.7758060484878782,0.6373241840051729,1.413130232493051
+panel,Camera,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.6204342703248611,0.4888903298704775,1.1093246001953385
+panel,Camera,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.6653336665833542,0.495460376593273,1.1607940431766273
+panel,Camera,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.6204342703248611,0.482351846484644,1.1027861168095052
+panel,Camera,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.6653336665833542,0.4948236103423348,1.160157276925689
+panel,Camera,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,first,2,0.885877798350446,1.0,1.885877798350446
+panel,Camera,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,second,2,0.920769807548113,1.0,1.9207698075481132
+panel,Camera,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,first,2,0.8643326039387308,1.0,1.8643326039387307
+panel,Camera,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,second,2,0.8202949262684329,1.0,1.8202949262684331
+panel,Camera,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,first,2,0.26931493014644,1.0,1.26931493014644
+panel,Camera,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,second,2,0.4558860284928768,1.0,1.4558860284928767
+panel,Camera,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.5194411715199462,1.0,1.5194411715199463
+panel,Camera,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.7530617345663585,1.0,1.7530617345663586
+panel,Camera,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,second,2,0.6962009497625594,1.0,1.6962009497625594
+panel,Camera,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,first,2,0.6805251641137855,1.0,1.6805251641137855
+panel,Camera,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.8757784884699544,1.0,1.8757784884699544
+panel,Camera,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.6757060734816296,1.0,1.6757060734816296
+panel,Camera,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,first,2,0.0,1.0,1.0
+panel,Camera,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,second,2,0.0,1.0,1.0
+panel,Camera,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.6241373506143746,0.6192829402465182,1.2434202908608927
+panel,Camera,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.5018745313671582,0.6239986646309691,1.1258731959981274
+panel,Camera,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.6204342703248611,0.541806608560167,1.1622408788850283
+panel,Camera,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.5841039740064985,0.5609764112829514,1.1450803852894498
+panel,Camera,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.6204342703248611,0.555687162193548,1.176121432518409
+panel,Camera,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.5914771307173208,0.5308731857976468,1.1223503165149675
+panel,Camera,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.6100974756310923,1.0,1.6100974756310924
+panel,Camera,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,first,2,0.8845312236997138,1.0,1.8845312236997138
+panel,Camera,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,second,2,0.5102474381404649,1.0,1.510247438140465
+panel,Camera,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,first,2,0.6241373506143746,1.0,1.6241373506143746
+panel,Camera,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,second,2,0.509372656835791,1.0,1.509372656835791
+panel,Camera,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,first,2,0.26931493014644,1.0,1.26931493014644
+panel,Camera,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,second,2,0.4558860284928768,1.0,1.4558860284928767
+panel,Camera,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.3638276384447062,1.0,1.3638276384447061
+panel,Camera,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.5841039740064985,1.0,1.5841039740064984
+panel,Camera,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,second,2,0.5971007248187954,1.0,1.5971007248187954
+panel,Camera,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,first,2,0.6805251641137855,1.0,1.6805251641137855
+panel,Camera,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,second,2,0.5841039740064985,1.0,1.5841039740064984
+panel,Camera,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.6983672782359871,1.0,1.698367278235987
+panel,Camera,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.5841039740064985,1.0,1.5841039740064984
+panel,Camera,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,first,2,0.5109409190371991,0.5,1.010940919037199
+panel,Camera,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,second,2,0.6729567608097975,1.0,1.6729567608097975
+panel,Camera,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.5971007248187954,1.0,1.5971007248187954
+panel,Camera,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.6100974756310923,1.0,1.6100974756310924
+panel,Camera,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.5402399400149963,1.0,1.5402399400149962
+panel,Car,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.7490000000000001,0.24399304475156652,0.9929930447515666
+panel,Car,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.7924000000000001,0.5157776381406558,1.308177638140656
+panel,Car,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.8519000000000001,0.50450371564908,1.3564037156490802
+panel,Car,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.7598000000000001,0.5062829471539905,1.2660829471539907
+panel,Car,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.8519000000000001,0.5303072310034518,1.3822072310034519
+panel,Car,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.8616000000000001,0.5066859812591751,1.3682859812591754
+panel,Car,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,first,2,0.83585,1.0,1.83585
+panel,Car,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,second,2,0.9787999999999999,1.0,1.9788
+panel,Car,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,first,2,0.8225500000000001,1.0,1.8225500000000001
+panel,Car,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,second,2,0.7236,1.0,1.7236000000000002
+panel,Car,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,first,2,0.0,1.0,1.0
+panel,Car,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,second,2,0.0,1.0,1.0
+panel,Car,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.5899000000000001,1.0,1.5899
+panel,Car,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.7060000000000002,1.0,1.706
+panel,Car,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,first,2,0.8774,1.0,1.8774
+panel,Car,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,second,2,0.8716000000000002,1.0,1.8716000000000002
+panel,Car,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.7576,1.0,1.7576
+panel,Car,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.8104,1.0,1.8104
+panel,Car,Agent360,gradient,RandomNegotiator,random rational offers,baseline,first,2,0.40845000000000004,0.5,0.90845
+panel,Car,Agent360,gradient,RandomNegotiator,random rational offers,baseline,second,2,0.7437000000000001,1.0,1.7437
+panel,Car,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.6783,0.0,0.6783
+panel,Car,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.6924000000000001,0.4919636673487162,1.1843636673487163
+panel,Car,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.8519000000000001,0.5499869726230365,1.4018869726230367
+panel,Car,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.8616000000000001,0.543046135606283,1.4046461356062832
+panel,Car,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.8519000000000001,0.5732928467923386,1.4251928467923385
+panel,Car,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.8616000000000001,0.5631239935645267,1.4247239935645268
+panel,Car,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.7598000000000001,1.0,1.7598000000000003
+panel,Car,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,first,2,0.773,0.0,0.773
+panel,Car,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,second,2,0.9787999999999999,1.0,1.9788
+panel,Car,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,first,2,0.7259,1.0,1.7259000000000002
+panel,Car,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,second,2,0.6760000000000002,1.0,1.6760000000000002
+panel,Car,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,first,2,0.0,1.0,1.0
+panel,Car,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,second,2,0.0,1.0,1.0
+panel,Car,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.5899000000000001,1.0,1.5899
+panel,Car,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.7060000000000002,1.0,1.706
+panel,Car,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,first,2,0.8774,1.0,1.8774
+panel,Car,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,second,2,0.8716000000000002,1.0,1.8716000000000002
+panel,Car,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.6278,1.0,1.6278000000000001
+panel,Car,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.6623000000000001,1.0,1.6623
+panel,Car,Agent360Full,full,RandomNegotiator,random rational offers,baseline,first,2,0.7779,1.0,1.7779
+panel,Car,Agent360Full,full,RandomNegotiator,random rational offers,baseline,second,2,0.4703000000000001,1.0,1.4703000000000002
+panel,Car,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.9312,0.49892369104149403,1.430123691041494
+panel,Car,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.9188000000000002,0.51924849854101,1.43804849854101
+panel,Car,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.8519000000000001,0.4806002763836292,1.3325002763836293
+panel,Car,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.8616000000000001,0.5068184197253733,1.3684184197253735
+panel,Car,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.8519000000000001,0.4797415831662507,1.331641583166251
+panel,Car,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.8616000000000001,0.5069523922665758,1.3685523922665759
+panel,Car,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,first,2,0.9855000000000002,1.0,1.9855
+panel,Car,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,second,2,0.9738000000000001,1.0,1.9738000000000002
+panel,Car,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,first,2,0.9312,1.0,1.9312
+panel,Car,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,second,2,0.9707999999999999,1.0,1.9707999999999999
+panel,Car,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,first,2,0.0,1.0,1.0
+panel,Car,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,second,2,0.0,1.0,1.0
+panel,Car,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.6086000000000001,1.0,1.6086
+panel,Car,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.7140000000000002,1.0,1.714
+panel,Car,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,first,2,0.8774,1.0,1.8774
+panel,Car,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,second,2,0.8716000000000002,1.0,1.8716000000000002
+panel,Car,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.9519000000000001,1.0,1.9519000000000002
+panel,Car,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.9368000000000001,1.0,1.9368000000000003
+panel,Car,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,first,2,0.99665,1.0,1.99665
+panel,Car,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,second,2,0.499,1.0,1.499
+panel,Car,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.7678,0.0,0.7678
+panel,Car,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.7723000000000002,0.4919636673487162,1.2642636673487164
+panel,Car,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.8519000000000001,0.5496326274232655,1.4015326274232656
+panel,Car,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.7528000000000001,0.5661574592950717,1.318957459295072
+panel,Car,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.7642,0.5654796369551678,1.3296796369551678
+panel,Car,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.8616000000000001,0.5500465554911556,1.4116465554911557
+panel,Car,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.7775000000000001,1.0,1.7775
+panel,Car,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,first,2,0.7499500000000001,0.0,0.7499500000000001
+panel,Car,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,second,2,0.9787999999999999,1.0,1.9788
+panel,Car,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,first,2,0.7354,1.0,1.7354
+panel,Car,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,second,2,0.6816,1.0,1.6816
+panel,Car,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,first,2,0.0,1.0,1.0
+panel,Car,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,second,2,0.0,1.0,1.0
+panel,Car,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.5899000000000001,1.0,1.5899
+panel,Car,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.7860000000000001,1.0,1.786
+panel,Car,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,first,2,0.73365,1.0,1.73365
+panel,Car,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,first,2,0.8046500000000001,1.0,1.80465
+panel,Car,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,second,2,0.8716000000000002,1.0,1.8716000000000002
+panel,Car,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.6107500000000001,1.0,1.61075
+panel,Car,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.7650000000000001,1.0,1.7650000000000001
+panel,Car,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,first,2,0.7581,1.0,1.7581000000000002
+panel,Car,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,second,2,0.8134000000000001,1.0,1.8134000000000001
+panel,Car,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.7775000000000001,1.0,1.7775
+panel,Car,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Car,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.7031000000000001,1.0,1.7031
+panel,Car,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.7698,1.0,1.7698
+panel,Car,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.8519000000000001,1.0,1.8519
+panel,Car,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.8616000000000001,1.0,1.8616000000000001
+panel,Grocery,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.5361111111111112,0.6297679876864429,1.165879098797554
+panel,Grocery,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.7416666666666667,0.6408752927834563,1.3825419594501231
+panel,Grocery,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.7055555555555557,0.4760749909496524,1.181630546505208
+panel,Grocery,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.7500000000000001,0.5020213001772194,1.2520213001772196
+panel,Grocery,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.7055555555555557,0.4804382943646862,1.185993849920242
+panel,Grocery,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.7500000000000001,0.5105581389242251,1.260558138924225
+panel,Grocery,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.7055555555555557,1.0,1.7055555555555557
+panel,Grocery,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,first,2,0.5222222222222224,0.5,1.0222222222222224
+panel,Grocery,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,second,2,0.638888888888889,1.0,1.6388888888888888
+panel,Grocery,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,first,2,0.6055555555555556,1.0,1.6055555555555556
+panel,Grocery,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,first,2,0.38888888888888895,1.0,1.3888888888888888
+panel,Grocery,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,second,2,0.47222222222222227,1.0,1.4722222222222223
+panel,Grocery,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.588888888888889,1.0,1.588888888888889
+panel,Grocery,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,first,2,0.7055555555555557,1.0,1.7055555555555557
+panel,Grocery,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,first,2,0.8222222222222224,1.0,1.8222222222222224
+panel,Grocery,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.5333333333333333,1.0,1.5333333333333332
+panel,Grocery,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.6222222222222222,1.0,1.6222222222222222
+panel,Grocery,Agent360,gradient,RandomNegotiator,random rational offers,baseline,first,2,0.25833333333333336,1.0,1.2583333333333333
+panel,Grocery,Agent360,gradient,RandomNegotiator,random rational offers,baseline,second,2,0.24722222222222223,1.0,1.2472222222222222
+panel,Grocery,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.7055555555555557,1.0,1.7055555555555557
+panel,Grocery,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.6861111111111112,1.0,1.6861111111111113
+panel,Grocery,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.7055555555555557,1.0,1.7055555555555557
+panel,Grocery,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.5222222222222224,0.31425126289416117,0.8364734851163835
+panel,Grocery,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.7500000000000001,0.6421345180823227,1.3921345180823228
+panel,Grocery,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.7055555555555557,0.48405617956878455,1.1896117351243403
+panel,Grocery,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.7500000000000001,0.5389880588777233,1.2889880588777234
+panel,Grocery,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.7083333333333335,0.48256129440456513,1.1908946277378987
+panel,Grocery,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.7500000000000001,0.5468046847053987,1.296804684705399
+panel,Grocery,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.7055555555555557,1.0,1.7055555555555557
+panel,Grocery,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,first,2,0.5333333333333334,0.5,1.0333333333333334
+panel,Grocery,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,second,2,0.638888888888889,1.0,1.6388888888888888
+panel,Grocery,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,first,2,0.588888888888889,1.0,1.588888888888889
+panel,Grocery,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,first,2,0.38888888888888895,1.0,1.3888888888888888
+panel,Grocery,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,second,2,0.47222222222222227,1.0,1.4722222222222223
+panel,Grocery,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.588888888888889,1.0,1.588888888888889
+panel,Grocery,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,first,2,0.7638888888888891,1.0,1.763888888888889
+panel,Grocery,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,first,2,0.8222222222222224,1.0,1.8222222222222224
+panel,Grocery,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.5166666666666666,1.0,1.5166666666666666
+panel,Grocery,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.7027777777777778,1.0,1.702777777777778
+panel,Grocery,Agent360Full,full,RandomNegotiator,random rational offers,baseline,first,2,0.2944444444444445,0.0,0.2944444444444445
+panel,Grocery,Agent360Full,full,RandomNegotiator,random rational offers,baseline,second,2,0.25,1.0,1.25
+panel,Grocery,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.713888888888889,1.0,1.713888888888889
+panel,Grocery,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.7055555555555557,1.0,1.7055555555555557
+panel,Grocery,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.7055555555555557,1.0,1.7055555555555557
+panel,Grocery,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.8222222222222224,0.6273556534242524,1.4495778756464748
+panel,Grocery,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.8833333333333334,0.6485871135216448,1.5319204468549783
+panel,Grocery,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.7055555555555557,0.4757855290945829,1.1813410846501387
+panel,Grocery,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.7500000000000001,0.5165415906846618,1.266541590684662
+panel,Grocery,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.7055555555555557,0.47458233377988723,1.1801378893354428
+panel,Grocery,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.7500000000000001,0.5113353934470521,1.2613353934470524
+panel,Grocery,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.7638888888888891,1.0,1.763888888888889
+panel,Grocery,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,first,2,0.8138888888888891,1.0,1.813888888888889
+panel,Grocery,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,second,2,0.9444444444444445,1.0,1.9444444444444446
+panel,Grocery,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,first,2,0.838888888888889,1.0,1.838888888888889
+panel,Grocery,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,second,2,0.8833333333333334,1.0,1.8833333333333333
+panel,Grocery,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,first,2,0.38888888888888895,1.0,1.3888888888888888
+panel,Grocery,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,second,2,0.47222222222222227,1.0,1.4722222222222223
+panel,Grocery,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.8222222222222224,1.0,1.8222222222222224
+panel,Grocery,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.8416666666666668,1.0,1.8416666666666668
+panel,Grocery,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,first,2,0.7055555555555557,1.0,1.7055555555555557
+panel,Grocery,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,first,2,0.8222222222222224,1.0,1.8222222222222224
+panel,Grocery,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.8722222222222223,1.0,1.8722222222222222
+panel,Grocery,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.8777777777777778,1.0,1.8777777777777778
+panel,Grocery,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,first,2,0.827777777777778,0.5,1.327777777777778
+panel,Grocery,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,second,2,0.8777777777777778,1.0,1.8777777777777778
+panel,Grocery,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.7055555555555557,1.0,1.7055555555555557
+panel,Grocery,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.7055555555555557,1.0,1.7055555555555557
+panel,Grocery,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.7055555555555557,1.0,1.7055555555555557
+panel,Grocery,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.5694444444444445,0.31425126289416117,0.8836957073386057
+panel,Grocery,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.7500000000000001,0.6421345180823227,1.3921345180823228
+panel,Grocery,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.5222222222222224,0.5335032795823189,1.0557255018045413
+panel,Grocery,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.7500000000000001,0.552518184010095,1.302518184010095
+panel,Grocery,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.6472222222222224,0.518253228594139,1.1654754508163614
+panel,Grocery,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.7500000000000001,0.5552060182038043,1.3052060182038046
+panel,Grocery,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.588888888888889,1.0,1.588888888888889
+panel,Grocery,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,first,2,0.5305555555555557,0.5,1.0305555555555557
+panel,Grocery,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,second,2,0.638888888888889,1.0,1.6388888888888888
+panel,Grocery,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,first,2,0.588888888888889,1.0,1.588888888888889
+panel,Grocery,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,first,2,0.38888888888888895,1.0,1.3888888888888888
+panel,Grocery,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,second,2,0.47222222222222227,1.0,1.4722222222222223
+panel,Grocery,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.588888888888889,1.0,1.588888888888889
+panel,Grocery,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,first,2,0.5222222222222224,1.0,1.5222222222222224
+panel,Grocery,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,first,2,0.7055555555555557,1.0,1.7055555555555557
+panel,Grocery,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.6416666666666668,1.0,1.6416666666666668
+panel,Grocery,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.6222222222222222,1.0,1.6222222222222222
+panel,Grocery,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,first,2,0.39722222222222225,1.0,1.3972222222222221
+panel,Grocery,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,second,2,0.8166666666666667,1.0,1.8166666666666667
+panel,Grocery,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.6472222222222224,1.0,1.6472222222222224
+panel,Grocery,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.6472222222222224,1.0,1.6472222222222224
+panel,Grocery,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.7500000000000001,1.0,1.75
+panel,Grocery,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.588888888888889,1.0,1.588888888888889
+panel,Grocery,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.7500000000000001,1.0,1.75
+panel,ISBTAcquisition,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.6013071895424837,0.5853659929084868,1.1866731824509706
+panel,ISBTAcquisition,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.5121951219512194,0.5964173630080392,1.1086124849592585
+panel,ISBTAcquisition,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.7156862745098038,0.4720433700805209,1.1877296445903247
+panel,ISBTAcquisition,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.5121951219512194,0.5337917286042475,1.045986850555467
+panel,ISBTAcquisition,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.6928104575163399,0.46964117524800725,1.162451632764347
+panel,ISBTAcquisition,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.5121951219512194,0.7525580664316824,1.264753188382902
+panel,ISBTAcquisition,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.784313725490196,1.0,1.784313725490196
+panel,ISBTAcquisition,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,first,2,0.6862745098039216,0.5,1.1862745098039216
+panel,ISBTAcquisition,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,second,2,0.8048780487804877,1.0,1.8048780487804876
+panel,ISBTAcquisition,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,first,2,0.6013071895424837,1.0,1.6013071895424837
+panel,ISBTAcquisition,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,first,2,0.33986928104575165,1.0,1.3398692810457518
+panel,ISBTAcquisition,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.6764705882352942,1.0,1.6764705882352942
+panel,ISBTAcquisition,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.5731707317073169,1.0,1.5731707317073171
+panel,ISBTAcquisition,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,first,2,0.6013071895424837,1.0,1.6013071895424837
+panel,ISBTAcquisition,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,first,2,0.7124183006535947,1.0,1.7124183006535947
+panel,ISBTAcquisition,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.7908496732026143,1.0,1.7908496732026142
+panel,ISBTAcquisition,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.6097560975609755,1.0,1.6097560975609757
+panel,ISBTAcquisition,Agent360,gradient,RandomNegotiator,random rational offers,baseline,first,2,0.6437908496732025,0.5,1.1437908496732025
+panel,ISBTAcquisition,Agent360,gradient,RandomNegotiator,random rational offers,baseline,second,2,0.7134146341463414,1.0,1.7134146341463414
+panel,ISBTAcquisition,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.7352941176470588,1.0,1.7352941176470589
+panel,ISBTAcquisition,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.6339869281045751,1.0,1.6339869281045751
+panel,ISBTAcquisition,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.784313725490196,1.0,1.784313725490196
+panel,ISBTAcquisition,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.4836601307189543,0.5892775935543371,1.0729377242732914
+panel,ISBTAcquisition,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.5121951219512194,0.5964173630080392,1.1086124849592585
+panel,ISBTAcquisition,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.7516339869281045,0.5274217799914696,1.279055766919574
+panel,ISBTAcquisition,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.6993464052287581,0.530399141445737,1.229745546674495
+panel,ISBTAcquisition,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.784313725490196,1.0,1.784313725490196
+panel,ISBTAcquisition,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,first,2,0.5032679738562091,0.5,1.0032679738562091
+panel,ISBTAcquisition,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,second,2,0.5304878048780487,1.0,1.5304878048780488
+panel,ISBTAcquisition,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,first,2,0.5359477124183007,1.0,1.5359477124183007
+panel,ISBTAcquisition,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,first,2,0.33986928104575165,1.0,1.3398692810457518
+panel,ISBTAcquisition,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.6568627450980393,1.0,1.656862745098039
+panel,ISBTAcquisition,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,first,2,0.7352941176470588,1.0,1.7352941176470589
+panel,ISBTAcquisition,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,first,2,0.7352941176470588,1.0,1.7352941176470589
+panel,ISBTAcquisition,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.607843137254902,1.0,1.607843137254902
+panel,ISBTAcquisition,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Full,full,RandomNegotiator,random rational offers,baseline,first,2,0.7712418300653595,1.0,1.7712418300653594
+panel,ISBTAcquisition,Agent360Full,full,RandomNegotiator,random rational offers,baseline,second,2,0.3109756097560975,1.0,1.3109756097560976
+panel,ISBTAcquisition,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.784313725490196,1.0,1.784313725490196
+panel,ISBTAcquisition,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.784313725490196,1.0,1.784313725490196
+panel,ISBTAcquisition,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.7156862745098038,1.0,1.7156862745098038
+panel,ISBTAcquisition,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.980392156862745,0.5880752575440864,1.5684674144068314
+panel,ISBTAcquisition,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.8414634146341463,0.6098049241085527,1.451268338742699
+panel,ISBTAcquisition,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.784313725490196,0.4691719963171568,1.2534857218073527
+panel,ISBTAcquisition,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.6951219512195121,0.4991179611526391,1.1942399123721512
+panel,ISBTAcquisition,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.718954248366013,0.46854700456612786,1.187501252932141
+panel,ISBTAcquisition,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.6951219512195121,0.49094538466503945,1.1860673358845517
+panel,ISBTAcquisition,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.7352941176470589,1.0,1.7352941176470589
+panel,ISBTAcquisition,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.6951219512195121,1.0,1.6951219512195121
+panel,ISBTAcquisition,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,first,2,0.8660130718954249,1.0,1.8660130718954249
+panel,ISBTAcquisition,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,second,2,0.8475609756097561,1.0,1.847560975609756
+panel,ISBTAcquisition,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,first,2,0.8725490196078431,1.0,1.8725490196078431
+panel,ISBTAcquisition,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,second,2,0.8414634146341463,1.0,1.8414634146341462
+panel,ISBTAcquisition,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,first,2,0.33986928104575165,1.0,1.3398692810457518
+panel,ISBTAcquisition,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.6568627450980393,1.0,1.656862745098039
+panel,ISBTAcquisition,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.7134146341463414,1.0,1.7134146341463414
+panel,ISBTAcquisition,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,first,2,0.784313725490196,1.0,1.784313725490196
+panel,ISBTAcquisition,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,second,2,0.6951219512195121,1.0,1.6951219512195121
+panel,ISBTAcquisition,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,first,2,0.6764705882352942,1.0,1.6764705882352942
+panel,ISBTAcquisition,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,second,2,0.6951219512195121,1.0,1.6951219512195121
+panel,ISBTAcquisition,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.8954248366013072,1.0,1.8954248366013071
+panel,ISBTAcquisition,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.7134146341463414,1.0,1.7134146341463414
+panel,ISBTAcquisition,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,first,2,0.39869281045751637,1.0,1.3986928104575163
+panel,ISBTAcquisition,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,second,2,0.9756097560975608,1.0,1.975609756097561
+panel,ISBTAcquisition,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.7352941176470588,1.0,1.7352941176470589
+panel,ISBTAcquisition,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.6951219512195121,1.0,1.6951219512195121
+panel,ISBTAcquisition,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.6568627450980393,1.0,1.656862745098039
+panel,ISBTAcquisition,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.6951219512195121,1.0,1.6951219512195121
+panel,ISBTAcquisition,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.784313725490196,1.0,1.784313725490196
+panel,ISBTAcquisition,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.6951219512195121,1.0,1.6951219512195121
+panel,ISBTAcquisition,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.5032679738562091,0.29439321089893167,0.7976611847551408
+panel,ISBTAcquisition,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.5121951219512194,0.5964173630080392,1.1086124849592585
+panel,ISBTAcquisition,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.741830065359477,0.5372635634848382,1.2790936288443153
+panel,ISBTAcquisition,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.6666666666666667,0.5526798758152633,1.2193465424819299
+panel,ISBTAcquisition,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.741830065359477,1.0,1.7418300653594772
+panel,ISBTAcquisition,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,first,2,0.5130718954248366,0.5,1.0130718954248366
+panel,ISBTAcquisition,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,second,2,0.5304878048780487,1.0,1.5304878048780488
+panel,ISBTAcquisition,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,first,2,0.5359477124183007,1.0,1.5359477124183007
+panel,ISBTAcquisition,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,second,2,0.5182926829268292,1.0,1.5182926829268293
+panel,ISBTAcquisition,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,first,2,0.33986928104575165,1.0,1.3398692810457518
+panel,ISBTAcquisition,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.6862745098039216,1.0,1.6862745098039216
+panel,ISBTAcquisition,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,first,2,0.6797385620915033,1.0,1.6797385620915033
+panel,ISBTAcquisition,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,first,2,0.7124183006535947,1.0,1.7124183006535947
+panel,ISBTAcquisition,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.607843137254902,1.0,1.607843137254902
+panel,ISBTAcquisition,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,first,2,0.7581699346405228,1.0,1.7581699346405228
+panel,ISBTAcquisition,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,second,2,0.26219512195121947,1.0,1.2621951219512195
+panel,ISBTAcquisition,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.718954248366013,1.0,1.718954248366013
+panel,ISBTAcquisition,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.696078431372549,1.0,1.696078431372549
+panel,ISBTAcquisition,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,ISBTAcquisition,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.6372549019607843,1.0,1.6372549019607843
+panel,ISBTAcquisition,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.5121951219512194,1.0,1.5121951219512195
+panel,Laptop,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.5838558660326796,0.0,0.5838558660326796
+panel,Laptop,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.6685754732133643,0.6932670477187611,1.3618425209321254
+panel,Laptop,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.5775524426410947,0.6085972164811565,1.1861496591222513
+panel,Laptop,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.5136317604069089,0.510928967033948,1.024560727440857
+panel,Laptop,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.5775524426410947,0.5708354337391479,1.1483878763802426
+panel,Laptop,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.5911036168101367,0.7601333602997339,1.3512369771098705
+panel,Laptop,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,first,2,0.6527306389826513,1.0,1.6527306389826513
+panel,Laptop,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,second,2,0.9225281435967724,1.0,1.9225281435967725
+panel,Laptop,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,first,2,0.6745529209246102,0.5,1.1745529209246102
+panel,Laptop,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.7715533992081257,1.0,1.7715533992081256
+panel,Laptop,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.8450562871935448,1.0,1.8450562871935448
+panel,Laptop,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,first,2,0.5775524426410947,0.5,1.0775524426410947
+panel,Laptop,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,first,2,0.5775524426410947,0.5,1.0775524426410947
+panel,Laptop,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.7715533992081257,1.0,1.7715533992081256
+panel,Laptop,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360,gradient,RandomNegotiator,random rational offers,baseline,first,2,0.6820756952086802,1.0,1.6820756952086802
+panel,Laptop,Agent360,gradient,RandomNegotiator,random rational offers,baseline,second,2,0.7012967039821196,1.0,1.7012967039821196
+panel,Laptop,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.5775524426410947,0.5,1.0775524426410947
+panel,Laptop,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.5775524426410947,0.3422179205081517,0.9197703631492464
+panel,Laptop,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.5136317604069089,0.695142104219393,1.208773864626302
+panel,Laptop,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.5775524426410947,0.5679898609343506,1.145542303575445
+panel,Laptop,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.5136317604069089,0.5623656531319747,1.0759974135388837
+panel,Laptop,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.5775524426410947,0.5621806118878248,1.1397330545289193
+panel,Laptop,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.5136317604069089,0.5692239409059887,1.0828557013128979
+panel,Laptop,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,first,2,0.6355078168702297,0.0,0.6355078168702297
+panel,Laptop,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,second,2,0.6787618253129548,1.0,1.6787618253129548
+panel,Laptop,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,first,2,0.5775524426410947,0.5,1.0775524426410947
+panel,Laptop,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.7715533992081257,1.0,1.7715533992081256
+panel,Laptop,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360Full,full,RandomNegotiator,random rational offers,baseline,first,2,0.7669539393785885,1.0,1.7669539393785882
+panel,Laptop,Agent360Full,full,RandomNegotiator,random rational offers,baseline,second,2,0.7208102177047445,1.0,1.7208102177047446
+panel,Laptop,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.8059990434329688,0.6771094406811734,1.4831084841141422
+panel,Laptop,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.7670022323030451,0.7007291636329682,1.4677313959360134
+panel,Laptop,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.7715533992081257,0.4734735652971813,1.245026964505307
+panel,Laptop,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.6685754732133643,0.5181245476454228,1.186700020858787
+panel,Laptop,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.7715533992081257,0.48323492554505654,1.2547883247531821
+panel,Laptop,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.6685754732133643,0.5134927716749147,1.1820682448882789
+panel,Laptop,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.7715533992081257,1.0,1.7715533992081256
+panel,Laptop,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.6685754732133643,1.0,1.6685754732133642
+panel,Laptop,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,first,2,0.9999999999999999,1.0,2.0
+panel,Laptop,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,second,2,1.0,1.0,2.0
+panel,Laptop,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,first,2,0.8059990434329688,1.0,1.8059990434329687
+panel,Laptop,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,second,2,0.8450562871935448,1.0,1.8450562871935448
+panel,Laptop,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.7715533992081257,1.0,1.7715533992081256
+panel,Laptop,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.8450562871935448,1.0,1.8450562871935448
+panel,Laptop,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,first,2,0.7715533992081257,1.0,1.7715533992081256
+panel,Laptop,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,second,2,0.6685754732133643,1.0,1.6685754732133642
+panel,Laptop,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,first,2,0.7715533992081257,1.0,1.7715533992081256
+panel,Laptop,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,second,2,0.6685754732133643,1.0,1.6685754732133642
+panel,Laptop,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.7715533992081257,1.0,1.7715533992081256
+panel,Laptop,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.8450562871935448,1.0,1.8450562871935448
+panel,Laptop,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,first,2,0.9546514725540346,1.0,1.9546514725540347
+panel,Laptop,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,second,2,0.4804864862773751,1.0,1.4804864862773752
+panel,Laptop,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.7715533992081257,1.0,1.7715533992081256
+panel,Laptop,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.6685754732133643,1.0,1.6685754732133642
+panel,Laptop,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.7715533992081257,1.0,1.7715533992081256
+panel,Laptop,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.6685754732133643,1.0,1.6685754732133642
+panel,Laptop,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.7715533992081257,1.0,1.7715533992081256
+panel,Laptop,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.6685754732133643,1.0,1.6685754732133642
+panel,Laptop,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.5775524426410947,0.6844358410163034,1.2619882836573981
+panel,Laptop,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.5136317604069089,0.695142104219393,1.208773864626302
+panel,Laptop,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.5775524426410947,0.5807399243426469,1.1582923669837415
+panel,Laptop,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.5136317604069089,0.5684645173400995,1.0820962777470085
+panel,Laptop,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.5775524426410947,0.6017929555818923,1.1793453982229871
+panel,Laptop,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.5136317604069089,0.5692050889098048,1.0828368493167138
+panel,Laptop,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.5775524426410947,0.5,1.0775524426410947
+panel,Laptop,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,first,2,0.6355078168702297,0.5,1.1355078168702297
+panel,Laptop,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,second,2,0.6787618253129548,1.0,1.6787618253129548
+panel,Laptop,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,first,2,0.5775524426410947,0.5,1.0775524426410947
+panel,Laptop,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.5775524426410947,0.5,1.0775524426410947
+panel,Laptop,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.5911036168101367,1.0,1.5911036168101367
+panel,Laptop,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,first,2,0.7216054119326231,0.5,1.221605411932623
+panel,Laptop,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,second,2,0.7373023664808296,1.0,1.7373023664808296
+panel,Laptop,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,Laptop,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.5775524426410947,1.0,1.5775524426410947
+panel,Laptop,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.5136317604069089,1.0,1.513631760406909
+panel,NiceOrDie,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.1654761904761905,0.55,0.7154761904761905
+panel,NiceOrDie,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,first,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,second,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,TimeBasedNegotiator,generic time-based,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,AspirationNegotiator,aspiration-based,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360,gradient,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360,gradient,RandomNegotiator,random rational offers,baseline,first,2,0.5827380952380953,0.5,1.0827380952380952
+panel,NiceOrDie,Agent360,gradient,RandomNegotiator,random rational offers,baseline,second,2,0.5827380952380953,1.0,1.5827380952380952
+panel,NiceOrDie,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360,gradient,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,first,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,second,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,TimeBasedNegotiator,generic time-based,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,AspirationNegotiator,aspiration-based,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360Full,full,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360Full,full,RandomNegotiator,random rational offers,baseline,first,2,0.08273809523809525,0.5,0.5827380952380953
+panel,NiceOrDie,Agent360Full,full,RandomNegotiator,random rational offers,baseline,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Full,full,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,first,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,second,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.5827380952380953,1.0,1.5827380952380952
+panel,NiceOrDie,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,TimeBasedNegotiator,generic time-based,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,AspirationNegotiator,aspiration-based,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360Reverse,reverse,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,first,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,RandomNegotiator,random rational offers,baseline,second,2,1.0,1.0,2.0
+panel,NiceOrDie,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360Reverse,reverse,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,first,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360V2,v2,SimpleNegotiator,reverse-ufun + time concede,example,second,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,first,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360V2,v2,BOANeg,BOA: time offer + Smith + ACNext,example,second,2,0.1654761904761905,0.55,0.7154761904761905
+panel,NiceOrDie,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,first,2,0.1654761904761905,0.55,0.7154761904761905
+panel,NiceOrDie,Agent360V2,v2,MAPNeg,"MAP: same stack, acceptance_first",example,second,2,0.1654761904761905,0.5,0.6654761904761906
+panel,NiceOrDie,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,ConcederTBNegotiator,fast concession,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,LinearTBNegotiator,linear time concession,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,first,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360V2,v2,ToughNegotiator,"hard line, slow give",time-based,second,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,TimeBasedNegotiator,generic time-based,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,AspirationNegotiator,aspiration-based,time-based,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,first,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360V2,v2,HybridNegotiator,hybrid time + utility,hybrid,second,2,0.0,1.0,1.0
+panel,NiceOrDie,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,first,2,0.08273809523809525,1.0,1.0827380952380952
+panel,NiceOrDie,Agent360V2,v2,RandomNegotiator,random rational offers,baseline,second,2,0.5,1.0,1.5
+panel,NiceOrDie,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,FirstOfferOrientedTBNegotiator,anchors on first offer,oriented,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,LastOfferOrientedTBNegotiator,follows last offer,oriented,second,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,first,2,0.1654761904761905,1.0,1.1654761904761906
+panel,NiceOrDie,Agent360V2,v2,BestOfferOrientedTBNegotiator,tracks best offer seen,oriented,second,2,0.1654761904761905,1.0,1.1654761904761906
+head_to_head,Amsterdam,Agent360,gradient,Agent360Full,full,decoy,first,2,0.5966542750929368,0.22821172924841834,0.8248660043413552
+head_to_head,Amsterdam,Agent360Full,full,Agent360,gradient,decoy,second,2,0.6626712328767123,0.7717882707515817,1.4344595036282939
+head_to_head,Amsterdam,Agent360,gradient,Agent360Full,full,decoy,second,2,0.779109589041096,0.4462068205892158,1.2253164096303117
+head_to_head,Amsterdam,Agent360Full,full,Agent360,gradient,decoy,first,2,0.5892193308550187,0.5537931794107842,1.1430125102658026
+head_to_head,Amsterdam,Agent360,gradient,Agent360Reverse,reverse,decoy,first,2,0.5669144981412639,0.5200400813759041,1.086954579517168
+head_to_head,Amsterdam,Agent360Reverse,reverse,Agent360,gradient,decoy,second,2,0.9332191780821918,0.4799599186240959,1.4131790967062878
+head_to_head,Amsterdam,Agent360,gradient,Agent360Reverse,reverse,decoy,second,2,0.6301369863013698,0.5449693528275377,1.1751063391289076
+head_to_head,Amsterdam,Agent360Reverse,reverse,Agent360,gradient,decoy,first,2,0.8438661710037174,0.45503064717246233,1.2988968181761797
+head_to_head,Amsterdam,Agent360,gradient,Agent360V2,v2,decoy,first,2,0.5743494423791822,0.21005672456044958,0.7844061669396316
+head_to_head,Amsterdam,Agent360V2,v2,Agent360,gradient,decoy,second,2,0.660958904109589,0.7899432754395505,1.4509021795491395
+head_to_head,Amsterdam,Agent360,gradient,Agent360V2,v2,decoy,second,2,0.6609589041095889,0.44106489298456564,1.1020237970941547
+head_to_head,Amsterdam,Agent360V2,v2,Agent360,gradient,decoy,first,2,0.721189591078067,0.5589351070154345,1.2801246980935015
+head_to_head,Amsterdam,Agent360Full,full,Agent360Reverse,reverse,decoy,first,2,0.6765799256505576,0.5816442564889437,1.2582241821395015
+head_to_head,Amsterdam,Agent360Reverse,reverse,Agent360Full,full,decoy,second,2,0.833904109589041,0.4183557435110563,1.2522598531000972
+head_to_head,Amsterdam,Agent360Full,full,Agent360Reverse,reverse,decoy,second,2,0.6267123287671232,0.6397474931124576,1.2664598218795808
+head_to_head,Amsterdam,Agent360Reverse,reverse,Agent360Full,full,decoy,first,2,0.8698884758364314,0.36025250688754246,1.2301409827239738
+head_to_head,Amsterdam,Agent360Full,full,Agent360V2,v2,decoy,first,2,0.5371747211895911,0.5011966576739151,1.038371378863506
+head_to_head,Amsterdam,Agent360V2,v2,Agent360Full,full,decoy,second,2,0.6558219178082191,0.4988033423260849,1.154625260134304
+head_to_head,Amsterdam,Agent360Full,full,Agent360V2,v2,decoy,second,2,0.5393835616438356,0.4995488525053027,1.038932414149138
+head_to_head,Amsterdam,Agent360V2,v2,Agent360Full,full,decoy,first,2,0.5631970260223048,0.5004511474946974,1.0636481735170022
+head_to_head,Amsterdam,Agent360Reverse,reverse,Agent360V2,v2,decoy,first,2,0.8884758364312267,0.3685027045662236,1.2569785409974505
+head_to_head,Amsterdam,Agent360V2,v2,Agent360Reverse,reverse,decoy,second,2,0.5291095890410958,0.6314972954337763,1.1606068844748723
+head_to_head,Amsterdam,Agent360Reverse,reverse,Agent360V2,v2,decoy,second,2,0.9143835616438356,0.3859723740818991,1.3003559357257348
+head_to_head,Amsterdam,Agent360V2,v2,Agent360Reverse,reverse,decoy,first,2,0.5576208178438662,0.6140276259181009,1.1716484437619672
+head_to_head,Camera,Agent360,gradient,Agent360Full,full,decoy,first,2,0.6684059922571957,0.5211849722656254,1.189590964522821
+head_to_head,Camera,Agent360Full,full,Agent360,gradient,decoy,second,2,0.6433391652086979,0.47881502773437457,1.1221541929430723
+head_to_head,Camera,Agent360,gradient,Agent360Full,full,decoy,second,2,0.5764808797800549,0.4520828609196633,1.0285637406997181
+head_to_head,Camera,Agent360Full,full,Agent360,gradient,decoy,first,2,0.6717724288840263,0.5479171390803366,1.219689567964363
+head_to_head,Camera,Agent360,gradient,Agent360Reverse,reverse,decoy,first,2,0.827049318296583,0.48420033111820737,1.3112496494147905
+head_to_head,Camera,Agent360Reverse,reverse,Agent360,gradient,decoy,second,2,0.735566108472882,0.5157996688817926,1.2513657773546745
+head_to_head,Camera,Agent360,gradient,Agent360Reverse,reverse,decoy,second,2,0.6629592601849539,0.7897496447704218,1.4527089049553756
+head_to_head,Camera,Agent360Reverse,reverse,Agent360,gradient,decoy,first,2,0.8973236828816697,0.21025035522957825,1.107574038111248
+head_to_head,Camera,Agent360,gradient,Agent360V2,v2,decoy,first,2,0.6632721764012792,0.4970521370814429,1.1603243134827221
+head_to_head,Camera,Agent360V2,v2,Agent360,gradient,decoy,second,2,0.5182454386403399,0.5029478629185572,1.0211933015588972
+head_to_head,Camera,Agent360,gradient,Agent360V2,v2,decoy,second,2,0.5827293176705823,0.4551521818544191,1.0378814995250014
+head_to_head,Camera,Agent360V2,v2,Agent360,gradient,decoy,first,2,0.6445042922066992,0.5448478181455809,1.1893521103522802
+head_to_head,Camera,Agent360Full,full,Agent360Reverse,reverse,decoy,first,2,0.5324019525332435,0.597745251655389,1.1301472041886327
+head_to_head,Camera,Agent360Reverse,reverse,Agent360Full,full,decoy,second,2,0.9250187453136717,0.40225474834461084,1.3272734936582826
+head_to_head,Camera,Agent360Full,full,Agent360Reverse,reverse,decoy,second,2,0.600224943764059,0.7906948305846262,1.3909197743486852
+head_to_head,Camera,Agent360Reverse,reverse,Agent360Full,full,decoy,first,2,0.8756943275542838,0.20930516941537375,1.0849994969696577
+head_to_head,Camera,Agent360Full,full,Agent360V2,v2,decoy,first,2,0.485103517926275,0.2720517975844065,0.7571553155106815
+head_to_head,Camera,Agent360V2,v2,Agent360Full,full,decoy,second,2,0.5397400649837542,0.7279482024155934,1.2676882673993475
+head_to_head,Camera,Agent360Full,full,Agent360V2,v2,decoy,second,2,0.5361159710072483,0.46936568206062546,1.0054816530678736
+head_to_head,Camera,Agent360V2,v2,Agent360Full,full,decoy,first,2,0.5766705941760646,0.5306343179393747,1.1073049121154392
+head_to_head,Camera,Agent360Reverse,reverse,Agent360V2,v2,decoy,first,2,0.872832856421478,0.2087517647120057,1.0815846211334836
+head_to_head,Camera,Agent360V2,v2,Agent360Reverse,reverse,decoy,second,2,0.5721069732566859,0.7912482352879943,1.36335520854468
+head_to_head,Camera,Agent360Reverse,reverse,Agent360V2,v2,decoy,second,2,0.8302924268932768,0.409906646462906,1.2401990733561827
+head_to_head,Camera,Agent360V2,v2,Agent360Reverse,reverse,decoy,first,2,0.655192728496886,0.590093353537094,1.2452860820339802
+head_to_head,Car,Agent360,gradient,Agent360Full,full,decoy,first,2,0.8350000000000002,0.26228160576977927,1.0972816057697794
+head_to_head,Car,Agent360Full,full,Agent360,gradient,decoy,second,2,0.9034,0.7377183942302208,1.6411183942302208
+head_to_head,Car,Agent360,gradient,Agent360Full,full,decoy,second,2,0.905,0.7447211272370189,1.649721127237019
+head_to_head,Car,Agent360Full,full,Agent360,gradient,decoy,first,2,0.77195,0.25527887276298106,1.027228872762981
+head_to_head,Car,Agent360,gradient,Agent360Reverse,reverse,decoy,first,2,0.73865,0.5184298685023296,1.2570798685023297
+head_to_head,Car,Agent360Reverse,reverse,Agent360,gradient,decoy,second,2,0.9347000000000001,0.48157013149767036,1.4162701314976704
+head_to_head,Car,Agent360,gradient,Agent360Reverse,reverse,decoy,second,2,0.8967,0.5374512946856798,1.4341512946856798
+head_to_head,Car,Agent360Reverse,reverse,Agent360,gradient,decoy,first,2,0.9188500000000002,0.4625487053143203,1.3813987053143204
+head_to_head,Car,Agent360,gradient,Agent360V2,v2,decoy,first,2,0.9691500000000001,0.4629666753260253,1.4321166753260255
+head_to_head,Car,Agent360V2,v2,Agent360,gradient,decoy,second,2,0.7475,0.5370333246739747,1.284533324673975
+head_to_head,Car,Agent360,gradient,Agent360V2,v2,decoy,second,2,0.9773999999999999,1.0,1.9773999999999998
+head_to_head,Car,Agent360V2,v2,Agent360,gradient,decoy,first,2,0.6763000000000001,0.0,0.6763000000000001
+head_to_head,Car,Agent360Full,full,Agent360Reverse,reverse,decoy,first,2,0.68025,0.5905233636441963,1.2707733636441965
+head_to_head,Car,Agent360Reverse,reverse,Agent360Full,full,decoy,second,2,0.9559,0.4094766363558038,1.3653766363558038
+head_to_head,Car,Agent360Full,full,Agent360Reverse,reverse,decoy,second,2,0.8380000000000001,0.5592221224959937,1.3972221224959938
+head_to_head,Car,Agent360Reverse,reverse,Agent360Full,full,decoy,first,2,0.9785000000000001,0.4407778775040063,1.4192778775040065
+head_to_head,Car,Agent360Full,full,Agent360V2,v2,decoy,first,2,0.7181500000000001,0.0,0.7181500000000001
+head_to_head,Car,Agent360V2,v2,Agent360Full,full,decoy,second,2,0.9317,1.0,1.9317
+head_to_head,Car,Agent360Full,full,Agent360V2,v2,decoy,second,2,0.8996000000000001,0.7431824861366128,1.642782486136613
+head_to_head,Car,Agent360V2,v2,Agent360Full,full,decoy,first,2,0.8371500000000001,0.2568175138633872,1.093967513863387
+head_to_head,Car,Agent360Reverse,reverse,Agent360V2,v2,decoy,first,2,0.97255,0.41773631710540654,1.3902863171054065
+head_to_head,Car,Agent360V2,v2,Agent360Reverse,reverse,decoy,second,2,0.8380000000000001,0.5822636828945934,1.4202636828945936
+head_to_head,Car,Agent360Reverse,reverse,Agent360V2,v2,decoy,second,2,0.9813999999999999,0.4302584733686223,1.4116584733686222
+head_to_head,Car,Agent360V2,v2,Agent360Reverse,reverse,decoy,first,2,0.7243,0.5697415266313777,1.2940415266313776
+head_to_head,Grocery,Agent360,gradient,Agent360Full,full,decoy,first,2,0.5611111111111111,0.48737686694713533,1.0484879780582466
+head_to_head,Grocery,Agent360Full,full,Agent360,gradient,decoy,second,2,0.8138888888888889,0.5126231330528646,1.3265120219417537
+head_to_head,Grocery,Agent360,gradient,Agent360Full,full,decoy,second,2,0.6861111111111111,0.47334308922851853,1.1594542003396295
+head_to_head,Grocery,Agent360Full,full,Agent360,gradient,decoy,first,2,0.6583333333333334,0.5266569107714816,1.184990244104815
+head_to_head,Grocery,Agent360,gradient,Agent360Reverse,reverse,decoy,first,2,0.525,0.25179058057365467,0.7767905805736546
+head_to_head,Grocery,Agent360Reverse,reverse,Agent360,gradient,decoy,second,2,0.8722222222222222,0.7482094194263453,1.6204316416485676
+head_to_head,Grocery,Agent360,gradient,Agent360Reverse,reverse,decoy,second,2,0.7416666666666667,0.5348996482816765,1.2765663149483433
+head_to_head,Grocery,Agent360Reverse,reverse,Agent360,gradient,decoy,first,2,0.8805555555555558,0.46510035171832353,1.3456559072738794
+head_to_head,Grocery,Agent360,gradient,Agent360V2,v2,decoy,first,2,0.6277777777777778,0.45050452037616684,1.0782822981539448
+head_to_head,Grocery,Agent360V2,v2,Agent360,gradient,decoy,second,2,0.5583333333333333,0.5494954796238332,1.1078288129571665
+head_to_head,Grocery,Agent360,gradient,Agent360V2,v2,decoy,second,2,0.6083333333333334,0.47121525604125547,1.0795485893745886
+head_to_head,Grocery,Agent360V2,v2,Agent360,gradient,decoy,first,2,0.4750000000000001,0.5287847439587445,1.0037847439587444
+head_to_head,Grocery,Agent360Full,full,Agent360Reverse,reverse,decoy,first,2,0.575,0.5494491210006669,1.1244491210006669
+head_to_head,Grocery,Agent360Reverse,reverse,Agent360Full,full,decoy,second,2,0.8944444444444444,0.4505508789993331,1.3449953234437775
+head_to_head,Grocery,Agent360Full,full,Agent360Reverse,reverse,decoy,second,2,0.7444444444444445,0.579718359227015,1.3241628036714594
+head_to_head,Grocery,Agent360Reverse,reverse,Agent360Full,full,decoy,first,2,0.9000000000000001,0.420281640772985,1.3202816407729852
+head_to_head,Grocery,Agent360Full,full,Agent360V2,v2,decoy,first,2,0.5,0.24252608319872776,0.7425260831987279
+head_to_head,Grocery,Agent360V2,v2,Agent360Full,full,decoy,second,2,0.7416666666666667,0.7574739168012723,1.4991405834679388
+head_to_head,Grocery,Agent360Full,full,Agent360V2,v2,decoy,second,2,0.5916666666666667,0.5037999123111556,1.0954665789778224
+head_to_head,Grocery,Agent360V2,v2,Agent360Full,full,decoy,first,2,0.5027777777777779,0.4962000876888445,0.9989778654666224
+head_to_head,Grocery,Agent360Reverse,reverse,Agent360V2,v2,decoy,first,2,0.838888888888889,0.22565952272755344,1.0645484116164425
+head_to_head,Grocery,Agent360V2,v2,Agent360Reverse,reverse,decoy,second,2,0.7666666666666667,0.7743404772724465,1.5410071439391133
+head_to_head,Grocery,Agent360Reverse,reverse,Agent360V2,v2,decoy,second,2,0.8972222222222224,0.44713799298184004,1.3443602152040626
+head_to_head,Grocery,Agent360V2,v2,Agent360Reverse,reverse,decoy,first,2,0.5277777777777779,0.5528620070181599,1.0806397847959377
+head_to_head,ISBTAcquisition,Agent360,gradient,Agent360Full,full,decoy,first,2,0.4803921568627451,0.0,0.4803921568627451
+head_to_head,ISBTAcquisition,Agent360Full,full,Agent360,gradient,decoy,second,2,0.6768292682926829,1.0,1.6768292682926829
+head_to_head,ISBTAcquisition,Agent360,gradient,Agent360Full,full,decoy,second,2,0.8475609756097561,0.43392607616885653,1.2814870517786126
+head_to_head,ISBTAcquisition,Agent360Full,full,Agent360,gradient,decoy,first,2,0.4934640522875817,0.5660739238311434,1.0595379761187251
+head_to_head,ISBTAcquisition,Agent360,gradient,Agent360Reverse,reverse,decoy,first,2,0.5915032679738563,0.5527647947936922,1.1442680627675486
+head_to_head,ISBTAcquisition,Agent360Reverse,reverse,Agent360,gradient,decoy,second,2,0.847560975609756,0.4472352052063078,1.2947961808160637
+head_to_head,ISBTAcquisition,Agent360,gradient,Agent360Reverse,reverse,decoy,second,2,0.6097560975609755,0.5608949176686406,1.1706510152296161
+head_to_head,ISBTAcquisition,Agent360Reverse,reverse,Agent360,gradient,decoy,first,2,0.9313725490196079,0.43910508233135936,1.3704776313509672
+head_to_head,ISBTAcquisition,Agent360,gradient,Agent360V2,v2,decoy,first,2,0.5065359477124183,0.45995393721013034,0.9664898849225486
+head_to_head,ISBTAcquisition,Agent360V2,v2,Agent360,gradient,decoy,second,2,0.5670731707317072,0.5400460627898696,1.1071192335215767
+head_to_head,ISBTAcquisition,Agent360,gradient,Agent360V2,v2,decoy,second,2,0.7926829268292683,0.7126997574570275,1.5053826842862956
+head_to_head,ISBTAcquisition,Agent360V2,v2,Agent360,gradient,decoy,first,2,0.5261437908496732,0.2873002425429725,0.8134440333926457
+head_to_head,ISBTAcquisition,Agent360Full,full,Agent360Reverse,reverse,decoy,first,2,0.6764705882352942,0.6157803781064535,1.2922509663417476
+head_to_head,ISBTAcquisition,Agent360Reverse,reverse,Agent360Full,full,decoy,second,2,0.8475609756097561,0.3842196218935465,1.2317805975033025
+head_to_head,ISBTAcquisition,Agent360Full,full,Agent360Reverse,reverse,decoy,second,2,0.6036585365853657,0.8009282944868217,1.4045868310721876
+head_to_head,ISBTAcquisition,Agent360Reverse,reverse,Agent360Full,full,decoy,first,2,0.8594771241830066,0.19907170551317827,1.058548829696185
+head_to_head,ISBTAcquisition,Agent360Full,full,Agent360V2,v2,decoy,first,2,0.6405228758169935,0.5025515422019383,1.1430744180189318
+head_to_head,ISBTAcquisition,Agent360V2,v2,Agent360Full,full,decoy,second,2,0.6768292682926829,0.4974484577980617,1.1742777260907444
+head_to_head,ISBTAcquisition,Agent360Full,full,Agent360V2,v2,decoy,second,2,0.5304878048780487,0.5103187904207928,1.0408065952988417
+head_to_head,ISBTAcquisition,Agent360V2,v2,Agent360Full,full,decoy,first,2,0.7679738562091503,0.48968120957920724,1.2576550657883574
+head_to_head,ISBTAcquisition,Agent360Reverse,reverse,Agent360V2,v2,decoy,first,2,0.8725490196078431,0.0,0.8725490196078431
+head_to_head,ISBTAcquisition,Agent360V2,v2,Agent360Reverse,reverse,decoy,second,2,0.5853658536585366,1.0,1.5853658536585367
+head_to_head,ISBTAcquisition,Agent360Reverse,reverse,Agent360V2,v2,decoy,second,2,0.8475609756097561,0.4014409641254984,1.2490019397352543
+head_to_head,ISBTAcquisition,Agent360V2,v2,Agent360Reverse,reverse,decoy,first,2,0.5947712418300654,0.5985590358745015,1.193330277704567
+head_to_head,Laptop,Agent360,gradient,Agent360Full,full,decoy,first,2,0.9999999999999999,0.4499831526267986,1.4499831526267986
+head_to_head,Laptop,Agent360Full,full,Agent360,gradient,decoy,second,2,0.5136317604069089,0.5500168473732014,1.0636486077801104
+head_to_head,Laptop,Agent360,gradient,Agent360Full,full,decoy,second,2,0.8639876024288977,0.7200089797226468,1.5839965821515445
+head_to_head,Laptop,Agent360Full,full,Agent360,gradient,decoy,first,2,0.5385073385867143,0.27999102027735323,0.8184983588640675
+head_to_head,Laptop,Agent360,gradient,Agent360Reverse,reverse,decoy,first,2,0.5775524426410947,0.571032440041826,1.1485848826829206
+head_to_head,Laptop,Agent360Reverse,reverse,Agent360,gradient,decoy,second,2,1.0,0.42896755995817415,1.4289675599581741
+head_to_head,Laptop,Agent360,gradient,Agent360Reverse,reverse,decoy,second,2,0.5136317604069089,0.7884713959302283,1.3021031563371372
+head_to_head,Laptop,Agent360Reverse,reverse,Agent360,gradient,decoy,first,2,0.9999999999999999,0.2115286040697717,1.2115286040697717
+head_to_head,Laptop,Agent360,gradient,Agent360V2,v2,decoy,first,2,0.6808563443161951,0.0,0.6808563443161951
+head_to_head,Laptop,Agent360V2,v2,Agent360,gradient,decoy,second,2,0.7670022323030451,1.0,1.767002232303045
+head_to_head,Laptop,Agent360,gradient,Agent360V2,v2,decoy,second,2,0.6598305100776019,0.7440967746148541,1.4039272846924562
+head_to_head,Laptop,Agent360V2,v2,Agent360,gradient,decoy,first,2,0.7950796447121322,0.25590322538514587,1.050982870097278
+head_to_head,Laptop,Agent360Full,full,Agent360Reverse,reverse,decoy,first,2,0.5775524426410947,0.3107925610765584,0.8883450037176531
+head_to_head,Laptop,Agent360Reverse,reverse,Agent360Full,full,decoy,second,2,1.0,0.6892074389234416,1.6892074389234417
+head_to_head,Laptop,Agent360Full,full,Agent360Reverse,reverse,decoy,second,2,0.5136317604069089,0.5923923432803522,1.1060241036872611
+head_to_head,Laptop,Agent360Reverse,reverse,Agent360Full,full,decoy,first,2,0.9999999999999999,0.4076076567196478,1.4076076567196476
+head_to_head,Laptop,Agent360Full,full,Agent360V2,v2,decoy,first,2,0.6527306389826513,0.5185372193778317,1.1712678583604832
+head_to_head,Laptop,Agent360V2,v2,Agent360Full,full,decoy,second,2,0.6982753390355798,0.48146278062216824,1.179738119657748
+head_to_head,Laptop,Agent360Full,full,Agent360V2,v2,decoy,second,2,0.7670022323030451,0.7231702168843293,1.4901724491873742
+head_to_head,Laptop,Agent360V2,v2,Agent360Full,full,decoy,first,2,0.6808563443161951,0.27682978311567075,0.9576861274318658
+head_to_head,Laptop,Agent360Reverse,reverse,Agent360V2,v2,decoy,first,2,0.9999999999999999,0.4242075932595577,1.4242075932595575
+head_to_head,Laptop,Agent360V2,v2,Agent360Reverse,reverse,decoy,second,2,0.5136317604069089,0.5757924067404423,1.0894241671473512
+head_to_head,Laptop,Agent360Reverse,reverse,Agent360V2,v2,decoy,second,2,0.9609729725547502,0.42578132882937525,1.3867543013841255
+head_to_head,Laptop,Agent360V2,v2,Agent360Reverse,reverse,decoy,first,2,0.5322039151951294,0.5742186711706248,1.1064225863657542
+head_to_head,NiceOrDie,Agent360,gradient,Agent360Full,full,decoy,first,2,0.1654761904761905,0.0,0.1654761904761905
+head_to_head,NiceOrDie,Agent360Full,full,Agent360,gradient,decoy,second,2,0.1654761904761905,1.0,1.1654761904761906
+head_to_head,NiceOrDie,Agent360,gradient,Agent360Full,full,decoy,second,2,0.1654761904761905,1.0,1.1654761904761906
+head_to_head,NiceOrDie,Agent360Full,full,Agent360,gradient,decoy,first,2,0.1654761904761905,0.0,0.1654761904761905
+head_to_head,NiceOrDie,Agent360,gradient,Agent360Reverse,reverse,decoy,first,2,0.1654761904761905,0.3224744871391589,0.4879506776153494
+head_to_head,NiceOrDie,Agent360Reverse,reverse,Agent360,gradient,decoy,second,2,0.1654761904761905,0.6775255128608411,0.8430017033370316
+head_to_head,NiceOrDie,Agent360,gradient,Agent360Reverse,reverse,decoy,second,2,0.1654761904761905,0.8224744871391589,0.9879506776153494
+head_to_head,NiceOrDie,Agent360Reverse,reverse,Agent360,gradient,decoy,first,2,0.1654761904761905,0.1775255128608411,0.3430017033370316
+head_to_head,NiceOrDie,Agent360,gradient,Agent360V2,v2,decoy,first,2,0.1654761904761905,0.0,0.1654761904761905
+head_to_head,NiceOrDie,Agent360V2,v2,Agent360,gradient,decoy,second,2,0.1654761904761905,1.0,1.1654761904761906
+head_to_head,NiceOrDie,Agent360,gradient,Agent360V2,v2,decoy,second,2,0.1654761904761905,1.0,1.1654761904761906
+head_to_head,NiceOrDie,Agent360V2,v2,Agent360,gradient,decoy,first,2,0.1654761904761905,0.0,0.1654761904761905
+head_to_head,NiceOrDie,Agent360Full,full,Agent360Reverse,reverse,decoy,first,2,0.1654761904761905,0.6449489742783178,0.8104251647545082
+head_to_head,NiceOrDie,Agent360Reverse,reverse,Agent360Full,full,decoy,second,2,0.1654761904761905,0.3550510257216822,0.5205272161978727
+head_to_head,NiceOrDie,Agent360Full,full,Agent360Reverse,reverse,decoy,second,2,0.1654761904761905,0.6449489742783178,0.8104251647545082
+head_to_head,NiceOrDie,Agent360Reverse,reverse,Agent360Full,full,decoy,first,2,0.1654761904761905,0.3550510257216822,0.5205272161978727
+head_to_head,NiceOrDie,Agent360Full,full,Agent360V2,v2,decoy,first,2,0.1654761904761905,0.0,0.1654761904761905
+head_to_head,NiceOrDie,Agent360V2,v2,Agent360Full,full,decoy,second,2,0.1654761904761905,1.0,1.1654761904761906
+head_to_head,NiceOrDie,Agent360Full,full,Agent360V2,v2,decoy,second,2,0.1654761904761905,1.0,1.1654761904761906
+head_to_head,NiceOrDie,Agent360V2,v2,Agent360Full,full,decoy,first,2,0.1654761904761905,0.0,0.1654761904761905
+head_to_head,NiceOrDie,Agent360Reverse,reverse,Agent360V2,v2,decoy,first,2,0.1654761904761905,0.0,0.1654761904761905
+head_to_head,NiceOrDie,Agent360V2,v2,Agent360Reverse,reverse,decoy,second,2,0.1654761904761905,1.0,1.1654761904761906
+head_to_head,NiceOrDie,Agent360Reverse,reverse,Agent360V2,v2,decoy,second,2,0.1654761904761905,1.0,1.1654761904761906
+head_to_head,NiceOrDie,Agent360V2,v2,Agent360Reverse,reverse,decoy,first,2,0.1654761904761905,0.0,0.1654761904761905

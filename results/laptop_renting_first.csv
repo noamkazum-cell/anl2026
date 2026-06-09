@@ -1,0 +1,3 @@
+time,relative_time,step,negotiator,offer,responses,state,text,data,Agent360V2,RentingLite
+0.0,0.009900990099009901,0,Agent360V2,"('Macintosh', '60 Gb', ""20'' LCD"")",{},continuing,,,0.5901592894242644,0.8060292597482949
+0.0008451,0.019801980198019802,1,RentingLite,"('Macintosh', '80 Gb', ""19'' LCD"")",{'RentingLite': <ResponseType.ACCEPT_OFFER: 0>},agreement,,,0.5775524426410947,1.0

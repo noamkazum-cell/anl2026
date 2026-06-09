@@ -1,0 +1,113 @@
+scenario,opponent,opponent_class,strategy,family,agent_first,runs,advantage,concealing,score
+Amsterdam,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,first,1,0.4907063197026022,0.5594194193844314,1.0501257390870335
+Amsterdam,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,second,1,0.6849315068493149,0.5707866039204179,1.2557181107697328
+Amsterdam,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,first,1,0.7100371747211895,0.5333301415445355,1.243367316265725
+Amsterdam,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,second,1,0.6198630136986301,0.5744867429694199,1.1943497566680499
+Amsterdam,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,first,1,0.7100371747211895,0.5534222116233405,1.26345938634453
+Amsterdam,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,second,1,0.6198630136986301,0.5772522471830526,1.1971152608816826
+Amsterdam,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,first,1,0.7100371747211895,1.0,1.7100371747211895
+Amsterdam,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,second,1,0.6198630136986301,1.0,1.61986301369863
+Amsterdam,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,first,1,0.7546468401486989,1.0,1.7546468401486988
+Amsterdam,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,second,1,0.6267123287671232,1.0,1.6267123287671232
+Amsterdam,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,first,1,0.4907063197026022,1.0,1.4907063197026023
+Amsterdam,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,second,1,0.5136986301369862,1.0,1.5136986301369864
+Amsterdam,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,first,1,0.30855018587360594,1.0,1.308550185873606
+Amsterdam,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,second,1,0.47260273972602734,1.0,1.4726027397260273
+Amsterdam,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,first,1,0.6059479553903345,1.0,1.6059479553903344
+Amsterdam,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,second,1,0.5821917808219177,1.0,1.5821917808219177
+Camera,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,first,1,0.6241373506143746,0.6192829402465182,1.2434202908608927
+Camera,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,second,1,0.48187953011747064,0.6105873437719443,1.092466873889415
+Camera,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,first,1,0.6204342703248611,0.5382348944819333,1.1586691648067944
+Camera,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,second,1,0.6100974756310923,0.5726688717929217,1.182766347424014
+Camera,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,first,1,0.6204342703248611,0.5274690461473519,1.147903316472213
+Camera,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,second,1,0.6248437890527369,0.5599126594886825,1.1847564485414193
+Camera,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,first,1,0.5324019525332435,1.0,1.5324019525332435
+Camera,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,second,1,0.6100974756310923,1.0,1.6100974756310924
+Camera,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,first,1,0.8845312236997138,1.0,1.8845312236997138
+Camera,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,second,1,0.49162709322669335,1.0,1.4916270932266933
+Camera,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,first,1,0.6241373506143746,1.0,1.6241373506143746
+Camera,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,second,1,0.5988502874281431,1.0,1.5988502874281432
+Camera,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,first,1,0.26931493014644,1.0,1.26931493014644
+Camera,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,second,1,0.4558860284928768,1.0,1.4558860284928767
+Camera,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,first,1,0.5194411715199462,1.0,1.5194411715199463
+Camera,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,second,1,0.5841039740064985,1.0,1.5841039740064984
+Car,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,first,1,0.9397000000000001,0.0,0.9397000000000001
+Car,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,second,1,0.7176000000000001,0.4919636673487162,1.2095636673487165
+Car,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,first,1,0.8519000000000001,0.5558619102623625,1.4077619102623626
+Car,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,second,1,0.6580000000000001,0.5666543366695674,1.2246543366695675
+Car,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,first,1,0.8519000000000001,0.5806078359665338,1.432507835966534
+Car,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,second,1,0.8616000000000001,0.5680309129384067,1.4296309129384068
+Car,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,first,1,0.7031000000000001,1.0,1.7031
+Car,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,second,1,0.8616000000000001,1.0,1.8616000000000001
+Car,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,first,1,0.7499000000000001,0.0,0.7499000000000001
+Car,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,second,1,0.9787999999999999,1.0,1.9788
+Car,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,first,1,0.7354,1.0,1.7354
+Car,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,second,1,0.7316000000000001,1.0,1.7316000000000003
+Car,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,first,1,0.0,1.0,1.0
+Car,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,second,1,0.0,1.0,1.0
+Car,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,first,1,0.5899000000000001,1.0,1.5899
+Car,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,second,1,0.7860000000000001,1.0,1.786
+Grocery,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,first,1,0.5277777777777778,0.6310334495845635,1.1588112273623414
+Grocery,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,second,1,0.5055555555555555,0.6448071119585956,1.1503626675141512
+Grocery,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,first,1,0.7055555555555557,0.4840801833106164,1.1896357388661722
+Grocery,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,second,1,0.7500000000000001,0.546186694670301,1.2961866946703011
+Grocery,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,first,1,0.588888888888889,0.5054107182215158,1.094299607110405
+Grocery,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,second,1,0.7500000000000001,0.5644764422989266,1.3144764422989268
+Grocery,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,first,1,0.588888888888889,1.0,1.588888888888889
+Grocery,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,second,1,0.7500000000000001,1.0,1.75
+Grocery,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,first,1,0.46111111111111114,0.0,0.46111111111111114
+Grocery,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,second,1,0.638888888888889,1.0,1.6388888888888888
+Grocery,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,first,1,0.588888888888889,1.0,1.588888888888889
+Grocery,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,second,1,0.7500000000000001,1.0,1.75
+Grocery,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,first,1,0.38888888888888895,1.0,1.3888888888888888
+Grocery,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,second,1,0.47222222222222227,1.0,1.4722222222222223
+Grocery,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,first,1,0.588888888888889,1.0,1.588888888888889
+Grocery,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,second,1,0.7500000000000001,1.0,1.75
+ISBTAcquisition,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,first,1,0.5032679738562091,0.0,0.5032679738562091
+ISBTAcquisition,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,second,1,0.5121951219512194,0.5964173630080392,1.1086124849592585
+ISBTAcquisition,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,first,1,0.784313725490196,0.5164709305604539,1.30078465605065
+ISBTAcquisition,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,second,1,0.5121951219512194,1.0,1.5121951219512195
+ISBTAcquisition,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,first,1,0.784313725490196,0.5254369007155539,1.30975062620575
+ISBTAcquisition,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,second,1,0.5121951219512194,0.6155471607678578,1.127742282719077
+ISBTAcquisition,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,first,1,0.6993464052287581,1.0,1.6993464052287581
+ISBTAcquisition,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,second,1,0.5121951219512194,1.0,1.5121951219512195
+ISBTAcquisition,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,first,1,0.5228758169934641,1.0,1.522875816993464
+ISBTAcquisition,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,second,1,0.5121951219512194,1.0,1.5121951219512195
+ISBTAcquisition,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,first,1,0.5359477124183007,1.0,1.5359477124183007
+ISBTAcquisition,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,second,1,0.5121951219512194,1.0,1.5121951219512195
+ISBTAcquisition,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,first,1,0.33986928104575165,1.0,1.3398692810457518
+ISBTAcquisition,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,second,1,0.5121951219512194,1.0,1.5121951219512195
+ISBTAcquisition,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,first,1,0.5032679738562091,1.0,1.5032679738562091
+ISBTAcquisition,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,second,1,0.5121951219512194,1.0,1.5121951219512195
+Laptop,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,first,1,0.5775524426410947,0.6844358410163034,1.2619882836573981
+Laptop,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,second,1,0.5136317604069089,0.6932670477187611,1.2068988081256702
+Laptop,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,first,1,0.5775524426410947,0.5936450920748514,1.171197534715946
+Laptop,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,second,1,0.5136317604069089,0.5722575571988916,1.0858893176058007
+Laptop,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,first,1,0.5775524426410947,0.5936450920748514,1.171197534715946
+Laptop,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,second,1,0.5136317604069089,0.5534177546812092,1.0670495150881183
+Laptop,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,first,1,0.5775524426410947,0.0,0.5775524426410947
+Laptop,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,second,1,0.5136317604069089,1.0,1.513631760406909
+Laptop,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,first,1,0.6808563443161951,1.0,1.680856344316195
+Laptop,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,second,1,0.7670022323030451,1.0,1.767002232303045
+Laptop,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,first,1,0.5775524426410947,1.0,1.5775524426410947
+Laptop,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,second,1,0.5136317604069089,1.0,1.513631760406909
+Laptop,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,first,1,0.5775524426410947,0.0,0.5775524426410947
+Laptop,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,second,1,0.5136317604069089,1.0,1.513631760406909
+Laptop,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,first,1,0.5775524426410947,0.0,0.5775524426410947
+Laptop,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,second,1,0.6685754732133643,1.0,1.6685754732133642
+NiceOrDie,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,first,1,0.1654761904761905,0.5,0.6654761904761906
+NiceOrDie,SimpleNegotiator,examples.simple.SimpleNegotiator,reverse-ufun + time concede,example,second,1,0.1654761904761905,0.5,0.6654761904761906
+NiceOrDie,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,first,1,0.1654761904761905,0.5,0.6654761904761906
+NiceOrDie,BOANeg,examples.boa.BOANeg,BOA: time offer + Smith + ACNext,example,second,1,0.1654761904761905,0.5,0.6654761904761906
+NiceOrDie,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,first,1,0.1654761904761905,0.5,0.6654761904761906
+NiceOrDie,MAPNeg,examples.map.MAPNeg,"MAP: same stack, acceptance_first",example,second,1,0.1654761904761905,0.5,0.6654761904761906
+NiceOrDie,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,first,1,0.1654761904761905,1.0,1.1654761904761906
+NiceOrDie,BoulwareTBNegotiator,negmas.sao.BoulwareTBNegotiator,slow concession (Boulware),time-based,second,1,0.1654761904761905,1.0,1.1654761904761906
+NiceOrDie,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,first,1,0.1654761904761905,1.0,1.1654761904761906
+NiceOrDie,ConcederTBNegotiator,negmas.sao.ConcederTBNegotiator,fast concession,time-based,second,1,0.1654761904761905,1.0,1.1654761904761906
+NiceOrDie,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,first,1,0.1654761904761905,1.0,1.1654761904761906
+NiceOrDie,LinearTBNegotiator,negmas.sao.LinearTBNegotiator,linear time concession,time-based,second,1,0.1654761904761905,1.0,1.1654761904761906
+NiceOrDie,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,first,1,0.0,1.0,1.0
+NiceOrDie,ToughNegotiator,negmas.sao.ToughNegotiator,"hard line, slow give",time-based,second,1,0.0,1.0,1.0
+NiceOrDie,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,first,1,0.1654761904761905,1.0,1.1654761904761906
+NiceOrDie,MiCRONegotiator,negmas.sao.MiCRONegotiator,MiCRO (Genius-style),genius-style,second,1,0.1654761904761905,1.0,1.1654761904761906

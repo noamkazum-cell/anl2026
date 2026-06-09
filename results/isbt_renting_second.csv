@@ -1,0 +1,2 @@
+time,relative_time,step,negotiator,offer,responses,state,text,data,RentingLite,Agent360V2
+0.0,0.009900990099009901,0,RentingLite,"('8 million $', 'BI-Tech founders maintain all IP', 'BI-Tech founders get 5% + jobs ', 'salary raise of 15%', 'IS liable for all activities')",{'RentingLite': <ResponseType.ACCEPT_OFFER: 0>},agreement,,,1.0,0.5121951219512194

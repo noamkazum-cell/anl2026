@@ -1,0 +1,65 @@
+match_type,scenario,agent,agent_mode,opponent,opponent_mode,family,agent_first,runs,advantage,concealing,score
+panel,Camera,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,first,1,0.8643326039387308,0.6236118603865918,1.4879444643253226
+panel,Camera,Agent360,gradient,SimpleNegotiator,reverse-ufun + time concede,example,second,1,0.522369407648088,0.6169174284300588,1.139286836078147
+panel,Camera,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,first,1,0.6204342703248611,0.4750948393954822,1.0955291097203432
+panel,Camera,Agent360,gradient,BOANeg,BOA: time offer + Smith + ACNext,example,second,1,0.6653336665833542,0.4842977090802851,1.1496313756636394
+panel,Camera,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,first,1,0.6204342703248611,0.47408011743870887,1.09451438776357
+panel,Camera,Agent360,gradient,MAPNeg,"MAP: same stack, acceptance_first",example,second,1,0.6653336665833542,0.48691882414015475,1.152252490723509
+panel,Camera,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,1,0.6241373506143746,1.0,1.6241373506143746
+panel,Camera,Agent360,gradient,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,1,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,first,1,0.8845312236997138,1.0,1.8845312236997138
+panel,Camera,Agent360,gradient,ConcederTBNegotiator,fast concession,time-based,second,1,0.6928267933016746,1.0,1.6928267933016747
+panel,Camera,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,first,1,0.6241373506143746,1.0,1.6241373506143746
+panel,Camera,Agent360,gradient,LinearTBNegotiator,linear time concession,time-based,second,1,0.5308672831792052,1.0,1.5308672831792052
+panel,Camera,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,first,1,0.26931493014644,1.0,1.26931493014644
+panel,Camera,Agent360,gradient,ToughNegotiator,"hard line, slow give",time-based,second,1,0.4558860284928768,1.0,1.4558860284928767
+panel,Camera,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,1,0.5324019525332435,1.0,1.5324019525332435
+panel,Camera,Agent360,gradient,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,1,0.5841039740064985,1.0,1.5841039740064984
+panel,Camera,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,first,1,0.6241373506143746,0.6192829402465182,1.2434202908608927
+panel,Camera,Agent360Full,full,SimpleNegotiator,reverse-ufun + time concede,example,second,1,0.522369407648088,0.6260337789554135,1.1484031866035016
+panel,Camera,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,first,1,0.6204342703248611,0.5349875960858488,1.1554218664107099
+panel,Camera,Agent360Full,full,BOANeg,BOA: time offer + Smith + ACNext,example,second,1,0.6653336665833542,0.5141991210393734,1.1795327876227275
+panel,Camera,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,first,1,0.6204342703248611,0.5305988797335437,1.1510331500584048
+panel,Camera,Agent360Full,full,MAPNeg,"MAP: same stack, acceptance_first",example,second,1,0.6653336665833542,0.5081153699222322,1.1734490365055863
+panel,Camera,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,1,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360Full,full,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,1,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,first,1,0.8845312236997138,1.0,1.8845312236997138
+panel,Camera,Agent360Full,full,ConcederTBNegotiator,fast concession,time-based,second,1,0.49037740564858784,1.0,1.490377405648588
+panel,Camera,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,first,1,0.6241373506143746,1.0,1.6241373506143746
+panel,Camera,Agent360Full,full,LinearTBNegotiator,linear time concession,time-based,second,1,0.5988502874281431,1.0,1.5988502874281432
+panel,Camera,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,first,1,0.26931493014644,1.0,1.26931493014644
+panel,Camera,Agent360Full,full,ToughNegotiator,"hard line, slow give",time-based,second,1,0.4558860284928768,1.0,1.4558860284928767
+panel,Camera,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,1,0.3312573640801212,1.0,1.331257364080121
+panel,Camera,Agent360Full,full,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,1,0.5841039740064985,1.0,1.5841039740064984
+panel,Camera,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,first,1,0.8643326039387308,0.6236118603865918,1.4879444643253226
+panel,Camera,Agent360Reverse,reverse,SimpleNegotiator,reverse-ufun + time concede,example,second,1,0.7758060484878782,0.6373241840051729,1.413130232493051
+panel,Camera,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,first,1,0.6204342703248611,0.4861176900174817,1.1065519603423428
+panel,Camera,Agent360Reverse,reverse,BOANeg,BOA: time offer + Smith + ACNext,example,second,1,0.6653336665833542,0.4950523615531663,1.1603860281365206
+panel,Camera,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,first,1,0.6204342703248611,0.4814743323663648,1.101908602691226
+panel,Camera,Agent360Reverse,reverse,MAPNeg,"MAP: same stack, acceptance_first",example,second,1,0.6653336665833542,0.49331646295270554,1.1586501295360598
+panel,Camera,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,1,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360Reverse,reverse,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,1,0.6653336665833542,1.0,1.6653336665833542
+panel,Camera,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,first,1,0.9508500252482747,1.0,1.9508500252482746
+panel,Camera,Agent360Reverse,reverse,ConcederTBNegotiator,fast concession,time-based,second,1,0.9250187453136717,1.0,1.9250187453136718
+panel,Camera,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,first,1,0.8643326039387308,1.0,1.8643326039387307
+panel,Camera,Agent360Reverse,reverse,LinearTBNegotiator,linear time concession,time-based,second,1,0.7968007998000501,1.0,1.7968007998000501
+panel,Camera,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,first,1,0.26931493014644,1.0,1.26931493014644
+panel,Camera,Agent360Reverse,reverse,ToughNegotiator,"hard line, slow give",time-based,second,1,0.4558860284928768,1.0,1.4558860284928767
+panel,Camera,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,1,0.5194411715199462,1.0,1.5194411715199463
+panel,Camera,Agent360Reverse,reverse,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,1,0.7530617345663585,1.0,1.7530617345663586
+panel,Camera,Agent360V2,hybrid,SimpleNegotiator,reverse-ufun + time concede,example,first,1,0.8643326039387308,0.6236118603865918,1.4879444643253226
+panel,Camera,Agent360V2,hybrid,SimpleNegotiator,reverse-ufun + time concede,example,second,1,0.6738315421144715,0.6364174934935315,1.310249035608003
+panel,Camera,Agent360V2,hybrid,BOANeg,BOA: time offer + Smith + ACNext,example,first,1,0.6204342703248611,0.48054554476805533,1.1009798150929164
+panel,Camera,Agent360V2,hybrid,BOANeg,BOA: time offer + Smith + ACNext,example,second,1,0.5988502874281431,0.4928274249737848,1.091677712401928
+panel,Camera,Agent360V2,hybrid,MAPNeg,"MAP: same stack, acceptance_first",example,first,1,0.6204342703248611,0.47952630392203155,1.0999605742468925
+panel,Camera,Agent360V2,hybrid,MAPNeg,"MAP: same stack, acceptance_first",example,second,1,0.5988502874281431,0.4879575084316445,1.0868077958597875
+panel,Camera,Agent360V2,hybrid,BoulwareTBNegotiator,slow concession (Boulware),time-based,first,1,0.6204342703248611,1.0,1.620434270324861
+panel,Camera,Agent360V2,hybrid,BoulwareTBNegotiator,slow concession (Boulware),time-based,second,1,0.5988502874281431,1.0,1.5988502874281432
+panel,Camera,Agent360V2,hybrid,ConcederTBNegotiator,fast concession,time-based,first,1,0.9569096111765696,1.0,1.9569096111765696
+panel,Camera,Agent360V2,hybrid,ConcederTBNegotiator,fast concession,time-based,second,1,0.9930017495626094,1.0,1.9930017495626093
+panel,Camera,Agent360V2,hybrid,LinearTBNegotiator,linear time concession,time-based,first,1,0.8643326039387308,1.0,1.8643326039387307
+panel,Camera,Agent360V2,hybrid,LinearTBNegotiator,linear time concession,time-based,second,1,0.7298175456135967,1.0,1.7298175456135967
+panel,Camera,Agent360V2,hybrid,ToughNegotiator,"hard line, slow give",time-based,first,1,0.26931493014644,1.0,1.26931493014644
+panel,Camera,Agent360V2,hybrid,ToughNegotiator,"hard line, slow give",time-based,second,1,0.4558860284928768,1.0,1.4558860284928767
+panel,Camera,Agent360V2,hybrid,MiCRONegotiator,MiCRO (Genius-style),genius-style,first,1,0.5324019525332435,1.0,1.5324019525332435
+panel,Camera,Agent360V2,hybrid,MiCRONegotiator,MiCRO (Genius-style),genius-style,second,1,0.7530617345663585,1.0,1.7530617345663586
