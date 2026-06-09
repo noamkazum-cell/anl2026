@@ -2,7 +2,7 @@
 
 from typer.testing import CliRunner
 
-from main import app, generate_random_scenarios, load_scenarios
+from main import app, calc_scores, generate_random_scenarios, load_scenarios
 
 runner = CliRunner()
 
@@ -54,6 +54,29 @@ class TestLoadScenarios:
         all_scenarios = load_scenarios(None)
         scenarios_with_all = load_scenarios(["ALL"])
         assert len(scenarios_with_all) == len(all_scenarios)
+
+
+class TestCalcScores:
+    """Regression tests for tournament scoring."""
+
+    def test_scores_with_zero_sum_opponent_model(self):
+        """Tit-for-tat negotiators expose ZeroSumModel without BaseUtilityFunction init."""
+        from negmas.helpers import get_class, instantiate
+        from negmas.sao import SAOMechanism
+
+        from agent360_submit import Agent360
+
+        scenario = load_scenarios(["Camera"])[0]
+        mechanism = SAOMechanism(outcome_space=scenario.outcome_space, n_steps=50)
+        agent = Agent360()
+        opponent = instantiate(get_class("negmas.sao.NaiveTitForTatNegotiator"))
+        mechanism.add(agent, ufun=scenario.ufuns[0])
+        mechanism.add(opponent, ufun=scenario.ufuns[1])
+        mechanism.run()
+
+        scores = calc_scores(mechanism)
+        assert "Agent360" in scores
+        assert set(scores["Agent360"]) == {"Advantage", "Concealing", "Score"}
 
 
 class TestRunCommand:
@@ -115,7 +138,7 @@ class TestTournamentCommand:
                 "--competitor",
                 "negmas.sao.BoulwareTBNegotiator",
                 "--competitor",
-                "agent360.Agent360",
+                "agent360_submit.Agent360",
             ],
         )
         assert result.exit_code == 0
@@ -131,7 +154,7 @@ class TestTournamentCommand:
                 "--competitor",
                 "negmas.sao.BoulwareTBNegotiator",
                 "--competitor",
-                "agent360.Agent360",
+                "agent360_submit.Agent360",
             ],
         )
         assert result.exit_code == 0
@@ -150,7 +173,7 @@ class TestTournamentCommand:
                 "--competitor",
                 "negmas.sao.BoulwareTBNegotiator",
                 "--competitor",
-                "agent360.Agent360",
+                "agent360_submit.Agent360",
             ],
         )
         assert result.exit_code == 0

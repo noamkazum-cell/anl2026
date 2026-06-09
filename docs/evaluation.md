@@ -140,3 +140,19 @@ loop is competitive.
 4. `anl2026 run` + `--export-trace` on those matchups
 5. Tune `DECOY_PHASE_END`, `TRANSITION_PHASE_END`, acceptance aspiration
 6. `--repeats 5` on hard scenarios before submission
+
+Strategy write-ups: [agent360-v2.4-strategy.md](agent360-v2.4-strategy.md), [agent360-v3-plan.md](agent360-v3-plan.md) (**submission: `Agent360V3`**).
+
+---
+
+## 6. Sparring opponents (2024-inspired)
+
+In-house sparring agents live in `sparring/` (no oracle opponent utility). Benchmark:
+
+```bash
+uv run python scripts/eval_sparring.py --agent v3 --repeats 2
+uv run python scripts/eval_sparring.py --agent v2 --repeats 2
+uv run python scripts/eval_sparring.py --agent v2.firstseat --repeats 2
+```
+
+Findings, fix backlog, and V2.4 first-seat notes: [sparring-and-fixes.md](sparring-and-fixes.md).

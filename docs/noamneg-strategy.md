@@ -54,13 +54,16 @@ Implications:
 - Lightweight, no training pipeline.
 - Good enough for **late-phase** bids that look attractive to them.
 
-**Future upgrades (not implemented)**
+**Future upgrades (not implemented — planned for V3)**
 
 | Model                       | When to consider                            |
 |-----------------------------|---------------------------------------------|
 | `GAgentXFrequencyModel`     | Issue-weighted frequencies                  |
 | `GHardHeadedFrequencyModel` | Alternative Genius-style assumptions        |
 | Linear / Bayesian           | If you add offline fitting and more compute |
+| Offer-utility trajectory    | Detect opponent bluffing / curve-fit learners |
+
+See [sparring-and-fixes.md](sparring-and-fixes.md) for the V3 opponent-deception roadmap (deferred until first-seat Concealing is solid).
 
 ---
 

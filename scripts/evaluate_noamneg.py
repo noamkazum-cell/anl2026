@@ -28,7 +28,7 @@ from rich.console import Console
 from rich.table import Table
 
 from main import SCENARIOS_DIR, calc_scores
-from agent360 import Agent360
+from agent360_submit import Agent360
 
 app = typer.Typer(help="Benchmark Agent360 vs NegMAS and example opponents")
 console = Console()
@@ -58,7 +58,7 @@ QUICK_OPPONENTS: list[OpponentSpec] = [
 FULL_OPPONENTS: list[OpponentSpec] = QUICK_OPPONENTS + [
     OpponentSpec("negmas.sao.TimeBasedNegotiator", "generic time-based", "time-based"),
     OpponentSpec("negmas.sao.AspirationNegotiator", "aspiration-based", "time-based"),
-    OpponentSpec("negmas.sao.UtilBasedNegotiator", "utility-based offers", "utility-based"),
+    # UtilBasedNegotiator raises NotImplementedError in current NegMAS — excluded from panel
     OpponentSpec("negmas.sao.HybridNegotiator", "hybrid time + utility", "hybrid"),
     OpponentSpec("negmas.sao.RandomNegotiator", "random rational offers", "baseline"),
     OpponentSpec("negmas.sao.NaiveTitForTatNegotiator", "tit-for-tat", "behavioral"),

@@ -64,7 +64,10 @@ ANL 2026 is the opposite on the concealing dimension: being modeled correctly **
 uv run python scripts/compare_decoy_agents.py --quick
 
 # More opponents, repeated runs for stability
-uv run python scripts/compare_decoy_agents.py --repeats 5
+uv run python scripts/compare_decoy_agents.py --repeats 2
+
+# Full run with tournament-weight summary (85% student / 15% official default)
+uv run python scripts/compare_decoy_agents.py --repeats 2 --weight-student 0.85 --output results/decoy_compare_v24_full.csv
 
 # One scenario, save CSV
 uv run python scripts/compare_decoy_agents.py --quick --scenario Camera --output results/decoy_compare.csv

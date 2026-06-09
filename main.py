@@ -22,7 +22,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from negmas.helpers import get_class, instantiate
 from negmas.inout import Scenario, get_full_type_name, unique_name
-from negmas.preferences import compare_ufuns
+from negmas.preferences import LambdaMultiFun, compare_ufuns
 from negmas.preferences.generators import generate_multi_issue_ufuns
 from negmas.sao import SAOMechanism
 from negmas.tournaments.neg.simple import cartesian_tournament
@@ -34,9 +34,9 @@ import typer
 from typing import Annotated
 
 try:
-    from .agent360 import Agent360
+    from .agent360_submit import Agent360
 except ImportError:
-    from agent360 import Agent360
+    from agent360_submit import Agent360
 
 AGENT360 = get_full_type_name(Agent360)
 
@@ -66,6 +66,49 @@ def progress_callback(message: str, i: int, n: int, conf: dict | None = None) ->
     print(message)
 
 
+def _modeling_kendall(
+    true_ufun,
+    model,
+    *,
+    outcome_space,
+) -> float:
+    """Kendall correlation between a true ufun and an opponent model.
+
+    Some NegMAS opponent models (e.g. ``ZeroSumModel`` on tit-for-tat negotiators)
+    inherit ``BaseUtilityFunction`` but skip its ``__init__``, so ``compare_ufuns``
+    cannot call them directly. Wrap ``eval`` when needed.
+    """
+    if true_ufun is None or model is None:
+        return -1.0
+
+    try:
+        return float(
+            compare_ufuns(
+                true_ufun,
+                model,
+                method="kendall",
+                outcome_space=outcome_space,
+            )
+        )
+    except AttributeError:
+        if not hasattr(model, "eval"):
+            return -1.0
+        wrapped = LambdaMultiFun(f=model.eval)
+        try:
+            return float(
+                compare_ufuns(
+                    true_ufun,
+                    wrapped,
+                    method="kendall",
+                    outcome_space=outcome_space,
+                )
+            )
+        except Exception:
+            return -1.0
+    except Exception:
+        return -1.0
+
+
 def calc_scores(m: SAOMechanism) -> dict[str, dict[str, float]]:
     """Compute scores for the given agreement according the ANL 2026 rules."""
 
@@ -86,7 +129,8 @@ def calc_scores(m: SAOMechanism) -> dict[str, dict[str, float]]:
     models = [_.opponent_ufun for _ in m.negotiators]
     models.reverse()
     accuracies = [
-        (1 + compare_ufuns(u, m, method="kendall")) / 2 for u, m in zip(ufuns, models)
+        (1 + _modeling_kendall(u, model, outcome_space=m.outcome_space)) / 2
+        for u, model in zip(ufuns, models)
     ]
 
     # normalize accuracies so that we divide one point among all negotiators with

@@ -1,11 +1,11 @@
-"""Tests for the Agent360 agent."""
+"""Tests for the V1 gradient agent (Agent360Base)."""
 
 import pytest
 from negmas.inout import Scenario
 from negmas.preferences.generators import generate_multi_issue_ufuns
 from negmas.sao import SAOMechanism
 
-from agent360 import Agent360
+from agent360 import Agent360Base
 
 
 @pytest.fixture
@@ -20,17 +20,17 @@ def test_scenario():
     return Scenario(outcome_space=ufuns[0].outcome_space, ufuns=ufuns)
 
 
-class TestAgent360:
-    """Tests for the Agent360 agent."""
+class TestAgent360Base:
+    """Tests for Agent360Base (V1 gradient decoy baseline)."""
 
     def test_instantiation(self):
-        """Test that Agent360 can be instantiated."""
-        negotiator = Agent360()
+        """Test that Agent360Base can be instantiated."""
+        negotiator = Agent360Base()
         assert negotiator is not None
 
     def test_has_required_methods(self):
-        """Test that Agent360 exposes the SAOCallNegotiator strategy hooks."""
-        negotiator = Agent360()
+        """Test that Agent360Base exposes the SAOCallNegotiator strategy hooks."""
+        negotiator = Agent360Base()
         assert callable(negotiator.acceptance_strategy)
         assert callable(negotiator.concealing_bidding_strategy)
         assert callable(negotiator.update_opponent_model)
@@ -41,8 +41,8 @@ class TestAgent360:
             outcome_space=test_scenario.outcome_space,
             n_steps=5,
         )
-        negotiator = Agent360()
-        opponent = Agent360()
+        negotiator = Agent360Base()
+        opponent = Agent360Base()
 
         mechanism.add(negotiator, ufun=test_scenario.ufuns[0])
         mechanism.add(opponent, ufun=test_scenario.ufuns[1])
@@ -52,13 +52,13 @@ class TestAgent360:
         assert len(negotiator.rational_outcomes) > 0
 
     def test_negotiation_completes(self, test_scenario):
-        """Test that Agent360 can complete a negotiation."""
+        """Test that Agent360Base can complete a negotiation."""
         mechanism = SAOMechanism(
             outcome_space=test_scenario.outcome_space,
             n_steps=50,
         )
-        negotiator1 = Agent360()
-        negotiator2 = Agent360()
+        negotiator1 = Agent360Base()
+        negotiator2 = Agent360Base()
 
         mechanism.add(negotiator1, ufun=test_scenario.ufuns[0])
         mechanism.add(negotiator2, ufun=test_scenario.ufuns[1])
@@ -67,13 +67,13 @@ class TestAgent360:
         assert mechanism.state.agreement is not None or mechanism.state.timedout
 
     def test_makes_offers(self, test_scenario):
-        """Test that Agent360 makes valid offers."""
+        """Test that Agent360Base makes valid offers."""
         mechanism = SAOMechanism(
             outcome_space=test_scenario.outcome_space,
             n_steps=10,
         )
-        negotiator = Agent360()
-        opponent = Agent360()
+        negotiator = Agent360Base()
+        opponent = Agent360Base()
 
         mechanism.add(negotiator, ufun=test_scenario.ufuns[0])
         mechanism.add(opponent, ufun=test_scenario.ufuns[1])
@@ -83,7 +83,7 @@ class TestAgent360:
         assert len(mechanism.history) > 0
 
     def test_negotiation_with_different_opponents(self, test_scenario):
-        """Test that Agent360 can negotiate with different types of opponents."""
+        """Test that Agent360Base can negotiate with different types of opponents."""
         from examples.simple import SimpleNegotiator
         from examples.map import MAPNeg
 
@@ -91,7 +91,7 @@ class TestAgent360:
             outcome_space=test_scenario.outcome_space,
             n_steps=50,
         )
-        negotiator1 = Agent360()
+        negotiator1 = Agent360Base()
         opponent1 = SimpleNegotiator()
 
         mechanism1.add(negotiator1, ufun=test_scenario.ufuns[0])
@@ -104,7 +104,7 @@ class TestAgent360:
             outcome_space=test_scenario.outcome_space,
             n_steps=50,
         )
-        negotiator2 = Agent360()
+        negotiator2 = Agent360Base()
         opponent2 = MAPNeg()
 
         mechanism2.add(negotiator2, ufun=test_scenario.ufuns[0])
@@ -114,7 +114,7 @@ class TestAgent360:
         assert mechanism2.state.agreement is not None or mechanism2.state.timedout
 
     def test_negotiation_on_multiple_scenarios(self, test_scenario):
-        """Test that Agent360 works on scenarios with different numbers of issues."""
+        """Test that Agent360Base works on scenarios with different numbers of issues."""
         ufuns1 = generate_multi_issue_ufuns(
             n_issues=1,
             n_values=(3, 5),
@@ -127,8 +127,8 @@ class TestAgent360:
             outcome_space=scenario1.outcome_space,
             n_steps=50,
         )
-        negotiator1a = Agent360()
-        negotiator1b = Agent360()
+        negotiator1a = Agent360Base()
+        negotiator1b = Agent360Base()
 
         mechanism1.add(negotiator1a, ufun=scenario1.ufuns[0])
         mechanism1.add(negotiator1b, ufun=scenario1.ufuns[1])
@@ -148,8 +148,8 @@ class TestAgent360:
             outcome_space=scenario4.outcome_space,
             n_steps=50,
         )
-        negotiator4a = Agent360()
-        negotiator4b = Agent360()
+        negotiator4a = Agent360Base()
+        negotiator4b = Agent360Base()
 
         mechanism4.add(negotiator4a, ufun=scenario4.ufuns[0])
         mechanism4.add(negotiator4b, ufun=scenario4.ufuns[1])
@@ -158,13 +158,13 @@ class TestAgent360:
         assert mechanism4.state.agreement is not None or mechanism4.state.timedout
 
     def test_agreement_is_valid(self, test_scenario):
-        """Test that agreements reached by Agent360 are valid outcomes."""
+        """Test that agreements reached by Agent360Base are valid outcomes."""
         mechanism = SAOMechanism(
             outcome_space=test_scenario.outcome_space,
             n_steps=50,
         )
-        negotiator1 = Agent360()
-        negotiator2 = Agent360()
+        negotiator1 = Agent360Base()
+        negotiator2 = Agent360Base()
 
         mechanism.add(negotiator1, ufun=test_scenario.ufuns[0])
         mechanism.add(negotiator2, ufun=test_scenario.ufuns[1])

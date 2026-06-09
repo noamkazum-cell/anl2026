@@ -64,7 +64,10 @@ A sample agent skeleton built with [NegMAS](https://github.com/yasserfarouk/negm
 │   ├── ISBTAcquisition/
 │   ├── Laptop/
 │   └── NiceOrDie/
-├── docs/                  # Strategy documentation (examples + NoamNeg)
+├── docs/                  # Strategy documentation
+│   └── agent360-v4-strategy.md    # Agent360 V4.2 submission + report outline
+├── agent360_submit_v4.py  # Agent360 V4.3 submission source (zipped as agent360.py)
+├── agent360_submit.py     # Agent360 V3 legacy submission
 ├── main.py                # CLI application entry point
 ├── noam_neg.py            # NoamNeg agent (default for CLI)
 ├── pyproject.toml         # Project configuration

@@ -6,10 +6,10 @@ import random
 
 from negmas.outcomes import Outcome
 
-from agent360 import Agent360
+from agent360 import Agent360Base
 
 
-class Agent360Reverse(Agent360):
+class Agent360Reverse(Agent360Base):
     """
     Reverse / truth-first decoy strategy.
 

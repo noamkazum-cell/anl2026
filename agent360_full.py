@@ -8,10 +8,10 @@ from typing import Any
 
 from negmas.outcomes import Outcome
 
-from agent360 import Agent360
+from agent360 import Agent360Base
 
 
-class Agent360Full(Agent360):
+class Agent360Full(Agent360Base):
     """
     Full-flip decoy strategy.
 
