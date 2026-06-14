@@ -5,134 +5,293 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 
-\title{Agent360: A Concealment-First Bilateral Negotiator for ANL 2026}
-\author{Noam Kazum \\
-The College of Management Academic Studies}
+\title{Agent360: A Concealment-First Bilateral Negotiator\\for ANL 2026}
+\author{%
+  Noam Kazum \\[0.4em]
+  Omer Shani Steinmetz \\[0.4em]
+  Dr.~Galit Haim \\[0.4em]
+  Dr.~Raz Lin \\[1em]
+  \textit{The College of Management Academic Studies}%
+}
+\date{June 15, 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We present \textbf{Agent360}, a bilateral negotiator for the ANL 2026 league that maximizes
-$\text{Score} = \text{Advantage} + \text{Concealing}$.
-The agent combines a \emph{decoy persona}---early bids that misrepresent which issues we value---with
-a deception-aware opponent model built only from observed offers, seat order, and relative time.
-A phased bidding strategy (decoy, transition, closing) that protects Concealing, while mode-dependent
-acceptance and Smith-based closing bids improve Advantage against conceders, learners, and deceptive
-opponents.
-Development used iterative local benchmarks and official tournament feedback; we found that small
-acceptance tweaks aimed at reducing no-deal outliers can hurt overall performance if validated only
-on proxy panels rather than the full opponent mix.
+We present \textbf{Agent360}, a bilateral negotiator submitted to the Automated Negotiation
+League (ANL) 2026.
+The competition scores each agent on \textbf{Advantage} (deal quality relative to a reserved
+value) and \textbf{Concealing} (how poorly the opponent learns our true preferences from our
+bid stream).
+Our agent design follows a \emph{concealment-first} principle: early offers
+deliberately misrepresent issue priorities so that frequency-based opponent learners infer an
+incorrect utility function, while later phases and acceptance rules extract profitable
+agreements.
+The agent uses no oracle access to the opponent's class or true utility--only observed offers,
+negotiation seat, and the relative deadline time.
+We relate the bidding persona to theories of signaling, strategic misrepresentation, and the
+limits of honesty in non-cooperative negotiation.
 \end{abstract}
 
 \section{Introduction}
 
-The ANL 2026 competition rewards negotiators on two axes: \textbf{Advantage} (agreement utility minus
-reserved value) and \textbf{Concealing} (how poorly the opponent models our true preferences from our
-bid stream and published models).
-Agents that concede quickly or reveal true issue priorities early often score well on Advantage against
-simple opponents but lose Concealing against Smith-style learners (e.g.\ BOA, MAP, MiCRO).
+In bilateral alternating-offer negotiation, each proposal is both an economic act and a
+\emph{signal} about private preferences.
+The ANL 2026 league makes this dual role explicit: an agent is rewarded not only for closing
+good deals, but also for preventing the opponent from building an accurate model of its true
+utility function.
+Formally, the league score is
+\begin{equation}
+  \text{Score} = \text{Advantage} + \text{Concealing},
+\end{equation}
+where concealment is derived from the rank correlation between the agent's true utility and the
+utility function the opponent inferred from the negotiation transcript.
 
-Agent360 is designed \emph{concealment-first}: we mislead the opponent's learner for as long as it
-remains profitable, then gradually shift toward profitable agreements.
-We use no oracle access to the opponent's true utility or agent class---only observed offers,
-negotiation seat, and relative deadline time.
+Most student agents in the league learn from offers using Smith-style frequency models or
+similar adaptive estimators.
+Against such opponents, bidding one's sincere top outcomes early tends to maximize short-term
+deal quality but minimizes concealing, because the opponent's learner quickly converges on the
+correct issue weights.
+Agent360, therefore, treats preference \emph{concealment} as a first-class design goal and tunes deal extraction only in ways that do not collapse the decoy persona.
 
-\section{The Design of MyAgent}
+This report describes the agent, its psychological motivation, its
+three-layer architecture, and the evaluation process that produced the final parameterization.
 
-Agent360 extends the NegMAS \texttt{SAOCallNegotiator} protocol with three cooperating layers:
+\section{Background: Deception, Signaling, and Learning}
+
+\subsection{Offers as preference signals}
+
+In multi-issue negotiation, an offer is a vector of issue values.
+Rational opponents treat repeated offers as evidence about the values the sender prefers.
+Smith-style frequency models count how often each value appears in the opponent's
+bids, implementing a simple form of \emph{preference elicitation from behavior}.
+If our early bids consistently favor values that are actually low-priority for us, the
+opponent's estimated utility function shifts away from the truth, which directly increases concealment under the league metric.
+
+This is distinct from verbal deception: ANL agents cannot negotiate in natural language.
+All misdirection must be encoded in the \emph{bid stream}, analogous to non-verbal signaling
+in human bargaining (consistent choices that suggest false priorities).
+
+\subsection{Truth mechanisms versus competitive misrepresentation}
+
+Mechanism-design results (e.g.\ strategy-proof auction formats) show that honesty can be a
+dominant strategy when the \emph{rules} reward truthful reporting.
+The ANL scoring rule has the opposite incentive on the concealment axis: if the opponent models the agent correctly, our concealment score falls.
+We therefore operate in a non-cooperative setting closer to competitive signaling than to
+ incentive-compatible mechanism design.
+
+We initially considered a \emph{reverse-psychology} persona: bid sincere high-utility outcomes early (as if ``playing truth''), then shift toward misdirection, exploiting opponents that systematically discount our offers.
+Local experiments showed that this variant improved advantage against some time-based
+negotiators but reduced concealment against BOA, MAP, and MiCRO-style learners---the dominant
+opponent family in both our benchmarks and the live tournament.
+We rejected reverse-truth as the submission strategy and retained a gradual decoy-to-truth
+persona instead.
+
+\subsection{Opponent modeling without labels}
+
+Human negotiators form \emph{theories of mind} about whether the partner is conceding,
+posturing, or mirroring prior bids.
+Agent360 approximates this with a lightweight behavioral classifier (\texttt{mirror},
+\texttt{learner}, \texttt{deceptive}, \texttt{conceding}, \texttt{unknown}) derived from bid
+concentration, trajectory shape, issue-flip rate, and echo detection---not from the opponent's declared agent class.
+This avoids brittle, hard-coded routing while still allowing mode-dependent aspiration slopes, closing weights and bait guards.
+
+\section{Agent Architecture}
+
+Agent360 extends the NegMAS \texttt{SAOCallNegotiator} protocol with three cooperating layers.
 
 \begin{enumerate}
-  \item \textbf{Bidding persona:} what we \emph{offer}---decoy pool construction, phased transition,
+  \item \textbf{Bidding persona} --- what we offer: decoy pool construction, phased transition,
         and closing bids.
-  \item \textbf{Opponent model:} what we \emph{infer}---frequency (Smith), recency, time-weighted, and
-        trajectory-based estimates plus behavioral mode classification.
-  \item \textbf{Deal extraction:} when we \emph{accept}---time- and mode-dependent aspiration,
-        bait detection, and deadline safeguards.
+  \item \textbf{Opponent model} --- what we infer: blended Smith estimators, trajectory features,
+        and mode classification.
+  \item \textbf{Deal extraction} --- when we accept: time and mode-dependent aspiration, bait
+        detection, and deadline safeguards.
 \end{enumerate}
 
-Each step with a partner offer: update all models; evaluate acceptance; otherwise sample the next bid
-from the current phase.
-The first negotiator (seat~0) follows a stricter concealment profile---longer decoy phase, a minimum
-count of opponent bids before transition, and decoy rotation with utility jumps---because opening
-agents expose more of their bid stream to opponents' learners.
+On each step with a partner offer, the agent updates all estimators, evaluates acceptance, and otherwise samples the next bid from the current phase.
+The first negotiator (seat~0) follows a stricter concealment profile because opening agents
+expose more of their bid stream to the opponent's learner.
 
 \section{Concealing Bidding Strategy}
 
 Relative time $t \in [0,1]$ divides the negotiation into three phases.
 
-\paragraph{Decoy.}
-We bid from a \textbf{maximal-mismatch decoy pool}: rational outcomes that disagree with our inferred
-true top-issue values on at least half of issues, while staying above a utility floor.
-When we open, transition is blocked until the opponent has made at least four offers.
-Decoy selection avoids recent repeats, breaks mirror tit-for-tat, and prefers bids with large utility
-jumps relative to our last offer.
+\paragraph{Decoy phase.}
+We bid from a \textbf{maximal-mismatch decoy pool}: rational outcomes that disagree with our
+inferred true top-issue values on at least half of the issues, subject to a utility floor.
+When we open, transition is blocked until the opponent has made at least four offers
+reducing early leakage to curve-fitting learners.
+Decoy selection avoids recent repeats, breaks mirror tit-for-tat by perturbing echoed bids, and
+prefers offers with large utility jumps relative to our last bid.
+The first seat extends the decoy window to $t < 0.40$ (versus $0.35$ for the second seat).
 
-\paragraph{Transition ($t < 0.75$).}
-We mix decoy outcomes with a widening band of our true high-utility outcomes.
-The first negotiator keeps decoy mixing for most of the transition window and reveals true preferences
-more slowly than the second seat.
+\paragraph{Transition phase ($t < 0.75$).}
+We mix decoy outcomes with a widening band of true high-utility outcomes.
+The first negotiator keeps decoy mixing for most of the transition window
+(\texttt{FIRST\_TRANSITION\_DECOY\_MIX\_UNTIL}${}=0.85$) and reveals true preferences more
+slowly (\texttt{FIRST\_TRANSITION\_PROGRESS\_SCALE}${}=0.72$).
+If the opponent is classified as conceding and the trajectory shows honest concession, we allow
+an \emph{early exit} from decoy even before the usual time gate---trading a small amount of
+concealing for advantage when the partner is unlikely to exploit the signal.
 
-\paragraph{Closing ($t \ge 0.75$).}
-We sample rational outcomes and score each by a blend of normalized self-utility and estimated opponent
-utility.
-The weight on the opponent model increases through closing and is capped by the classified opponent
-mode (higher vs.\ learners and conceders, lower vs.\ deceptive or mirroring opponents).
+\paragraph{Closing phase ($t \ge 0.75$).}
+We sample rational outcomes and score each candidate by a blend of normalized self-utility and
+estimated opponent utility.
+The opponent weight increases through closing but is capped by mode
+(e.g.\ higher caps against learners and conceders, lower against deceptive or mirroring
+opponents).
+Against deceptive late bait-switching, inflated Smith scores are discounted when selecting
+closing bids.
 
-Together, decoy persona, gradual transition, and opponent-weighted closing form our main Concealing
-tactic: frequency learners fit an incorrect early preference signal.
+Together, these mechanisms implement a \emph{gradual preference revelation} strategy: the
+opponent's learner is fed a sustained false early signal, then gradually corrected only when
+deal extraction dominates further concealment.
+
+\section{Opponent Modeling}
+
+All opponent inference uses only the observed bid stream, relative time, and negotiation seat.
+We never read the opponent's agent class, true utility function, or internal state.
+The modeling stack has three roles: estimate what the opponent values, classify how they are
+negotiating, and publish a blended utility function that downstream bidding and acceptance
+logic can query.
+
+\subsection{Smith-style frequency estimation}
+
+The base estimator is a \textbf{Smith frequency model}: for each issue, we count how often the
+opponent chose each value in past offers.
+Values repeated often are treated as more valuable to them; per-issue scores are normalized and
+averaged into a scalar utility for any outcome.
+This matches the learning bias of many league agents (BOA, MAP, MiCRO) and provides a stable
+prior over the full negotiation.
+
+We maintain three refinements of this idea:
+\begin{itemize}
+  \item \textbf{Recency-blended Smith} (second seat): when at least two recent offers exist in
+        a window of five bids, we blend full-history Smith with recent-only Smith.
+        Weight on the recent estimate grows with sample count (up to ${\approx}0.68$), so we
+        track learners that adapt quickly after our persona shifts.
+  \item \textbf{Time-weighted Smith}: bids after $t \ge 0.40$ are counted three times when
+        building effective frequencies.
+        Late offers often reflect genuine priorities after decoy posturing ends; up-weighting
+        them reduces contamination from early misleading bids---both theirs and ours.
+  \item \textbf{Issue-weighted Smith}: issues where the opponent repeats the same value (low
+        spread) receive lower weight; issues with diverse values receive higher weight.
+        This filters decoy noise on ``frozen'' issues while emphasizing dimensions where real
+        trade-offs appear.
+\end{itemize}
+
+\subsection{Trajectory and concession dynamics}
+
+The \textbf{offer trajectory model} records pairs $(t, \hat{u}_{\text{Smith}})$ at each opponent
+bid and treats the stream as a time series of revealed preference strength and how much utility the opponent would gain.
+From it we compute:
+\begin{itemize}
+  \item \textbf{Concession slope} --- linear trend of Smith utility over time; slopes below
+        ${\approx}-0.04$ indicate honest monotonic concession.
+  \item \textbf{Non-monotonicity} --- two or more significant utility \emph{increases} suggest
+        strategic feints or bait-and-switch rather than steady concession.
+  \item \textbf{Predicted utility at $t$} --- extrapolation used to test whether a late offer is
+        inconsistent with the opponent's prior trajectory (a bluff signal).
+\end{itemize}
+Trajectory features feed both mode classification and bait rejection at acceptance time.
+
+\subsection{Behavioral mode classification}
+
+Rather than routing by opponent \emph{type} (which is unknown in competition), we classify
+\emph{behavior} into five modes:
+\texttt{mirror}, \texttt{learner}, \texttt{deceptive}, \texttt{conceding}, and \texttt{unknown}.
+The decision tree uses mirror echo detection first (at least three matches to our recent bids in
+a window of four opponent offers), then trajectory sample count, Smith concentration, concession
+slope, and concealment-tactic heuristics.
+
+\paragraph{Deceptive signals.}
+We label an opponent deceptive when their bid stream shows concealment tactics, for example:
+identical early offers, high early issue-flip rate (${\ge}0.25$), wide early Smith spread
+(${\ge}0.12$), non-monotone utility paths, or late bait-switching (preferred values flip on
+many issues after $t \ge 0.40$).
+Plain BOA/MAP-style learners usually fall into \texttt{learner}, not \texttt{deceptive}, which
+limits false bait triggers against honest frequency learners.
+
+\paragraph{Mode-dependent control.}
+The closing cap limits how much opponent utility weights closing bids; the aspiration slope
+controls how quickly we lower our acceptance threshold over time.
+Against deceptive opponents, inflated Smith estimates are discounted before bid scoring and
+late offers may be rejected as bait when they diverge from the trajectory prediction.
+Conceding opponents may trigger early decoy exit when concession slope is honestly negative;
+mirror opponents skip adaptive Smith blends so tit-for-tat echoes do not corrupt the published
+model.
+
+\subsection{Published opponent utility blend}
+
+The league measures Concealing from how well the \emph{opponent} models \emph{us}; symmetrically,
+we publish \texttt{opponent\_ufun} in private information so the opponent can score Advantage.
+The published estimate is built in stages:
+\begin{enumerate}
+  \item Start from full-history Smith.
+  \item If enough late bids exist ($t \ge 0.40$), blend toward a late-phase Smith estimate;
+        blend weight increases with late sample count (cap ${\approx}0.55$--$0.68$, higher when
+        we open).
+  \item If at least three late offers exist, further blend toward issue-weighted late Smith.
+  \item On the second seat, blend toward recency Smith when recent data exist; for
+        learner/conceding/unknown modes, add a stable-issue match term when recency is strong.
+  \item If mode is \texttt{mirror}, skip adaptive blends and return plain Smith.
+  \item Clamp all values to $[0,1]$.
+\end{enumerate}
+Closing bid selection and bait detection query this pipeline; against deceptive opponents,
+selected Smith utilities may be discounted before scoring candidate agreements.
+
+\subsection{Anti-mirror response}
+
+When the opponent repeats our last bid, mirror detection fires and we break synchrony by
+perturbing the next offer from an anti-mirror pool (small random change on one issue).
+Tit-for-tat mirroring freezes preference learning on both sides and depresses
+concealing without improving advantage.
 
 \section{Acceptance Strategy}
 
-We accept when any of the following applies:
+The agent accepts a partner's offer when any of the following holds:
 \begin{itemize}
   \item \textbf{Catastrophe floor:} $t \ge 0.95$ and utility $\ge$ reserved value.
-  \item \textbf{Mode aspiration:} utility $\ge u_{\max}(1 - \text{slope} \cdot t)$ and above reserved
-        value; aspiration slope is tuned per opponent mode.
+  \item \textbf{Mode aspiration:} utility $\ge u_{\max}(1 - \text{slope} \cdot t)$ and above
+        reserved value; the aspiration slope depends on the classified opponent mode.
   \item \textbf{AC-next:} offer utility is at least that of our next concealing bid.
   \item \textbf{Deadline safe:} $t > 0.90$ and utility above reserved value.
 \end{itemize}
-Before the deadline-safe window, offers that pass aspiration may still be rejected if they appear to be
-\textbf{bait}: a deceptive opponent profile and Smith-estimated utility far above the trajectory
-prediction.
-During development we experimented with earlier escape acceptance (e.g.\ accepting above reserved value
-well before the deadline); this improved some local stress tests but was dropped because it accepted
-too many weak or deceptive deals in broader evaluation.
 
-\section{Opponent Model}
+Before the deadline-safe window ($t \le 0.90$), offers that pass aspiration may still be
+rejected if they appear to be \textbf{bait}: the opponent is classified as deceptive, shows
+concealment tactics, and the Smith-estimated utility exceeds the trajectory prediction by more
+than a threshold (\texttt{ACCEPT\_BAIT\_THRESHOLD}${}=0.14$).
 
-All inference uses opponent bids only:
+During development, we tested an \emph{escape tier} that accepted above reserved value from
+$t \approx 0.88$ onward, intended to reduce timeout penalties.
+Although this improved some local stress tests, tournament and proxy runs showed that it
+accepted too many mediocre or deceptive agreements against the real opponent mix.
+Currently, the agent deliberately disables mid-game escape acceptance and relies on catastrophe accept
+only near timeout.
+
+\section{Evaluation and Development Process}
+
+We evaluated each candidate agent on a repeatable local panel before submission:
 \begin{itemize}
-  \item \textbf{Smith frequency model} over the full history.
-  \item \textbf{Recency-weighted Smith} on the second seat (recent window of five offers).
-  \item \textbf{Time-weighted Smith} emphasizing bids after $t = 0.40$.
-  \item \textbf{Trajectory model} of $(t, \hat{u}_{\text{Smith}})$ for concession slope, non-monotonicity,
-        and bait inconsistency.
-\end{itemize}
-
-We classify opponents as \texttt{mirror}, \texttt{learner}, \texttt{deceptive}, \texttt{conceding}, or
-\texttt{unknown} from bid concentration, early issue-flip rate, trajectory shape, and bid-echo detection
----not from agent class names.
-The published \texttt{opponent\_ufun} blends these estimators; against deceptive late bait-switching we
-discount inflated Smith scores when choosing closing bids and when deciding acceptance.
-
-\section{Evaluation}
-
-We evaluated Agent360 locally before each submission using a repeatable panel:
-\begin{itemize}
-  \item \textbf{Learners:} BOA, MAP, MiCRO across all competition scenarios (both seats).
+  \item \textbf{Learners:} BOA, MAP, MiCRO across competition scenarios (both seats).
   \item \textbf{Stress:} time-based NegMAS negotiators (Boulware, Conceder, Tough, etc.).
-  \item \textbf{Sparring:} in-house deceptive opponents (mirror, bait-switch, strong learner variants).
+  \item \textbf{Sparring:} in-house deceptive opponents (mirror, bait-switch, strong learner
+        variants).
 \end{itemize}
-Each cell is repeated with fixed step counts; we report mean Advantage, Concealing, and their sum.
+Each matchup cell is repeated with fixed step counts; we report mean Advantage, Concealing, and
+their sum.
 
-Table~\ref{tab:local} shows a representative snapshot on the combined panel.
-Official tournament runs use a different opponent mix; we therefore treated leaderboard feedback as the
-final gate for acceptance-rule and closing-weight changes, not proxy means alone.
+Table~\ref{tab:local} summarizes a representative development snapshot on the combined panel.
+Official tournament runs use a different opponent mix and panel size; we therefore treated
+leaderboard feedback as the final gate for acceptance and closing changes, not proxy means
+alone.
 
 \begin{table}[ht]
   \centering
-  \caption{Local proxy panel (mean Score per matchup cell; illustrative development snapshot).}
+  \caption{Local proxy panel (mean Score per matchup cell; development snapshot).}
   \label{tab:local}
   \begin{tabular}{@{}lrrr@{}}
     \toprule
@@ -147,40 +306,34 @@ final gate for acceptance-rule and closing-weight changes, not proxy means alone
   \end{tabular}
 \end{table}
 
-Iterative changes that improved the submitted agent include: conceding-triggered early exit from decoy,
-relaxed bait discount thresholds, mode-dependent closing caps, first-seat decoy rotation, anti-mirror
-bid pools, and catastrophe acceptance near timeout.
-Changes we tried but did not keep include stricter first-seat min-offer gates, shorter second-seat
-decoy windows, and mid-game escape acceptance---they helped isolated tail cases on local runs but
-reduced robustness on the wider panel.
+\paragraph{Iterative refinement.}
+The path from an early submission (strong concealing but weak advantage against learners) to
+the current Agent360 added: conceding-triggered early decoy exit, relaxed bait-discount thresholds,
+mode-dependent closing caps, first-seat decoy rotation, anti-mirror bid pools, and catastrophe
+acceptance near timeout.
+Changes that improved isolated local cells but hurt the broader distribution---stricter
+first-seat gates, shorter second-seat decoy windows, mid-game escape acceptance, and
+stall-based accept rules---were removed after broader evaluation showed regressions.
 
-\section{Lessons and Suggestions}
+\section{Discussion and Conclusions}
 
-\textbf{Separate concealment from deal quality.}
-Concealing is driven mainly by the bid stream; Advantage depends on opponent modeling and acceptance.
-Strengthening one without weakening the other requires keeping the decoy persona while tuning closing
-and acceptance independently.
+Agent360 is a concealment-first bilateral negotiator grounded in signaling theory
+and empirical tests of alternative personas.
+Its core idea is psychologically motivated but implemented entirely through bid streams:
+early maximal-mismatch decoys mislead frequency learners, gradual transition limits preference
+leakage, and mode-aware closing and acceptance extract Advantage without surrendering
+Concealing to deceptive or mirroring opponents.
 
-\textbf{Local benchmarks are necessary but not sufficient.}
-Proxy panels catch regressions against known opponent families but do not replicate the full tournament
-distribution.
-Major design decisions should be checked on official runs when available.
+Three lessons emerged from development.
+First, \textbf{concealing and advantage require separate controls}; strengthening acceptance
+without preserving the decoy persona hurts the combined score against learner-heavy fields.
+Second, \textbf{evaluation must span multiple opponent families}; learner, stress, and deceptive
+sparring panels together catch failures that no single benchmark family reveals alone.
+Third, \textbf{seat asymmetry matters}; first and second negotiators see different information,
+and asymmetric decoy length and min-offer gates improved learner matchups without oracle
+routing.
 
-\textbf{Seat asymmetry matters.}
-First and second negotiators see different information; asymmetric decoy length and min-offer gates
-improved learner matchups in our local tests without oracle routing.
-
-\textbf{Avoid over-fitting to tail outcomes.}
-Rules that accept earlier to prevent timeouts can trade away Advantage and Concealing on typical
-head-to-head negotiations.
-
-\section*{Conclusions}
-
-Agent360 is a concealment-first bilateral negotiator that combines maximal-mismatch decoy bidding,
-gradual preference revelation, deception-aware Smith modeling, and mode-tuned acceptance and closing.
-It operates without oracle information and adapts behavior to negotiation seat and inferred opponent
-type.
-Our development process emphasized iterative local evaluation followed by tournament-informed
-refinement, with particular care not to sacrifice the decoy persona when improving deal extraction.
+The submitted agent operates without privileged information, adapts to inferred opponent behavior,
+and balances strategic misrepresentation of preferences with profitable agreement formation.
 
 \end{document}

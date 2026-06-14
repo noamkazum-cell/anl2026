@@ -1,12 +1,14 @@
-"""Agent360 — self-contained ANL 2026 submission agent (V4.2 as ``Agent360``).
+"""Agent360 — self-contained ANL 2026 submission agent (V4.6 as ``Agent360``).
 
 This file is copied into ``submitted_v4.zip`` as ``agent360.py`` for upload.
 V3 submission source remains in ``agent360_submit.py`` / ``submitted.zip``.
 
-Active submission: V4.2 (9th-place tournament build). V4.3 reverted — rank 28 regression.
+Active submission: V4.6 — V4.2 logic restored after V4.5 stall-accept regression (#19047).
 """
 
 from __future__ import annotations
+
+__version__ = "4.6.0"
 
 import random
 from collections import Counter
@@ -715,9 +717,9 @@ class OfferTrajectoryModel:
 
 class Agent360(Agent360V2):
     """
-    Submission agent (V4.2): persona + opponent model + tournament-grade deal extraction.
+    Submission agent (V4.6): V4.2 persona + opponent model + tournament-grade deal extraction.
 
-    Proven ~9th on official panel. V4.3 changes reverted after rank-28 regression.
+    Label bump only — same behavior as rank-~10 V4.2; not V4.5 stall accept.
     """
 
     FIRST_MIN_OPPONENT_OFFERS = 4

@@ -456,15 +456,238 @@ flowchart TD
 
 Plain BOA/MAP → usually **learner**, not deceptive — avoids false bait triggers.
 
-### 12.2 Mode → behavior summary
+### 12.2 Mode → behavior table (full reference)
 
-| Mode | Closing cap | Aspiration slope | Bait discount | Notes |
-|------|-------------|------------------|---------------|-------|
-| **conceding** | 0.52 | 0.42 | No | Early decoy exit allowed |
-| **learner** | 0.48 | 0.52 | No | +0.04 utility boost after t>0.55 |
-| **deceptive** | 0.32 | 0.58 (until t=0.85) | Yes | Higher min closing utility (0.75) |
-| **mirror** | 0.38 | default | No | Plain Smith only |
-| **unknown** | 0.40 | 0.55 | No | Conservative learner path |
+Classification is **behavioral**, not by opponent class name. We never read the opponent's declared agent type; we only observe their bid stream. Once a mode is assigned, the table below fixes how closing bids, acceptance, Smith blending, and persona transitions behave for the rest of the negotiation (re-evaluated each step as new offers arrive).
+
+| Mode | Cap | Slope | Smith | Bait | Persona / other |
+|------|-----|-------|-------|------|-----------------|
+| **Conceding** | 0.52 | 0.42 | Full blend | No | Early decoy exit |
+| **Learner** | 0.48 | 0.52 | Full blend | No | Self-utility boost late |
+| **Deceptive** | 0.32 | 0.58 | Discounted | Yes | Bait reject active |
+| **Mirror** | 0.38 | 0.55 | Plain Smith only | No | Anti-mirror bids |
+| **Unknown** | 0.40 | 0.55 | Full blend | No | Conservative default |
+
+**Constants (V4.2):** `CLOSING_CAP_*`, `ASPIRATION_SLOPE_*`, `ASPIRATION_DECEPTIVE_UNTIL = 0.85`, `BAIT_THRESHOLD = ACCEPT_BAIT_THRESHOLD = 0.14`, `BAIT_DISCOUNT = 0.30`.
+
+---
+
+### 12.3 What each column means
+
+#### Cap (closing opponent-weight cap)
+
+During closing ($t \ge 0.75$), each candidate agreement is scored as a blend of normalized **self-utility** and **estimated opponent utility**. The opponent weight ramps up through closing:
+
+```text
+w = min(cap, 0.15 + 0.35 × (t − 0.75))
+score = my_weight × (my_u / max_u) + (1 − my_weight) × estimated_opponent_utility(offer)
+```
+
+**Cap** is the mode-specific ceiling on `w` — how much we chase deals that look good *for them* when picking our closing counter-offers.
+
+| Higher cap | Lower cap |
+|------------|-----------|
+| More cooperative closing — we bid outcomes the opponent likely prefers | More selfish closing — we keep more weight on our own utility |
+
+**Intuition by mode:**
+
+- **Conceding (0.52)** — highest cap. Opponent is honestly giving ground; chasing mutual agreements pays off and timeouts are costly.
+- **Learner (0.48)** — moderate-high. BOA/MAP-style learners repeat stable preferences; matching their inferred model closes deals without over-trusting bait.
+- **Unknown (0.40)** — conservative until we have evidence.
+- **Mirror (0.38)** — moderate-low. Tit-for-tat echoes make Smith unreliable; don't over-weight opponent utility.
+- **Deceptive (0.32)** — lowest cap. Don't chase offers that *look* generous on Smith when the opponent may be baiting.
+
+#### Slope (aspiration time slope)
+
+Acceptance uses a time-decaying aspiration bar:
+
+```text
+aspiration = max_u × (1 − slope × t)
+accept if u(offer) ≥ aspiration AND u(offer) > reserved_value
+```
+
+**Slope** controls how fast we lower our minimum acceptable utility as the deadline approaches.
+
+| Lower slope | Higher slope |
+|-------------|--------------|
+| Stays picky longer (higher bar early and mid) | Drops aspiration faster (accepts earlier) |
+
+**Intuition by mode:**
+
+- **Conceding (0.42)** — slowest drop. Partner is conceding anyway; we can afford to wait for a better deal.
+- **Learner (0.52)** — moderate. Standard extraction against frequency learners.
+- **Unknown / Mirror (0.55)** — default slope when profile is unclear or mirrored.
+- **Deceptive (0.58 until t = 0.85)** — steepest early/mid. Stay skeptical of inflated late offers; after `ASPIRATION_DECEPTIVE_UNTIL` the slope reverts to default (0.55).
+
+Deceptive mode also uses a **higher closing floor** (`CLOSING_MIN_UTILITY_START_DECEPTIVE = 0.75` vs 0.72 default / 0.70 learner) so closing bids stay above bait territory.
+
+#### Smith (published / closing opponent model)
+
+This column describes how we build **estimated opponent utility** for closing bids and the published `opponent_ufun` (except mirror, which short-circuits inside the blend function).
+
+| Value | Meaning |
+|-------|---------|
+| **Full blend** | `_blended_opponent_utility`: full-history Smith → late-phase Smith → issue-weighted late Smith → (2nd seat) recency Smith → stable-issue match for learner/conceding/unknown. See [§13](#13-published-opponent_ufun-blend-pipeline). |
+| **Plain Smith only** | Skip all adaptive blends; return raw `FrequencyOpponentModel` estimate. Mirror echoes would corrupt recency/late blends. |
+| **Discounted** | Start from full blend, then if bait guards fire (`_should_apply_bait_discount` + `_offer_looks_like_bait`), pull estimate toward trajectory prediction (30% discount on excess above threshold; extra 38% blend if inconsistency > 0.18). See [§15](#15-bait-detection). |
+
+#### Bait (bait discount + acceptance reject)
+
+| Value | Meaning |
+|-------|---------|
+| **No** | No trajectory-based discount on closing evaluation; no bait rejection at acceptance (other acceptance rules still apply). |
+| **Yes** | Full bait pipeline when mode == deceptive **and** concealment tactics confirmed **and** late bait-switch detected **and** ≥ 5 trajectory samples. Closing: discount inflated Smith estimates. Acceptance (while $t \le 0.90$): reject if `smith_u > predicted(t) + 0.14` and slope is not honestly conceding (< −0.04). |
+
+Plain learners are explicitly excluded from bait logic even if misclassified — `_opponent_smith_learner_profile()` blocks bait discount and bait reject.
+
+#### Persona / other (mode-specific extras)
+
+Behaviors beyond cap/slope/Smith/bait:
+
+- **Early decoy exit (conceding)** — if mode is conceding, trajectory slope ≤ −0.025, and ≥ 3 trajectory samples, `transition_allowed()` becomes true after just **1** opponent offer (bypasses the normal min-offer gate). Rationale: vs Boulware/Conceder, concealment is already maxed; staying in decoy wastes advantage.
+- **Self-utility boost late (learner)** — in closing, when $t > 0.55$, add `CLOSING_LEARNER_UTILITY_BOOST = 0.04` to self-weight (cap 0.92). Slightly favors our utility when chasing learner agreements.
+- **Bait reject active (deceptive)** — see Bait column; stricter aspiration until $t = 0.85$.
+- **Anti-mirror bids (mirror)** — if our next bid would echo the opponent's last offer, re-pick from `_anti_mirror_pool` (random one-issue perturbation). Breaks tit-for-tat deadlock.
+- **Conservative default (unknown)** — fewer than 2 trajectory samples; treat like learner path with unknown cap/slope until evidence accumulates.
+
+---
+
+### 12.4 Per-mode guide (detection + response)
+
+Use this section for presentations: one slide per mode, or a walkthrough of the decision tree then this table.
+
+#### Conceding
+
+**How we detect it**
+
+- Not mirror.
+- ≥ 2 trajectory samples (not unknown).
+- Fails learner profile (or has concealment signals).
+- Not deceptive.
+- ≥ 3 trajectory samples **and** concession slope ≤ **−0.025** (`CONCEDING_SLOPE_THRESHOLD`).
+
+**What it looks like in practice**
+
+Opponent's Smith-estimated offers trend steadily downward over time — classic time-based conceder (Boulware, Conceder, etc.). No early decoy flips, no late bait switches, no non-monotone spikes.
+
+**How we respond**
+
+| Mechanism | Setting | Why |
+|-----------|---------|-----|
+| Closing cap | **0.52** (highest) | Partner is moving toward us; cooperative closing closes deals |
+| Aspiration slope | **0.42** (lowest) | Can stay picky; they'll keep conceding |
+| Smith | Full blend | Their late bids reflect true preferences |
+| Bait | Off | Honest concession path — bait guards would false-positive |
+| Persona | **Early decoy exit** | Leave decoy phase early; concealment already won vs conceders |
+
+---
+
+#### Learner
+
+**How we detect it**
+
+- Not mirror; ≥ 2 trajectory samples.
+- `_opponent_smith_learner_profile()`: ≥ 4 recent offers, issue concentration ≥ **0.78**, **no** concealment tactics, **not** non-monotone trajectory.
+
+**What it looks like in practice**
+
+BOA, MAP, MiCRO-style agents: repeat similar issue values, high repetition on preferred issues, monotone or slowly improving offers. This is the **default fallback** when other modes don't match.
+
+**How we respond**
+
+| Mechanism | Setting | Why |
+|-----------|---------|-----|
+| Closing cap | **0.48** | Match their stable Smith model without over-chasing |
+| Aspiration slope | **0.52** | Moderate extraction |
+| Smith | Full blend + stable-issue term (2nd seat) | Recency and stable-issue match track converged preferences |
+| Bait | Off | Critical: plain learners must not trigger bait logic |
+| Persona | **+0.04 self-weight** after $t > 0.55$ in closing | Slight advantage push once learner profile is stable |
+
+---
+
+#### Deceptive
+
+**How we detect it**
+
+- Not mirror; ≥ 2 trajectory samples.
+- Not a plain learner profile.
+- `_opponent_shows_concealment_tactics()` — any of:
+  - **Early decoy persona** ($t < 0.40$): all identical early offers, **or** issue flip rate ≥ 0.25, **or** Smith utility spread ≥ 0.12.
+  - **Non-monotone trajectory**: ≥ 2 significant utility rises.
+  - **Late bait switch** ($t \ge 0.40$): preferred values flip on ≥ half of issues between first/second half of late offers.
+
+**What it looks like in practice**
+
+Agents like ShochanLite, UOAgentLite, RentingLite (decoy personas): chaotic early bids, utility feints, or late issue switches designed to make us accept bad deals or reveal priorities.
+
+**How we respond**
+
+| Mechanism | Setting | Why |
+|-----------|---------|-----|
+| Closing cap | **0.32** (lowest) | Don't chase Smith-inflated "generous" offers |
+| Aspiration slope | **0.58** until $t = 0.85$ | Stay skeptical mid-game |
+| Smith | **Discounted** when bait conditions met | Pull estimates toward trajectory prediction |
+| Bait | **Yes** — closing discount + acceptance reject | Reject `smith_u >> predicted(t) + 0.14` before $t = 0.90$ |
+| Persona | Higher closing floor (0.75) | Don't bid too low into bait territory |
+
+---
+
+#### Mirror
+
+**How we detect it**
+
+- `_opponent_mirrors_us()`: in the last **4** opponent offers (`MIRROR_MATCH_WINDOW`), ≥ **3** (`MIRROR_MATCH_MIN`) identical to our recent bids.
+
+**What it looks like in practice**
+
+Self-play diagnostic: opponent copies our last bid (tit-for-tat echo). Not a tournament opponent class, but handled for robustness.
+
+**How we respond**
+
+| Mechanism | Setting | Why |
+|-----------|---------|-----|
+| Closing cap | **0.38** | Moderate; Smith is unreliable |
+| Aspiration slope | **0.55** (default) | Standard acceptance |
+| Smith | **Plain Smith only** | Adaptive blends would learn from echoed bids |
+| Bait | Off | Mirror is not deception |
+| Persona | **Anti-mirror pool** | Perturb bid if it would echo opponent's last offer |
+
+---
+
+#### Unknown
+
+**How we detect it**
+
+- Not mirror.
+- **< 2** trajectory samples — not enough history to classify.
+
+**What it looks like in practice**
+
+First few rounds of a negotiation: only 0–1 opponent offers recorded in the trajectory model.
+
+**How we respond**
+
+| Mechanism | Setting | Why |
+|-----------|---------|-----|
+| Closing cap | **0.40** | Conservative until evidence |
+| Aspiration slope | **0.55** (default) | Don't overfit early noise |
+| Smith | Full blend (when enough timed/recency data exist) | Same pipeline as learner/conceding path |
+| Bait | Off | Insufficient samples for bait guards anyway |
+| Persona | Falls through to **learner default** once samples ≥ 2 | Unknown is transient |
+
+---
+
+### 12.5 Column quick-reference (one slide)
+
+```text
+CAP     → How much closing bids weight opponent utility (cooperative vs selfish)
+SLOPE   → How fast acceptance threshold drops over time (picky vs eager)
+SMITH   → Full adaptive blend | plain frequency only | blend + bait discount
+BAIT    → Discount inflated Smith in closing + reject bait offers at acceptance
+PERSONA → Decoy exit, learner boost, anti-mirror, etc.
+```
+
+**Design principle:** classify from **observable behavior** (trajectory, concentration, flips, echoes), then apply a fixed response row from the table. Plain learners are protected from bait false positives; deceptive agents get the strictest caps and bait guards.
 
 ---
 
@@ -502,7 +725,7 @@ Competition scores **Concealing** from opponent's fit to our true `ufun`; we pub
 1. **Min our utility** ramps from mode-dependent start to **0.52** of max through closing:
    - Default start **0.72**; learner **0.70**; deceptive **0.75**.
 2. Filter `rational_outcomes` above floor.
-3. **Opponent weight** `w = min(cap, 0.15 + 0.35 × (t − 0.75))` with mode cap from [§12.2](#122-mode--behavior-summary).
+3. **Opponent weight** `w = min(cap, 0.15 + 0.35 × (t − 0.75))` with mode cap from [§12.2](#122-mode--behavior-table-full-reference).
 4. Sample up to **40** candidates (**55** was V4.3 only); learner uses cap **40**.
 5. **Learner boost:** `my_weight = min(0.92, (1−w) + 0.04)` when learner and `t > 0.55`.
 6. Maximize: `my_weight × (my_u/max_u) + (1−my_weight) × estimated_opponent_utility(offer)`.
@@ -586,7 +809,7 @@ flowchart TD
 | Rule | V4.2 constant | Description |
 |------|---------------|-------------|
 | **Catastrophe** | `ACCEPT_CATASTROPHE_TIME = 0.95` | Accept any offer ≥ RV |
-| **Aspiration** | slope mode-dependent | See [§12.2](#122-mode--behavior-summary) |
+| **Aspiration** | slope mode-dependent | See [§12.2](#122-mode--behavior-table-full-reference) |
 | **AC-next** | — | Accept if `u(offer) ≥ u(our_next_bid)` |
 | **Deadline safe** | `ACCEPT_DEADLINE_SAFE = 0.90` | Accept if `u > RV × 1.0` |
 | **Bait reject** | `ACCEPT_BAIT_THRESHOLD = 0.14` | Only when `t ≤ 0.90` and deceptive profile |

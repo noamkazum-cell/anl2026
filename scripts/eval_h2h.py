@@ -32,7 +32,7 @@ console = Console()
 AGENTS: dict[str, AgentSpec] = {
     "v2": AgentSpec(Agent360V2, "v2", "Agent360V2 (V2.4)"),
     "v3": AgentSpec(Agent360, "v3", "Agent360 (submission)"),
-    "v4": AgentSpec(Agent360V4, "v4.3", "Agent360 V4.3 (submission)"),
+    "v4": AgentSpec(Agent360V4, "v4.5", "Agent360 V4.5 (submission)"),
     "v4.2": AgentSpec(Agent360V42, "v4.2", "Agent360 V4.2"),
     "v2.6a": AgentSpec(Agent360V2ClosingA, "v2.6a", "Agent360V2ClosingA"),
     "v2.adaptive": AgentSpec(Agent360V2Adaptive, "v2.adaptive", "Agent360V2Adaptive"),

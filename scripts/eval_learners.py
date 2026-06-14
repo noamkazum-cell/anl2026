@@ -42,7 +42,7 @@ AGENTS: dict[str, AgentSpec] = {
     "gradient": AgentSpec(Agent360Base, "gradient", "Agent360Base"),
     "v2": AgentSpec(Agent360V2, "v2", "Agent360V2"),
     "submission": AgentSpec(Agent360, "submission", "Agent360 (submission)"),
-    "v4": AgentSpec(Agent360V4, "v4.3", "Agent360 V4.3 (submission)"),
+    "v4": AgentSpec(Agent360V4, "v4.5", "Agent360 V4.5 (submission)"),
     "v4.2": AgentSpec(Agent360V42, "v4.2", "Agent360 V4.2"),
     "v2.6a": AgentSpec(Agent360V2ClosingA, "v2.6a", "Agent360V2ClosingA"),
     "v2.adaptive": AgentSpec(Agent360V2Adaptive, "v2.adaptive", "Agent360V2Adaptive"),

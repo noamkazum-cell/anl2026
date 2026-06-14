@@ -6,7 +6,7 @@ from negmas.preferences.generators import generate_multi_issue_ufuns
 from negmas.sao import SAOMechanism
 
 from agent360_submit import Agent360 as Agent360V3
-from agent360_submit_v4 import Agent360, OfferTrajectoryModel
+from agent360_submit_v4 import Agent360, OfferTrajectoryModel, __version__
 from agent360_v2 import Agent360V2
 from agent360_v4 import Agent360V4
 
@@ -40,12 +40,16 @@ class TestAgent360V4:
         assert agent.CLOSING_CAP_CONCEDING > agent.CLOSING_CAP_DECEPTIVE
         assert agent.CLOSING_CAP_DECEPTIVE < Agent360V3.CLOSING_OPPONENT_WEIGHT_CAP
 
-    def test_v42_tournament_hardening(self):
+    def test_v46_submission_version(self):
+        assert __version__ == "4.6.0"
+
+    def test_v46_tournament_hardening(self):
         agent = Agent360V4()
         assert agent.FIRST_MIN_OPPONENT_OFFERS == 4
         assert agent.FIRST_DECOY_PHASE_END == 0.40
         assert agent.ACCEPT_CATASTROPHE_TIME == 0.95
         assert agent.ACCEPT_DEADLINE_SAFE == 0.90
+        assert not hasattr(agent, "ACCEPT_STALL_TIME")
         assert agent.CLOSING_CAP_LEARNER > 0.45
         assert agent.ASPIRATION_SLOPE_CONCEDING < agent.ASPIRATION_SLOPE_DEFAULT
         assert agent.FIRST_LATE_BLEND_MAX > 0.62
