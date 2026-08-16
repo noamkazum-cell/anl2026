@@ -16,9 +16,9 @@ from negmas.sao import SAOMechanism
 from rich.console import Console
 from rich.table import Table
 
-from agent360_v2 import Agent360V2
+from drafts.agent360_v2 import Agent360V2
 from main import SCENARIOS_DIR, calc_scores
-from opponent_classifier import OpponentRouter, _pearson_correlation
+from drafts.opponent_classifier import OpponentRouter, _pearson_correlation
 
 app = typer.Typer()
 console = Console()

@@ -5,7 +5,7 @@ from negmas.inout import Scenario
 from negmas.preferences.generators import generate_multi_issue_ufuns
 from negmas.sao import SAOMechanism
 
-from agent360 import Agent360Base
+from drafts.agent360 import Agent360Base
 
 
 @pytest.fixture

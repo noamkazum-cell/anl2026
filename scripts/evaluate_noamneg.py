@@ -28,7 +28,7 @@ from rich.console import Console
 from rich.table import Table
 
 from main import SCENARIOS_DIR, calc_scores
-from agent360_submit import Agent360
+from drafts.agent360_submit import Agent360
 
 app = typer.Typer(help="Benchmark Agent360 vs NegMAS and example opponents")
 console = Console()

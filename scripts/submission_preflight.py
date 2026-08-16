@@ -14,7 +14,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 SUBMISSION_FILES = (
-    "agent360_submit.py",
+    "agent360_FINAL.py",
+    "submitted_v4.zip",
     "requirements.txt",
 )
 
@@ -51,9 +52,9 @@ def main() -> int:
 
     try:
         sys.path.insert(0, str(ROOT))
-        from agent360_submit import Agent360  # noqa: F401
+        from agent360_FINAL import Agent360  # noqa: F401
 
-        print("[OK] import agent360_submit.Agent360 (packaged as agent360.py in zip)")
+        print("[OK] import agent360_FINAL.Agent360 (packaged as agent360.py in zip)")
     except Exception as exc:
         print(f"[FAIL] import Agent360: {exc}")
         return 1
@@ -87,7 +88,7 @@ def main() -> int:
             "Camera",
             "--no-plot",
             "--negotiator",
-            "agent360_submit.Agent360",
+            "agent360_FINAL.Agent360",
             "--opponent",
             "negmas.sao.BoulwareTBNegotiator",
             "--negotiator-first",

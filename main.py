@@ -34,9 +34,9 @@ import typer
 from typing import Annotated
 
 try:
-    from .agent360_submit import Agent360
+    from .agent360_FINAL import Agent360
 except ImportError:
-    from agent360_submit import Agent360
+    from agent360_FINAL import Agent360
 
 AGENT360 = get_full_type_name(Agent360)
 

@@ -22,13 +22,13 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from agent360 import Agent360Base
-from agent360_submit import Agent360
-from agent360_full import Agent360Full
-from agent360_reverse import Agent360Reverse
-from agent360_v4 import Agent360V4
-from agent360_v4_2 import Agent360V42
-from agent360_v2 import (
+from drafts.agent360 import Agent360Base
+from drafts.agent360_submit import Agent360
+from drafts.agent360_full import Agent360Full
+from drafts.agent360_reverse import Agent360Reverse
+from drafts.agent360_v4 import Agent360V4
+from drafts.agent360_v4_2 import Agent360V42
+from drafts.agent360_v2 import (
     Agent360V2,
     Agent360V2_5,
     Agent360V2Adaptive,

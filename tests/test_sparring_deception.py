@@ -5,7 +5,7 @@ from negmas.inout import Scenario
 from negmas.preferences.generators import generate_multi_issue_ufuns
 from negmas.sao import SAOMechanism
 
-from agent360_v2 import Agent360V2
+from drafts.agent360_v2 import Agent360V2
 from sparring.decoy_persona import DecoyPersona
 from sparring.renting_lite import RentingLite
 from sparring.shochan_lite import ShochanLite

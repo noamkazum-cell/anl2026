@@ -5,15 +5,15 @@ from negmas.inout import Scenario
 from negmas.preferences.generators import generate_multi_issue_ufuns
 from negmas.sao import SAOMechanism
 
-from agent360_v3 import (
+from drafts.agent360_v3 import (
     Agent360V3,
     OfferTrajectoryModel,
     RecencyBlendedSmith,
     TimedOpponentModel,
     issue_weighted_smith_estimate,
 )
-from agent360 import FrequencyOpponentModel
-from agent360_v2 import Agent360V2
+from drafts.agent360 import FrequencyOpponentModel
+from drafts.agent360_v2 import Agent360V2
 
 
 class TestOfferTrajectoryModel:

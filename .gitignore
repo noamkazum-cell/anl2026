@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local / tooling junk (do not ship to classmates or the professor)
+.popai_playwright_profile/
+.idea/
+.pytest_cache/
+report/_popai_slide_images/
+*.log
+texput.log

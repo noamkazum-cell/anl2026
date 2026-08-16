@@ -52,24 +52,18 @@ A sample agent skeleton built with [NegMAS](https://github.com/yasserfarouk/negm
 
 ```
 .
+├── agent360_FINAL.py      # ★ Final submitted agent (upload source)
+├── submitted_v4.zip       # ★ Zip uploaded to ANL (agent360.py + requirements)
+├── agent360_submit_v4.py  # Back-compat alias → agent360_FINAL
+├── drafts/                # Older agent versions & legacy zips (not final)
 ├── examples/              # Example negotiator implementations
-│   ├── boa.py             # BOA (Bidding, Opponent modeling, Acceptance) agent
-│   ├── map.py             # MAP (Maximum Aspiration Policy) agent
-│   └── simple.py          # Simple negotiator example
 ├── scenarios/             # Negotiation scenarios
-│   ├── Amsterdam/
-│   ├── Camera/
-│   ├── Car/
-│   ├── Grocery/
-│   ├── ISBTAcquisition/
-│   ├── Laptop/
-│   └── NiceOrDie/
 ├── docs/                  # Strategy documentation
-│   └── agent360-v4-strategy.md    # Agent360 V4.2 submission + report outline
-├── agent360_submit_v4.py  # Agent360 V4.3 submission source (zipped as agent360.py)
-├── agent360_submit.py     # Agent360 V3 legacy submission
+├── report/                # Course report (report.tex / report.pdf)
+├── sparring/              # Local sparring opponents
+├── scripts/               # Eval / packaging helpers
+├── tests/                 # Unit tests
 ├── main.py                # CLI application entry point
-├── noam_neg.py            # NoamNeg agent (default for CLI)
 ├── pyproject.toml         # Project configuration
 └── README.md
 ```

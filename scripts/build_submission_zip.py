@@ -8,8 +8,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_SOURCE = ROOT / "agent360_submit.py"
-DEFAULT_OUTPUT = ROOT / "submitted.zip"
+DEFAULT_SOURCE = ROOT / "agent360_FINAL.py"
+DEFAULT_OUTPUT = ROOT / "submitted_v4.zip"
 REQUIREMENTS = ROOT / "requirements.txt"
 
 

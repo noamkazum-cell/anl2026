@@ -5,10 +5,10 @@ from negmas.inout import Scenario
 from negmas.preferences.generators import generate_multi_issue_ufuns
 from negmas.sao import SAOMechanism
 
-from agent360_submit import Agent360 as Agent360V3
-from agent360_submit_v4 import Agent360, OfferTrajectoryModel, __version__
-from agent360_v2 import Agent360V2
-from agent360_v4 import Agent360V4
+from drafts.agent360_submit import Agent360 as Agent360V3
+from agent360_FINAL import Agent360, OfferTrajectoryModel, __version__
+from drafts.agent360_v2 import Agent360V2
+from drafts.agent360_v4 import Agent360V4
 
 
 @pytest.fixture

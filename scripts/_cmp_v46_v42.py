@@ -20,8 +20,8 @@ def strip_header(text: str) -> str:
         lines.append(line)
     return "\n".join(lines)
 
-a = strip_header(Path("agent360_submit_v4.py").read_text(encoding="utf-8"))
-b = strip_header(Path("agent360_submit_v42.py").read_text(encoding="utf-8"))
+a = strip_header(Path("agent360_FINAL.py").read_text(encoding="utf-8"))
+b = strip_header(Path("drafts/agent360_submit_v42.py").read_text(encoding="utf-8"))
 if a == b:
     print("IDENTICAL: V4.6 submission logic == frozen V4.2")
 else:

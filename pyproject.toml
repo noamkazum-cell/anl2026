@@ -22,8 +22,8 @@ build-backend = "hatchling.build"
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["examples", "tests", "sparring"]
-force-include = {"main.py" = "main.py", "agent360.py" = "agent360.py", "agent360_submit.py" = "agent360_submit.py", "agent360_v2.py" = "agent360_v2.py", "agent360_v3.py" = "agent360_v3.py", "README.md" = "README.md", "scenarios" = "scenarios"}
+packages = ["examples", "tests", "sparring", "drafts"]
+force-include = {"main.py" = "main.py", "agent360_FINAL.py" = "agent360_FINAL.py", "agent360_submit_v4.py" = "agent360_submit_v4.py", "README.md" = "README.md", "scenarios" = "scenarios"}
 
 [project.scripts]
 anl2026 = "main:app"

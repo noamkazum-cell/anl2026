@@ -20,7 +20,7 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from agent360_v2 import (
+from drafts.agent360_v2 import (
     Agent360V2,
     Agent360V2FirstSeat,
     Agent360V2FirstSeatLongDecoy,

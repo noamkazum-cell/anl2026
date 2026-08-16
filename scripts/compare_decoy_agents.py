@@ -30,10 +30,10 @@ from rich.table import Table
 
 from evaluate_noamneg import FULL_OPPONENTS, QUICK_OPPONENTS, OpponentSpec, list_scenario_names
 from main import SCENARIOS_DIR, calc_scores
-from agent360 import Agent360Base
-from agent360_full import Agent360Full
-from agent360_reverse import Agent360Reverse
-from agent360_v2 import Agent360V2, Agent360V2Adaptive, Agent360V2FirstSeat
+from drafts.agent360 import Agent360Base
+from drafts.agent360_full import Agent360Full
+from drafts.agent360_reverse import Agent360Reverse
+from drafts.agent360_v2 import Agent360V2, Agent360V2Adaptive, Agent360V2FirstSeat
 
 app = typer.Typer(help="Compare decoy-strategy agents vs panel and each other")
 console = Console()

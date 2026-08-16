@@ -64,7 +64,7 @@ class TestCalcScores:
         from negmas.helpers import get_class, instantiate
         from negmas.sao import SAOMechanism
 
-        from agent360_submit import Agent360
+        from agent360_FINAL import Agent360
 
         scenario = load_scenarios(["Camera"])[0]
         mechanism = SAOMechanism(outcome_space=scenario.outcome_space, n_steps=50)
@@ -138,7 +138,7 @@ class TestTournamentCommand:
                 "--competitor",
                 "negmas.sao.BoulwareTBNegotiator",
                 "--competitor",
-                "agent360_submit.Agent360",
+                "agent360_FINAL.Agent360",
             ],
         )
         assert result.exit_code == 0
@@ -154,7 +154,7 @@ class TestTournamentCommand:
                 "--competitor",
                 "negmas.sao.BoulwareTBNegotiator",
                 "--competitor",
-                "agent360_submit.Agent360",
+                "agent360_FINAL.Agent360",
             ],
         )
         assert result.exit_code == 0
@@ -173,7 +173,7 @@ class TestTournamentCommand:
                 "--competitor",
                 "negmas.sao.BoulwareTBNegotiator",
                 "--competitor",
-                "agent360_submit.Agent360",
+                "agent360_FINAL.Agent360",
             ],
         )
         assert result.exit_code == 0

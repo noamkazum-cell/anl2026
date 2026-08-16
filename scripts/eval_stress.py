@@ -24,10 +24,10 @@ import typer
 from rich.console import Console
 from rich.table import Table
 
-from agent360_submit import Agent360
-from agent360_v2 import Agent360V2
-from agent360_v4 import Agent360V4
-from agent360_v4_2 import Agent360V42
+from drafts.agent360_submit import Agent360
+from drafts.agent360_v2 import Agent360V2
+from drafts.agent360_v4 import Agent360V4
+from drafts.agent360_v4_2 import Agent360V42
 from compare_decoy_agents import AgentSpec, run_panel_match
 from evaluate_noamneg import OpponentSpec, list_scenario_names
 

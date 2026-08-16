@@ -27,12 +27,12 @@ def strip_meta(text: str) -> str:
 
 
 def main() -> None:
-    v4 = strip_meta((ROOT / "agent360_submit_v4.py").read_text(encoding="utf-8"))
-    v42 = strip_meta((ROOT / "agent360_submit_v42.py").read_text(encoding="utf-8"))
+    v4 = strip_meta((ROOT / "agent360_FINAL.py").read_text(encoding="utf-8"))
+    v42 = strip_meta((ROOT / "drafts" / "agent360_submit_v42.py").read_text(encoding="utf-8"))
     zip_t = strip_meta(
         zipfile.ZipFile(ROOT / "submitted_v4.zip").read("agent360.py").decode()
     )
-    v45 = (ROOT / "agent360_submit_v45.py").read_text(encoding="utf-8")
+    v45 = (ROOT / "drafts" / "agent360_submit_v45.py").read_text(encoding="utf-8")
 
     h4 = hashlib.sha256(v4.encode()).hexdigest()
     h42 = hashlib.sha256(v42.encode()).hexdigest()

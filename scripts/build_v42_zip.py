@@ -7,8 +7,8 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SOURCE = ROOT / "agent360_submit_v42.py"
-OUTPUT = ROOT / "submitted_v42.zip"
+SOURCE = ROOT / "drafts" / "agent360_submit_v42.py"
+OUTPUT = ROOT / "drafts" / "submitted_v42.zip"
 REQUIREMENTS = ROOT / "requirements.txt"
 
 UPLOAD_HEADER = '''"""Agent360 — ANL 2026 submission (V4.2 as ``Agent360``).
