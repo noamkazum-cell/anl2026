@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Judge Q&A — ANAC 2026 Oral</title>
+  <style>
+@page {
+  size: A4;
+  margin: 1.8cm 1.6cm 2cm 1.6cm;
+}
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  font-family: "Segoe UI", "David", "Arial Hebrew", Arial, sans-serif;
+  font-size: 18pt;
+  line-height: 2.05;
+  color: #111;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+body.rtl { direction: rtl; text-align: right; }
+body.ltr { direction: ltr; text-align: left; }
+h1 {
+  font-size: 28pt;
+  line-height: 1.35;
+  margin: 0 0 1.4rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 3px solid #222;
+}
+h2 {
+  font-size: 22pt;
+  line-height: 1.4;
+  margin: 2.6rem 0 1rem;
+  padding-top: 0.4rem;
+  page-break-after: avoid;
+}
+h3 {
+  font-size: 18pt;
+  line-height: 1.45;
+  margin: 2.2rem 0 0.85rem;
+  page-break-after: avoid;
+}
+p {
+  margin: 0 0 1.35rem;
+}
+ul, ol {
+  margin: 0 0 1.6rem;
+  padding-inline-start: 1.6rem;
+}
+li {
+  margin: 0 0 0.85rem;
+  padding-inline-start: 0.25rem;
+}
+strong { font-weight: 700; }
+hr {
+  border: none;
+  border-top: 1.5px dashed #bbb;
+  margin: 2.2rem 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.8rem;
+  font-size: 16pt;
+  line-height: 1.7;
+}
+th, td {
+  border: 1px solid #888;
+  padding: 0.55rem 0.7rem;
+  vertical-align: top;
+}
+th { background: #f0f0f0; }
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.88em;
+  background: #f3f3f3;
+  padding: 0.05em 0.25em;
+}
+.meta {
+  font-size: 15pt;
+  line-height: 1.85;
+  margin-bottom: 1.8rem;
+  padding: 0.9rem 1rem;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+}
+.print-hint {
+  font-size: 13pt;
+  line-height: 1.5;
+  color: #444;
+  margin: 0 0 1.8rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px dashed #999;
+}
+.notes {
+  margin: 0.4rem 0 2rem;
+  padding: 0.35rem 0 0;
+  min-height: 4.2rem;
+  border-bottom: 1.5px dotted #999;
+  page-break-inside: avoid;
+}
+.notes::before {
+  content: "הערות: ";
+  font-size: 12pt;
+  color: #777;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+body.ltr .notes::before { content: "Notes: "; }
+.notes-tall {
+  min-height: 6.5rem;
+}
+.block {
+  margin-bottom: 0.5rem;
+  page-break-inside: avoid;
+}
+@media print {
+  body { padding: 0; max-width: none; }
+  .print-hint { display: none; }
+  a { color: inherit; text-decoration: none; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style>
+</head>
+<body class="ltr">
+  <p class="print-hint">Print with Ctrl+P. Note lines appear under each section for handwritten comments.</p>
+  <h1>Judge Q&A — ANAC 2026 Oral</h1>
+  <p><strong>Presenter:</strong> Noam Kazum<br />
+<strong>Team:</strong> Noam Kazum · Omer Shani Steinmetz<br />
+<strong>Agents:</strong> Agent360 (ANL) · GunnerAgent (HAN)<br />
+<strong>Use with:</strong> <code>report/oral-5min-presentation.md</code></p>
+<hr />
+<div class="block"><h2>How to use this</h2>
+<ul>
+<li>Present both agents as <strong>joint work</strong>. Never say who coded which part.</li>
+<li>Learn the <strong>one-sentence answers</strong> first; expand only if the judge digs in.</li>
+<li>Be equally fluent on <strong>GunnerAgent</strong> and <strong>Agent360</strong> — judges will ask about both.</li>
+<li>If you don’t know: “We didn’t measure that directly; what we did measure was …” → pivot to a panel result or a design choice you kept/rejected.</li>
+<li>Prefer concrete numbers and rejected alternatives over vague claims.</li>
+</ul>
+<hr />
+<div class="notes"></div></div><div class="block"><h2>Quick triad (memorize cold)</h2>
+<ol>
+<li><strong>Why reverse lost (Agent360):</strong> Opening sincere trains frequency learners; concealment collapsed vs BOA/MAP/MiCRO-style agents.</li>
+<li><strong>Why Core + LLM (Gunner):</strong> LLM failure must never produce a bad offer; numbers first, words second, fallbacks if the model fails.</li>
+<li><strong>Why first-offer template (Gunner):</strong> With ~10 turns, humans open near preferences then concede — frequency tables fill with the wrong values.</li>
+</ol>
+<hr />
+<div class="notes"></div></div><div class="block"><h2>1. Big-picture / project</h2>
+<div class="notes"></div></div><div class="block"><h3>Why two agents instead of focusing on one?</h3>
+<p>The leagues ask incompatible questions. ANL rewards hiding preferences from learners over many rounds; HAN rewards sounding human with ~10 turns and a message every move. One strategy can’t optimize both. Comparing them sharpens the research claim: strategy follows scoring rule and data budget.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>What’s the main scientific contribution?</h3>
+<p>For <strong>Agent360</strong>: an empirically validated <strong>concealment-first</strong> persona (gradient over reverse/full-flip), with seat-aware phasing and mode-aware acceptance, without oracle info.<br />
+For <strong>GunnerAgent</strong>: a <strong>safe Core+LLM split</strong> plus a <strong>two-phase</strong> concession and <strong>first-offer template</strong> model suited to HAN’s short horizon.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Who is on the team?</h3>
+<p><strong>Noam Kazum</strong> and <strong>Omer Shani</strong>, supervised by <strong>Dr. Galit Haim</strong> and <strong>Dr. Raz Lin</strong>, College of Management. We developed both agents together for ANAC 2026.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>What would you do with another semester?</h3>
+<p><strong>Agent360</strong> — richer opponent classification and online tuning of decoy length.<br />
+<strong>GunnerAgent</strong> — opponent-type adaptation of the concession exponent; sharper issue-importance from concession order; better handling when the outcome space is tiny and the no-repeat cap runs out.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>What’s the single-sentence thesis?</h3>
+<p><strong>Strategy must follow the scoring rule and the data budget — and concerns that fail independently should live in separate layers.</strong></p>
+<hr />
+<div class="notes notes-tall"></div></div><div class="block"><h2>2. Agent360 / ANL</h2>
+<div class="notes"></div></div><div class="block"><h3>Isn’t deception unethical / against “good AI”?</h3>
+<p>In ANL 2026, <strong>Concealing is an explicit scoring axis</strong>. The rules incentivize misrepresentation in the bid stream — competitive signaling, not verbal lying. We study how agents respond to that incentive. In cooperative or incentive-compatible settings, honesty can be optimal; here the score pushes the opposite way on concealment.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Why not just bid randomly to maximize concealment?</h3>
+<p>Random bids destroy Advantage and often look incoherent. We use <strong>rational</strong> outcomes that <strong>mismatch</strong> true top issues but stay above a utility floor — so we still have a path to good deals in transition and closing.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Explain Concealing in one sentence.</h3>
+<p>After the session, if the opponent’s inferred utility of you correlates well with your true utility, your Concealing score is low — so we want their model to stay <strong>wrong</strong>.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Why did reverse psychology lose?</h3>
+<p>Opening with sincere high-utility outcomes trains frequency learners correctly. Local gains vs some time-based agents were outweighed by concealment losses vs BOA/MAP/MiCRO-style learners that dominate the field.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>What’s “maximal-mismatch decoy”?</h3>
+<p>From our rational outcomes, pick ones that disagree with our true preferred values on <strong>at least half the issues</strong>, subject to a utility floor — systematically wrong early signal without garbage bids.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Why three phases instead of one switch?</h3>
+<p>Abrupt flips are detectable and fragile. Gradual transition keeps the false early signal long enough to poison the learner, then reveals enough preference late to close.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Why treat first and second seat differently?</h3>
+<p>The opener’s bid stream is longer and more exposed to the opponent’s learner. We extend the decoy window and tighten early gates when we open — no oracle routing, just seat + time.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>How do you model the opponent?</h3>
+<p>Smith-style frequency models with recency / time / issue weighting, plus trajectory features (concession slope, non-monotonicity). We classify <strong>behavior</strong> — mirror, learner, deceptive, conceding, unknown — not agent class names we don’t have.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>How do you detect bait?</h3>
+<p>Deceptive mode + concealment tactics + late offer whose Smith utility jumps far above the trajectory prediction → reject even if aspiration would accept, until near the catastrophe/deadline window.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Did you overfit to local benchmarks?</h3>
+<p>Risk we managed with panels: learners, time-based stress, and in-house deceptive sparring. We <strong>removed</strong> changes that helped one cell but hurt the panel — escape accept, reverse persona, some stricter gates.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Do you use the opponent’s true utility?</h3>
+<p>No. Only observed offers, relative time, and seat. We publish an estimated opponent utility for league Advantage scoring, built from blended Smith estimates.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>What’s your local score roughly?</h3>
+<p>Development snapshot panel mean around <strong>Advantage ~0.55, Concealing ~0.79, Score ~1.34</strong> (learners ~1.27, stress ~1.43, deceptive sparring ~1.19). Emphasize it’s a <strong>proxy</strong>, not official tournament rank unless you have official numbers.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Connection to signaling / mechanism design?</h3>
+<p>Offers are signals. Strategy-proof mechanisms can make honesty dominant; ANL’s Concealing axis does the opposite for preference revelation. We operate in competitive signaling, not incentive-compatible reporting.</p>
+<hr />
+<div class="notes notes-tall"></div></div><div class="block"><h2>3. GunnerAgent / HAN</h2>
+<p><em>Own this section as fully as Agent360 — same “we,” same confidence.</em></p>
+<div class="notes"></div></div><div class="block"><h3>Why can’t the LLM choose the offer?</h3>
+<p>Stochastic errors, timeouts, and bad JSON must not produce bad deals. Half the score is perception, but a bad offer destroys utility. Numbers first, words second; fallbacks if the LLM fails.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Which LLM?</h3>
+<p>League-fixed local model via Ollama — <strong>qwen3:4b-instruct</strong>. We engineer prompts and sampling, not the model choice.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Does the LLM see your utilities?</h3>
+<p>No. It gets verbal labels, offer terms, partner message/history — never utility, reservation, or priorities — so it can’t leak strategy or invent numbers.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Walk me through one turn end to end.</h3>
+<ol>
+<li>Partner offer arrives (with their message).  </li>
+<li><strong>GunnerCore</strong> decides accept or reject using the current threshold on <strong>our</strong> utility only.  </li>
+<li>If reject: build candidates above threshold → Pareto filter on (our util, estimated opp util) → sort by predicted partner utility → pick one under the no-repeat cap.  </li>
+<li><strong>LLM wrapper</strong> gets the fixed move + labels → writes 2–3 sentences.  </li>
+<li>If LLM fails → send a <strong>fallback</strong> message that still matches the numerical move.<br />
+Emit (decision + message). The LLM never changes the numbers.</li>
+</ol>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Why two concession phases? (be concrete)</h3>
+<p>Classical aspiration:<br />
+<code>aspiration(t) = (M − rv)(1 − t^e) + rv</code>.</p>
+<p>With ~10 turns, one curve fails:
+- <strong>Boulware</strong> (e &gt; 1) → near-identical repeats → reads robotic<br />
+- <strong>Conceder</strong> (e &lt; 1) → gives value away early<br />
+- <strong>Linear</strong> (e = 1) → partner waits until the end  </p>
+<p>Our split at <strong>t = 0.4</strong>:
+- <strong>Phase 1 — Anchor:</strong> linear from <strong>1.0 → 0.7</strong> (fixed floor, not scaled by rv — so movement is visible without giving real value)<br />
+- <strong>Phase 2 — Settle:</strong> Shochan-style curve from 0.7 down to <code>max(1.5·rv, 0.3)</code> with <strong>e = 2.5</strong> — hold near 0.7, then sharp drop near the deadline  </p>
+<p>Same threshold for <strong>accept</strong> and <strong>propose</strong>.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Why not Smith/frequency modeling like Agent360?</h3>
+<p>In HAN the partner quickly leaves preferred outcomes and concedes; frequency tables fill with non-preferred values. In our tests, frequency models collapsed toward a zero-sum proxy. The <strong>first offer</strong> is the best preference sketch; later bids are mostly concession.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>How does opponent modeling work exactly?</h3>
+<p>Estimate <code>û_opp</code> <strong>only to rank</strong> proposals (Pareto + sort) — <strong>not</strong> for accept/reject.</p>
+<ul>
+<li><strong>≤2 issues</strong> (buyer–seller-like): template-match against the <strong>first offer</strong>  </li>
+<li><strong>≥3 issues</strong> (resource-like): template-match <strong>weighted</strong> by issues the partner keeps <strong>unchanged</strong> across rounds (stability ≈ importance)</li>
+</ul>
+<p>We do <strong>not</strong> estimate partner reservation value — too few offers; a wrong rv hurts more than none.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>What if the first offer is “I want everything”?</h3>
+<p>That’s exactly why the ≥3-issue branch exists: first offer alone is uninformative, so we weight issues by <strong>stability</strong> across consecutive offers.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>What if you run out of distinct offers?</h3>
+<p>Small outcome spaces + high Phase-2 threshold + no-repeat cap (don’t repeat the same offer more than ~3 times) can exhaust candidates. The propose loop may re-offer; the message layer softens deadlock. Known limitation.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>How do modular prompts work?</h3>
+<p>Small model + one giant prompt = instructions interfere. We assemble from separate pieces: global rules, move brief, partner last action, offer line, output format. Each can be edited without breaking the rest. Recency matters — put exact offer terms and critical instructions <strong>last</strong>. We give a ready-made “You get …” line to copy literally so the model doesn’t paraphrase items wrong. Temperature <strong>0.7</strong>; raise token limit to avoid truncation.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>How do you avoid sounding robotic?</h3>
+<p>Move labels drive tone: opening, large concession, small adjustment, holding firm, repeating, re-raising, accepting. Separate lighter labels for the partner’s last action. Persona: warm and assertive — not apologetic, not machine-like. Fallbacks still match the numerical move.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Why inherit from Shochan then change so much?</h3>
+<p>Shochan won ANAC 2024 ANL with opponent <strong>ufun</strong> available. HAN <strong>hides</strong> partner utility and adds messages + a short clock. We kept the aspiration/propose skeleton, replaced every <code>opponent_ufun</code> call with our estimator, and added the two-phase curve, no-repeat cap, and LLM presentation layer.</p>
+<hr />
+<div class="notes notes-tall"></div></div><div class="block"><h2>4. Comparison / methods</h2>
+<div class="notes"></div></div><div class="block"><h3>Both use Shochan lineage — how are they different?</h3>
+<p>Shared inheritance for aspiration/propose ideas, then diverged: Agent360 rebuilt for <strong>concealment</strong> and long learner games; GunnerAgent rebuilt for <strong>hidden partner utility</strong>, short horizon, and a language layer Shochan never needed.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>How did you evaluate?</h3>
+<p>Repeatable local tournaments / panels before submission; iterate; keep only changes that help across opponent families.<br />
+<strong>Agent360:</strong> learners + stress + deceptive sparring.<br />
+<strong>GunnerAgent:</strong> curve/model ablations under HAN constraints (league flow: LLM round → humans).</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Same stack, opposite strategies — one table</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Agent360</th>
+<th>GunnerAgent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opponent</td>
+<td>Learning agents</td>
+<td>Humans</td>
+</tr>
+<tr>
+<td>Extra goal</td>
+<td>Hide preferences</td>
+<td>Sound human / trusted</td>
+</tr>
+<tr>
+<td>Early game</td>
+<td>Decoy persona</td>
+<td>Anchor without giving value</td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td>Persona / model / accept</td>
+<td>Numbers core + language layer</td>
+</tr>
+</tbody>
+</table>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Five lessons (closing fallback)</h3>
+<ol>
+<li>Scoring rule defines the strategy  </li>
+<li>Opponent modeling must fit the data budget  </li>
+<li>Evaluate across opponent families  </li>
+<li>Separate layers that fail independently  </li>
+<li>Empirical iteration over intuition  </li>
+</ol>
+<hr />
+<div class="notes notes-tall"></div></div><div class="block"><h2>5. Soft / process questions</h2>
+<div class="notes"></div></div><div class="block"><h3>What was hardest?</h3>
+<p>On Agent360: balancing Advantage and Concealing — strengthening acceptance without collapsing the decoy.<br />
+On Gunner: designing for ~10 offers and unknown partner utility without sounding robotic. Across both: knowing when to <strong>roll back</strong> a change that looked good in one cell.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>What did you reject that you’re glad you rejected?</h3>
+<p>Reverse-psychology persona; mid-game escape acceptance; treating HAN like long ANL frequency learning; letting the LLM touch numerical decisions.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>What are you most proud of?</h3>
+<p>Clear experimental path on Agent360 personas, and the Core/LLM separation on Gunner so presentation can’t corrupt strategy — plus the shared lesson that <strong>scoring rule + data budget</strong> drive design.</p>
+<div class="notes notes-tall"></div></div><div class="block"><h3>Where is Omer?</h3>
+<p>He’s part of the team; I’m presenting today. Happy to take any question on either agent — we built both together.</p>
+<hr />
+<div class="notes notes-tall"></div></div><div class="block"><h2>6. If stuck — recovery lines</h2>
+<ul>
+<li>“The short answer is X; the reason we chose it over Y is Z.”</li>
+<li>“We didn’t optimize for that metric; we optimized for Advantage + Concealing / utility + perception.”</li>
+<li>“Local panel evidence suggested …, so we kept / rolled back …”</li>
+<li>“Happy to point to the poster section on … for the diagram.”</li>
+<li>Never: “That was Omer’s part” / “I mainly did Agent360.”</li>
+</ul><div class="notes"></div></div>
+</body>
+</html>
