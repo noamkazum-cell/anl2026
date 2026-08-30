@@ -1,0 +1,23 @@
+# Public viewing is fine. Only the repo owner may keep a pull request open.
+# Pushing this file is enough; no extra GitHub token is required.
+name: Owner-only pull requests
+
+on:
+  pull_request_target:
+    types: [opened, reopened, ready_for_review, synchronize]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  close-external:
+    if: github.event.pull_request.user.login != github.repository_owner
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close pull request from non-owner
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          gh pr close "$PR" --repo "${{ github.repository }}" \
+            --comment "This repository is public for viewing only. Commits, pushes, and pull requests are restricted to the owner."
