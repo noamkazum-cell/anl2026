@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>הסבר: פרומפטים מודולריים — GunnerAgent</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", "David", "Arial Hebrew", Arial, sans-serif;
+      font-size: 18pt;
+      line-height: 1.9;
+      color: #111;
+      max-width: 44rem;
+      margin: 2rem auto;
+      padding: 0 1.25rem 3rem;
+      direction: rtl;
+      text-align: right;
+    }
+    h1 {
+      font-size: 24pt;
+      border-bottom: 2px solid #222;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    h2 {
+      font-size: 20pt;
+      margin: 1.8rem 0 0.8rem;
+    }
+    p, li { margin: 0 0 1rem; }
+    ul, ol { margin: 0 0 1.2rem; padding-right: 1.4rem; padding-left: 0; }
+    strong { font-weight: 700; }
+    code {
+      direction: ltr;
+      unicode-bidi: embed;
+      font-family: Consolas, monospace;
+      font-size: 0.9em;
+      background: #f3f3f3;
+      padding: 0.1em 0.3em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 16pt;
+    }
+    th, td {
+      border: 1px solid #888;
+      padding: 0.5rem 0.6rem;
+      text-align: right;
+      vertical-align: top;
+    }
+    th { background: #f0f0f0; }
+    .note {
+      background: #f7f7f7;
+      border-right: 4px solid #444;
+      padding: 0.8rem 1rem;
+      margin: 1.2rem 0;
+    }
+    .flow {
+      background: #fafafa;
+      border: 1px solid #ccc;
+      padding: 1rem 1.2rem;
+      font-size: 16pt;
+      line-height: 1.8;
+      margin: 1.2rem 0;
+      direction: ltr;
+      text-align: center;
+      unicode-bidi: embed;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>פרומפטים מודולריים — למה ואיך?</h1>
+
+  <p>זה שייך ל־<strong>GunnerAgent</strong> — לשכבת ה־<strong>LLM</strong> שכותבת את <strong>ההודעה</strong> לשותף.</p>
+
+  <p><strong>GunnerCore</strong> כבר החליט מספרית: לקבל, לדחות, איזו הצעה לשלוח.<br>
+  ה־LLM (<code>qwen3:4b</code> — מודל קטן) רק «מלביש» על זה 2–3 משפטים חמים — <strong>בלי לשנות את המהלך</strong>.</p>
+
+  <h2>הבעיה: פרומפט ענק אחד</h2>
+  <p>מודל קטן + הוראה אחת ארוכה = הוראות <strong>מתנגשות</strong>:</p>
+  <ul>
+    <li>«תהיה חם»</li>
+    <li>«אל תגיד מספרים»</li>
+    <li>«העתק בדיוק את המספרים»</li>
+    <li>«תגיב למה שהוא אמר»</li>
+    <li>«אל תבטיח כלום»</li>
+  </ul>
+  <p>המודל «מבולבל» ומתחיל לפרפרז — למשל לשנות כמויות או לשכוח מה לעשות בסוף.</p>
+
+  <h2>הפתרון: חתיכות נפרדות</h2>
+  <table>
+    <tr><th>חלק</th><th>מה זה</th></tr>
+    <tr><td><strong>כללים גלובליים</strong></td><td><code>SYSTEM_PROMPT</code> — פרסונה, טון, איסורים</td></tr>
+    <tr><td><strong>תמצית המהלך</strong></td><td><code>_BEHAVIOR_BRIEF</code> — «ויתרת הרבה» / «עומדת» / «מקבלת»</td></tr>
+    <tr><td><strong>פעולת השותף</strong></td><td>מה היריב עשה בסיבוב האחרון + איך להגיב</td></tr>
+    <tr><td><strong>שורת ההצעה</strong></td><td><code>copy_line</code> — המונחים המדויקים להעתקה</td></tr>
+    <tr><td><strong>פורמט פלט</strong></td><td><code>{"think": "...", "text": "..."}</code></td></tr>
+  </table>
+  <p>כל חלק בקובץ/מילון נפרד → אפשר לערוך חלק אחד בלי לשבור את השאר.</p>
+
+  <h2>Recency — למה «בסוף»?</h2>
+  <p>מודלים קטנים <strong>שוכחים את תחילת הפרומפט</strong> כשהוא ארוך.</p>
+  <p>לכן הסדר חשוב:</p>
+  <ol>
+    <li><strong>למעלה:</strong> הודעת השותף, סוג המהלך, היסטוריה</li>
+    <li><strong>בסוף</strong> (ממש לפני הפלט): תנאי ההצעה המדויקים + «תגיב למה שהוא אמר עכשיו»</li>
+  </ol>
+  <p>מה שנקרא <strong>אחרון</strong> — נשמר הכי טוב בזיכרון של המודל.</p>
+
+  <h2>«You get …» / העתקה מילולית</h2>
+  <p>המודל נוטה <strong>לפרפרז</strong> («תקבל בערך חצי») במקום המספרים האמיתיים → באג של <strong>פריטים לא תואמים</strong> למהלך המספרי.</p>
+  <p>הפתרון: שורה מוכנה עם המונחים המדויקים, למשל:</p>
+  <p><code>Quantity 8, Price 200</code></p>
+  <p>והוראה קשיחה: <strong>העתק כל שם ומספר בלי לשנות</strong>.</p>
+
+  <h2>Temperature 0.7 + יותר טוקנים</h2>
+  <table>
+    <tr><th>פרמטר</th><th>למה</th></tr>
+    <tr><td><strong>Temperature 0.7</strong></td><td>לא 0 (רובוטי מדי), לא 1 (אקראי מדי). מספיק גמישות לניסוח חם, אבל יציב להעתקת מספרים</td></tr>
+    <tr><td><strong>max_tokens = 350</strong></td><td>מקום ל־think קצר + 2–3 משפטים + JSON — בלי חיתוך באמצע (שגורם ל־JSON שבור)</td></tr>
+  </table>
+
+  <h2>הקשר לשאר המערכת</h2>
+  <div class="flow">
+    הצעת שותף<br>
+    ↓<br>
+    GunnerCore → קבלה/דחייה + בחירת הצעה<br>
+    ↓<br>
+    פרומפט מודולרי → LLM כותב הודעה<br>
+    ↓<br>
+    אם LLM נכשל → fallback מוכן
+  </div>
+
+  <div class="note">
+    <strong>לזכור:</strong> זה לא «אסטרטגיית משא ומתן» — זה <strong>הנדסת פרומפט</strong> כדי שמודל קטן יכתוב הודעות אנושיות <strong>בלי לשבור</strong> את ההחלטה המספרית שכבר נקבעה. <strong>Agent360</strong> בכלל לא משתמש ב־LLM.
+  </div>
+
+</body>
+</html>

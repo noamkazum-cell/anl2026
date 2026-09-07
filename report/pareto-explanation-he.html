@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>הסבר: Pareto ו-no-repeat cap — GunnerAgent</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", "David", "Arial Hebrew", Arial, sans-serif;
+      font-size: 18pt;
+      line-height: 1.9;
+      color: #111;
+      max-width: 44rem;
+      margin: 2rem auto;
+      padding: 0 1.25rem 3rem;
+      direction: rtl;
+      text-align: right;
+    }
+    h1 {
+      font-size: 24pt;
+      border-bottom: 2px solid #222;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    h2 {
+      font-size: 20pt;
+      margin: 1.8rem 0 0.8rem;
+    }
+    p, li { margin: 0 0 1rem; }
+    ul, ol { margin: 0 0 1.2rem; padding-right: 1.4rem; padding-left: 0; }
+    strong { font-weight: 700; }
+    code {
+      direction: ltr;
+      unicode-bidi: embed;
+      font-family: Consolas, monospace;
+      font-size: 0.9em;
+      background: #f3f3f3;
+      padding: 0.1em 0.3em;
+    }
+    .ltr {
+      direction: ltr;
+      unicode-bidi: embed;
+      display: inline-block;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 16pt;
+    }
+    th, td {
+      border: 1px solid #888;
+      padding: 0.5rem 0.6rem;
+      text-align: right;
+    }
+    th { background: #f0f0f0; }
+    .note {
+      background: #f7f7f7;
+      border-right: 4px solid #444;
+      padding: 0.8rem 1rem;
+      margin: 1.2rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>מה זה «סינון Pareto» אחרי דחייה?</h1>
+
+  <p>זה מתאר איך <strong>GunnerAgent</strong> בוחר הצעה חדשה אחרי שהוא <strong>דוחה</strong> את הצעת השותף — לא Agent360.</p>
+
+  <h2>הרקע</h2>
+  <p>אחרי דחייה, <code>GunnerCore</code> צריך להחליט <strong>איזו הצעה לשלוח</strong>. הוא <strong>לא</strong> משתמש במודל תועלת של היריב כדי לקבל או לדחות — רק כדי <strong>לדרג</strong> הצעות.</p>
+
+  <h2>שלב אחר שלב</h2>
+  <ol>
+    <li><strong>מועמדים מעל הסף</strong> — כל התוצאות שהתועלת <em>שלנו</em> בהן ≥ הסף הנוכחי (עקומת הוויתור לפי הזמן).</li>
+    <li><strong>סינון Pareto</strong> — לכל מועמד זוג: <span class="ltr">(התועלת שלנו, תועלת יריב מוערכת)</span>. נשארות רק הצעות שלא «נשלטות» על ידי אחרת: אין הצעה B שגם טובה לנו לא פחות <strong>וגם</strong> טובה ליריב לא פחות — ולפחות באחד מהם יותר טוב.</li>
+    <li><strong>מיון לפי תועלת שותף חזויה</strong> — בין מה שנשאר, ממיינים יורד לפי <code>û_opp</code> — כמה ההצעה נראית טובה ליריב (לפי המודל).</li>
+    <li><strong>בוחרים תחת no-repeat cap</strong> — לא שולחים את אותה תוצאה שוב ושוב. אם כבר הצענו אותה 5 פעמים, מדלגים לבאה ברשימה.</li>
+  </ol>
+
+  <h2>למה Pareto?</h2>
+  <p>כדי לא לשלוח הצעה «טיפשה» — למשל כזו שגם לנו פחות טובה <strong>וגם</strong> ליריב נראית פחות טובה מאחרת.</p>
+
+  <h2>דוגמה קצרה</h2>
+  <table>
+    <tr><th>הצעה</th><th>לנו</th><th>ליריב (מוערך)</th></tr>
+    <tr><td>A</td><td>0.8</td><td>0.3</td></tr>
+    <tr><td>B</td><td>0.75</td><td>0.6</td></tr>
+    <tr><td>C</td><td>0.7</td><td>0.5</td></tr>
+  </table>
+  <ul>
+    <li>A נשלטת על ידי B → יוצאת</li>
+    <li>C נשלטת על ידי B → יוצאת</li>
+    <li>נשאר <strong>B</strong> → שולחים אותה (אם לא חרגה מ-no-repeat cap)</li>
+  </ul>
+
+  <div class="note">
+    <strong>לזכור:</strong> <code>û_opp</code> משמש <strong>רק</strong> לסינון Pareto ולמיון — <strong>לא</strong> להחלטת קבלה/דחייה, שמבוססת רק על התועלת שלנו מול הסף.
+  </div>
+
+</body>
+</html>
